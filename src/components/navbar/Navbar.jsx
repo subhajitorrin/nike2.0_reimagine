@@ -1,9 +1,9 @@
 import React from 'react'
 import "./Navbar.css"
 
-function Navbar(obj) {
+function Navbar() {
   return (
-   <div></div>
+   <div>Navber</div>
   )
 }
 
