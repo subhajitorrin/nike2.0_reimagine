@@ -6,10 +6,10 @@
   padding: 48px;
   font-family: sans-serif;
 }
-.footerbreakline{
-    border-top: 1px solid #E5E5E5;
-    margin-left: 48px;
-    margin-right: 48px;
+.footerbreakline {
+  border-top: 1px solid #e5e5e5;
+  margin-left: 48px;
+  margin-right: 48px;
 }
 .lowerfooter .footerBoxesContainer {
   width: 100%;
@@ -52,15 +52,15 @@
 }
 .lowerfooter .footerguidesicon {
   display: flex;
-  align-items: center;
   gap: 5px;
+  position: relative;
 }
 .lowerfooter .footerLinerContainer {
   margin-top: 20px;
 }
 .lowerfooter .footerLinerContainer ul {
   display: flex;
-  gap: 1rem;
+  gap: 1.7rem;
   list-style-type: none;
   font-weight: bold;
   color: #707072;
@@ -71,4 +71,40 @@
 }
 .footerHover:hover {
   color: black;
+}
+
+/* uppper footer  */
+.upperfooter {
+  border-top: 1px solid black;
+  height: 300px;
+}
+.lowerfooter .guideList {
+  width: 200px;
+  padding: 10px;
+  padding-right: 50px;
+  /* border: 1px solid black; */
+  position: absolute;
+  font-size: 13px;
+  font-weight: 600;
+  top: -515px;
+  left: -10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+}
+.lowerfooter .guidelistitem {
+  padding: 10px;
+  padding-right: 10px;
+  border: 1px solid transparent;
+}
+.lowerfooter .guidelistitem:hover{
+  background-color: #E5E5E5;
+  color: black;
+}
+.lowerfooter .spanGuide{
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }

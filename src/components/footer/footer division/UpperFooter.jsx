@@ -2,7 +2,7 @@ import React from 'react'
 
 function UpperFooter() {
   return (
-    <div>This is upperfooter</div>
+    <div className='upperfooter'>This is upperfooter</div>
   )
 }
 
