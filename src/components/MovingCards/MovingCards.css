@@ -86,6 +86,10 @@
   position: relative;
   top: -24%;
 }
+.cardsContainer .card4 img{
+  position: relative;
+  top: -45%;
+}
 @keyframes slide {
   from {
     transform: translateX(0);
