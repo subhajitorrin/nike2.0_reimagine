@@ -109,18 +109,15 @@ function Navbar() {
               <span>Latest Clothing</span>
             </h5>
            
-           
             <h5>
               <span>Get Em in SNKRS</span>
             </h5>
-            
             <h5>
               <span>Bestsellers</span>
             </h5>
             <h5>
               <span>Member Exclusive</span>
             </h5>
-           
           </div>
           <div className="nav2-middle-elem">
             <h4>
@@ -175,10 +172,6 @@ function Navbar() {
             </h5>
            
           </div>
-
-          
-          
-          
         </div>
         <div className="nav2-left">
           <div className="nav2-left-input">
