@@ -1,0 +1,30 @@
+.navContainer{
+    height: 70px;
+    width: 100%;
+    padding: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: transparent;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navContainer li {
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nav-left {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1rem;
+}
