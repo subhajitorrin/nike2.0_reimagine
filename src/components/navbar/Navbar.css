@@ -9,14 +9,11 @@
     /* border: 1px solid black; */
     font-family: sans-serif;
 }
-/* from orrin top */
+
 nav {
     display: flex;
     justify-content: space-between;
 }
-
-/* merging at 13:04 from orrin */
-/* merging at 13:14 from orrin */
 
 .navContainer li {
     list-style-type: none;
@@ -76,14 +73,3 @@ nav {
 .navList4::before {
     content: "SIGN IN";
 }
-
-/* from orrin */
-/* merger */
-
-/* abhra unnac 13:16 */
-/* abhra unnac 13:16 */
-/* abhra unnac 13:16 */
-/* abhra unnac 13:16 */
-/* abhra unnac 13:16 */
-/* abhra unnac 13:16 */
-/* abhra unnac 13:16 */
