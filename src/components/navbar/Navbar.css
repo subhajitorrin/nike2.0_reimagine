@@ -1,0 +1,75 @@
+.navContainer {
+    height: 70px;
+    width: 100%;
+    padding: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: transparent;
+    /* border: 1px solid black; */
+    font-family: sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navContainer li {
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.nav-left {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-right {
+
+    display: flex;
+    gap: 2rem;
+
+    display: flex;
+    gap: 1rem;
+}
+
+.rightHover {
+    position: relative;
+}
+
+.rightHover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: fit-content;
+    overflow: hidden;
+    white-space: nowrap;
+    color: red;
+    transition: width 0.2s ease;
+}
+
+.rightHover:hover::before {
+    width: 100%;
+}
+
+.navList1::before {
+    content: "FIND A STORE";
+}
+
+.navList2::before {
+    content: "HELP";
+}
+
+.navList3::before {
+    content: "JOIN US";
+}
+
+.navList4::before {
+    content: "SIGN IN";
+}
