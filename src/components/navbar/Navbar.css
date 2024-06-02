@@ -2,12 +2,13 @@
     height: 70px;
     width: 100%;
     padding: 2rem;
-    position: sticky;
-    top: 0;
     z-index: 1000;
     background-color: transparent;
     /* border: 1px solid black; */
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 nav {
@@ -17,7 +18,7 @@ nav {
 
 .navContainer li {
     list-style-type: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -72,4 +73,66 @@ nav {
 
 .navList4::before {
     content: "SIGN IN";
+}
+
+.nav2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+}
+
+.middle {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav2-left {
+    display: flex;
+    gap: 1rem;
+    width: 30%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav2-right {
+    width: 30%;
+}
+
+.nav2-left .nav2-left-input {
+    position: relative;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.nav2-left-input {
+    display: flex;
+    align-items: center;
+}
+
+.nav2-left .nav2-left-input input {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    padding-left: 35px;
+    border: none;
+    outline: none;
+    background-color: #e5e5e5;
+}
+
+.nav2-left .nav2-left-input input:focus {
+    outline: none;
+}
+
+.nav2-left-input .search-icon {
+    position: absolute;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.nav2-left .nav-left-icon{
+    height: 24px;
+    width: 24px;
 }
