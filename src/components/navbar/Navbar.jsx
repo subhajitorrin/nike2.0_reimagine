@@ -1,21 +1,29 @@
-import React from 'react'
-import "./Navbar.css"
+import React from "react";
+import "./Navbar.css";
 
 function Navbar() {
   return (
-   <div className='navContainer'>
+    <div className="navContainer">
       <nav>
         <div className="nav-left">
-          <li>Find a Store</li>
-          <li>Help</li>
+          <li>
+            <span className="rightHover navList1">FIND A STORE</span>
+          </li>
+          <li>
+            <span className="rightHover navList2">HELP</span>{" "}
+          </li>
         </div>
         <div className="nav-right">
-          <li>Join Us</li>
-          <li>Sign In</li>
+          <li>
+            <span className="rightHover navList3">JOIN US</span>{" "}
+          </li>
+          <li>
+            <span className="rightHover navList4">SIGN IN</span>{" "}
+          </li>
         </div>
       </nav>
-   </div>
-  )
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;
