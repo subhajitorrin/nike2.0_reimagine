@@ -13,6 +13,7 @@ function Navbar() {
       let tl = gsap.timeline();
       tl.to("#nav-bottom", {
         height: "32vh",
+        duration:0.01
       })
       tl.to(".nav2-middle-elem h5",{
         display:"block",
@@ -20,7 +21,7 @@ function Navbar() {
       tl.to(".nav2-middle-elem h5 span",{
         y:0,
         stagger:{
-          amount:0.6
+          amount:0.3
         }
       })
     };
@@ -30,7 +31,8 @@ function Navbar() {
       tl.to(".nav2-middle-elem h5 span",{
         y:25,
         stagger:{
-          amount:0.2
+          amount:0.1,
+          duration:0.01
         }
       })
       tl.to(".nav2-middle-elem h5",{
@@ -38,8 +40,8 @@ function Navbar() {
       })
       tl.to("#nav-bottom", {
         height: "0vh",
+        duration:0.01
       })
-   
     };
 
     nav.addEventListener("mouseenter", handleMouseEnter);

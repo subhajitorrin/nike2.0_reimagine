@@ -152,6 +152,7 @@ nav {
     /* gap: 2vw; */
     z-index: 9;
     background-color: rgb(255, 255, 255);
+    transition: all ease-out 0.2s;
 }
 .nav2-middle-elem{
     display: flex;
