@@ -13,34 +13,37 @@ function Navbar() {
       let tl = gsap.timeline();
       tl.to("#nav-bottom", {
         height: "32vh",
-        duration:0.01
+        duration: 0.0000000000000000000000000000000000000001
       })
-      tl.to(".nav2-middle-elem h5",{
-        display:"block",
+      tl.to(".nav2-middle-elem h5", {
+        display: "block",
+        duration: 0.0000000000000000000000000000000000000000000000000000000000000000000000000000001
       })
-      tl.to(".nav2-middle-elem h5 span",{
-        y:0,
-        stagger:{
-          amount:0.3
+      tl.to(".nav2-middle-elem h5 span", {
+        y: 0,
+        stagger: {
+          amount: 0.1,
+          duration: 0.01
         }
       })
     };
 
     const handleMouseLeave = () => {
       let tl = gsap.timeline();
-      tl.to(".nav2-middle-elem h5 span",{
-        y:25,
-        stagger:{
-          amount:0.1,
-          duration:0.01
+      tl.to(".nav2-middle-elem h5 span", {
+        y: 25,
+        stagger: {
+          amount: 0.02,
+          duration: 0.0000000000000000000000000000000000000001
         }
       })
-      tl.to(".nav2-middle-elem h5",{
-       display:"none"
+      tl.to(".nav2-middle-elem h5", {
+        display: "none",
+        duration: 0.0000000000000000000000000000000000000000000000000000000000000000000000000000001
       })
       tl.to("#nav-bottom", {
         height: "0vh",
-        duration:0.01
+        duration: 0.0000000000000000000000000000000000000001
       })
     };
 
@@ -53,6 +56,23 @@ function Navbar() {
     };
   }, []);
 
+  useEffect(()=>{
+    let input = document.querySelector('.nav2left_input');
+    let Hiddennav = document.querySelector('.hidden-searchbarContainer');
+    let Cancelbtn = document.querySelector('.hidden-searchbar-cancelbtn');
+    let HiddenSearhicon = document.querySelector('.hidden-search-icon');
+    const handelHiddennav = ()=>{
+      Hiddennav.style.display="initial";
+    }
+    const handelNav = ()=>{
+      Hiddennav.style.display="none";
+    }
+    return ()=>{
+      input.addEventListener("click",handelHiddennav);
+      Cancelbtn.addEventListener("click",handelNav);
+      HiddenSearhicon.addEventListener("click",handelHiddennav);
+    }
+  },[])
   return (
     <div className="navContainer">
       <nav>
@@ -110,7 +130,7 @@ function Navbar() {
             <h5>
               <span>Latest Clothing</span>
             </h5>
-           
+
             <h5>
               <span>Get Em in SNKRS</span>
             </h5>
@@ -137,7 +157,7 @@ function Navbar() {
             <h5>
               <span>Shop All New</span>
             </h5>
-           
+
           </div>
           <div className="nav2-middle-elem">
             <h4>
@@ -172,18 +192,57 @@ function Navbar() {
             <h5>
               <span>Shop All New</span>
             </h5>
-           
+
           </div>
         </div>
         <div className="nav2-left">
           <div className="nav2-left-input">
             <CiSearch className="search-icon" />
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="Search" className="nav2left_input"/>
           </div>
+          <CiSearch className="hidden-search-icon" />
           <FaRegHeart className="nav-left-icon" />
           <IoBagOutline className="nav-left-icon" />
         </div>
         <div id="nav-bottom"></div>
+      </div>
+
+      <div className="hidden-searchbarContainer">
+
+      <div className="hidden-searchbar">
+        <div className="hidden-searchbar-Nikelogo">
+          <svg
+            aria-hidden="true"
+            className="swoosh-svg"
+            focusable="false"
+            viewBox="0 0 24 24"
+            role="img"
+            width="70px"
+            height="70px"
+            fill="none"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </div>
+
+        <div className="hidden-searchbar-input">
+
+          <div className="hidden-searchbar-input-searchicon">
+            <input type="text" placeholder="Search"/>
+            <CiSearch className="hidden-searchbar-searchicon" />
+          </div>
+        </div>
+
+        <div className="hidden-searchbar-cancelbtn">
+          <span>Cancel</span>
+        </div>
+
+      </div>
       </div>
     </div>
   );

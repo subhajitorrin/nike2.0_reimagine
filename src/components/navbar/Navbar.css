@@ -89,6 +89,7 @@ nav {
     z-index: 11;
     justify-content: space-evenly;
     width: 60%;
+    position: relative;
 }
 
 .nav2-left {
@@ -96,6 +97,7 @@ nav {
     gap: 1rem;
     width: 20%;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .nav2-right {
@@ -138,21 +140,20 @@ nav {
 }
 
 .nav2-left .nav-left-icon {
-    height: 24px;
-    width: 24px;
+ font-size: 24px;
 }
 
 #nav-bottom {
     position: absolute;
     height: 0vh;
     width: 60%;
-    top: 100%;
+    top: 110px;
     border-bottom: 1px solid #dadada;
     left: 15%;
     /* gap: 2vw; */
     z-index: 9;
     background-color: rgb(255, 255, 255);
-    transition: all ease-out 0.2s;
+    transition: all ease-out 0.09s;
 }
 .nav2-middle-elem{
     display: flex;
@@ -175,4 +176,74 @@ nav {
 
 .nav2-middle-elem h4 {
     margin-bottom: 2vw;
+}
+.nav2-right svg{
+    position: relative;
+    top: -20px;
+}
+.hidden-search-icon{
+    display: none;
+}
+
+@media(max-width:1200px) {
+    .nav2-left-input{
+        display: none;
+    }
+    .hidden-search-icon{
+        display: block;
+        font-size: 24px;
+    }
+}
+.hidden-searchbarContainer{
+    width: 100%;
+    height: 100%;
+}
+.hidden-searchbar{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    height: 130%;
+    align-items: flex-start;
+    box-sizing: border-box;
+    z-index: 999;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    top: 0;
+    padding: 0 1rem;
+    margin-top: 20px;
+}
+.hidden-searchbar-input{
+    height: 20%;
+    background-color: rgb(250, 250, 250);
+    width: 50%;
+    border-radius: 20px;
+    position: relative;
+}
+.hidden-searchbar-input input{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    border: 1px solid;
+    padding-left: 40px;
+}
+.hidden-searchbar-input-searchicon .hidden-searchbar-searchicon{
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    font-size: 24px;
+}
+.hidden-searchbar-Nikelogo svg{
+    height: 100px;
+    width: 100px;
+
+}
+.hidden-searchbar-Nikelogo{
+    position: relative;
+    top: -30px;
+}
+.hidden-searchbarContainer{
+    display: none;
 }
