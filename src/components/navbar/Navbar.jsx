@@ -22,7 +22,7 @@ function Navbar() {
       tl.to(".nav2-middle-elem h5 span", {
         y: 0,
         stagger: {
-          amount: 0.1,
+          amount: 0.001,
           duration: 0.01
         }
       })
@@ -61,11 +61,14 @@ function Navbar() {
     let Hiddennav = document.querySelector('.hidden-searchbarContainer');
     let Cancelbtn = document.querySelector('.hidden-searchbar-cancelbtn');
     let HiddenSearhicon = document.querySelector('.hidden-search-icon');
+    let hiddensearchbarinputsearchicon = document.querySelector('.nav2-left-input');
     const handelHiddennav = ()=>{
       Hiddennav.style.display="initial";
+      hiddensearchbarinputsearchicon.style.transform = "translateX(-100px)";
     }
     const handelNav = ()=>{
       Hiddennav.style.display="none";
+      hiddensearchbarinputsearchicon.style.transform = "translateX(0)";
     }
     return ()=>{
       input.addEventListener("click",handelHiddennav);
@@ -235,6 +238,13 @@ function Navbar() {
           <div className="hidden-searchbar-input-searchicon">
             <input type="text" placeholder="Search"/>
             <CiSearch className="hidden-searchbar-searchicon" />
+          </div>
+          <div className="search_option">
+            <li><span>Popular Search Terms</span></li>
+            <li><span>Air Force 1</span></li>
+            <li><span>Jordan</span></li>
+            <li><span>Air Max</span></li>
+            <li><span>Blazer</span></li>
           </div>
         </div>
 
