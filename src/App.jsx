@@ -3,13 +3,12 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import MovingCards from "./components/MovingCards/MovingCards";
 import "./App.css";
-// import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Loader from "./components/Loader/Loader";
 import Section from "./components/TemporarySection/Section";
+import Cursor from "./components/Cursor/Cursor";
 
 function App() {
-  const cursorRef = useRef(null);
   const [mousePos, setmousePos] = useState({
     x: 0,
     y: 0,
@@ -35,12 +34,12 @@ function App() {
 
   return (
     <div id="main">
-      <div id="cursor" ref={cursorRef}></div>
+      <Cursor />
       <Loader />
       <Navbar />
       <Section />
       <Section />
-      <MovingCards cursorRef={cursorRef} />
+      <MovingCards />
       <Footer />
     </div>
   );
