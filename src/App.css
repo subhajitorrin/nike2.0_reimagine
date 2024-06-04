@@ -1,0 +1,14 @@
+#cursor {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9999999;
+  pointer-events: none;
+  background-color: black;
+}
+#main{
+  position: relative;
+}

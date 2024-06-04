@@ -4,7 +4,6 @@
   overflow: hidden;
 
   display: flex;
-
 }
 .movingCardsContainer .cardsContainer {
   display: grid;
@@ -87,7 +86,7 @@
   position: relative;
   top: -26%;
 }
-.cardsContainer .card4 img{
+.cardsContainer .card4 img {
   position: relative;
   top: -45%;
 }
