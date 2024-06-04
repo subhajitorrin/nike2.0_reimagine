@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import "./Cursor.css";
 
 function Cursor() {
   return (
-    <div id="cursor"></div>
-  )
+    <>
+      <div class="cursor" ></div>
+    </>
+  );
 }
 
-export default Cursor
+export default Cursor;

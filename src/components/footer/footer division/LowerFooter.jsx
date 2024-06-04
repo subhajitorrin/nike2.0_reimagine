@@ -37,7 +37,7 @@ function LowerFooter() {
   }
 
   return (
-    <div className="lowerfooter">
+    <div className="lowerfooter" >
       <div className="footerBoxesContainer">
         <div className="footerbox">
           <ul>

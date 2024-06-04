@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Loader.css";
-import loadervideo from "../../assets/Loader/nikeloader.mp4";
 import ImgCard from "./ImgCard";
 import gsap from "gsap";
 
@@ -36,7 +35,7 @@ function Loader() {
   }, [isLoading]);
 
   return (
-    <div className="loaderContainer">
+    <div className="loaderContainer" >
       <div className="wrapper">
         <h1>{counter}</h1>
         <div className="imglist">

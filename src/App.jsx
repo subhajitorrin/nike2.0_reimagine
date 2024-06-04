@@ -9,28 +9,16 @@ import Section from "./components/TemporarySection/Section";
 import Cursor from "./components/Cursor/Cursor";
 
 function App() {
-  const [mousePos, setmousePos] = useState({
-    x: 0,
-    y: 0,
-  });
-
+  const containerRef = useRef(null);
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setmousePos({
+      gsap.set(".cursor", {
         x: e.clientX,
         y: e.clientY,
       });
     };
-
     window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
   }, []);
-  useEffect(() => {
-    gsap.set("#cursor", { x: mousePos.x, y: mousePos.y });
-  }, [mousePos]);
 
   return (
     <div id="main">

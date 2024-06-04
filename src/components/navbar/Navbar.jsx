@@ -77,7 +77,7 @@ function Navbar() {
     }
   },[])
   return (
-    <div className="navContainer">
+    <div className="navContainer" >
       <nav>
         <div className="nav-left">
           <li>

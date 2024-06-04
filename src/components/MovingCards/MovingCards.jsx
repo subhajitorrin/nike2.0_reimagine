@@ -12,7 +12,7 @@ import card7 from "../../assets/MovingCards/card7.jpg";
 
 function MovingCards() {
   return (
-    <div className="movingCardsContainer">
+    <div className="movingCardsContainer" >
       <div className="cardsContainer">
         <div className="card card1">
           <img src={card1} alt="" />
