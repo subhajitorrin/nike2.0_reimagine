@@ -9,6 +9,7 @@
   user-select: none;
   position: fixed;
   z-index: 10000;
+  transition: all .3s ease-in-out;
 }
 .loaderContainer h1 {
   color: white;

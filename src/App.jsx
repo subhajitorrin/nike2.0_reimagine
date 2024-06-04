@@ -3,7 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import MovingCards from "./components/MovingCards/MovingCards";
 import "./App.css";
-import { useGSAP } from "@gsap/react";
+// import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Loader from "./components/Loader/Loader";
 import Section from "./components/TemporarySection/Section";
