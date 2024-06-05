@@ -7,8 +7,11 @@ import gsap from "gsap";
 import Loader from "./components/Loader/Loader";
 import Section from "./components/TemporarySection/Section";
 import Cursor from "./components/Cursor/Cursor";
+import LocomotiveScroll from "locomotive-scroll";
 
 function App() {
+  const [isLoading, setisLoading] = useState(true);
+  const locomotiveScroll = new LocomotiveScroll();
   const containerRef = useRef(null);
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -20,10 +23,16 @@ function App() {
     window.addEventListener("mousemove", handleMouseMove);
   }, []);
 
+  /*****
+if you are commenting <Loader/> 
+then make isLoading usestate to false
+at App.jsx line 13
+*****/
+
   return (
-    <div id="main">
+    <div id="main" style={isLoading ? { height: "100vh" } : {}}>
       <Cursor />
-      <Loader />
+      <Loader isLoading={isLoading} setisLoading={setisLoading} />
       <Navbar />
       <Section />
       <Section />

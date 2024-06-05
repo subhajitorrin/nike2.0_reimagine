@@ -3,9 +3,9 @@ import "./Loader.css";
 import ImgCard from "./ImgCard";
 import gsap from "gsap";
 
-function Loader() {
+function Loader({ isLoading, setisLoading }) {
   const [counter, setcounter] = useState(0);
-  const [isLoading, setisLoading] = useState(true);
+  // const [isLoading, setisLoading] = useState(true);
   useEffect(() => {
     if (counter < 50) {
       setTimeout(() => {
@@ -35,7 +35,7 @@ function Loader() {
   }, [isLoading]);
 
   return (
-    <div className="loaderContainer" >
+    <div className="loaderContainer">
       <div className="wrapper">
         <h1>{counter}</h1>
         <div className="imglist">
