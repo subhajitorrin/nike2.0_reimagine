@@ -8,6 +8,7 @@ import Loader from "./components/Loader/Loader";
 import Section from "./components/TemporarySection/Section";
 import Cursor from "./components/Cursor/Cursor";
 import LocomotiveScroll from "locomotive-scroll";
+import FullscreenNavbar from "./components/FullscreenNavbar/FullscreenNavbar";
 
 function App() {
   const [isLoading, setisLoading] = useState(true);
@@ -33,7 +34,8 @@ at App.jsx line 13
     <div id="main" style={isLoading ? { height: "100vh" } : {}}>
       <Cursor />
       <Loader isLoading={isLoading} setisLoading={setisLoading} />
-      <Navbar />
+      {/* <Navbar /> */}
+      <FullscreenNavbar />
       <Section />
       <Section />
       <MovingCards />

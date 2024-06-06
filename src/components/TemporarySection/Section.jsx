@@ -9,6 +9,7 @@ function Section() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor:"darkcyan"
       }}
     >
       This is temporary section

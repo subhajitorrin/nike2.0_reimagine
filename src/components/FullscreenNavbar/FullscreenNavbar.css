@@ -1,0 +1,26 @@
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: -4px;
+  left: 0;
+  z-index: 999999999;
+}
+.overlaySvg path {
+  fill: black;
+}
+.navarea {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh;
+  background-color: darkslategrey;
+}
+.menuicon {
+  font-size: 1.6rem;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 9999999999;
+  transition: .2s all linear;
+  color: white;
+}
