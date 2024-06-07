@@ -17,6 +17,12 @@ function FullscreenNavbar({ setisNavActive }) {
   const tl2 = gsap.timeline({ paused: true });
 
   function reverseActiveFullscreenNavbar() {
+    document.querySelector(".blureffect").style.opacity="0"
+    document.querySelector(".blureffect").style.pointerEvents="none"
+    setTimeout(() => {
+      document.querySelector('html').style.overflow="auto";
+    }, 900);
+
     tl2
       .to(
         pathRef.current,
@@ -44,6 +50,11 @@ function FullscreenNavbar({ setisNavActive }) {
     settoggleNavbar(false);
   }
   function activeFullscreenNavbar() {
+    document.querySelector(".blureffect").style.opacity="1"
+    document.querySelector(".blureffect").style.pointerEvents="auto"
+    setTimeout(() => {
+      document.querySelector('html').style.overflow="hidden";
+    }, 10);
     tl1
       .to(
         pathRef.current,
@@ -106,7 +117,7 @@ function FullscreenNavbar({ setisNavActive }) {
         <div className="">these are navbar right conenet</div>
       </div>
       <div className="overlay">
-        <svg viewBox="0 0 1000 1005" className="overlaySvg">
+        <svg viewBox="0 0 1000 1005" className="overlaySvg" style={{filter:"url(#f1)"}}>
           <path ref={pathRef} d="M0,2S175,1,500,1S1000,1,1000,1V0H0Z"></path>
         </svg>
       </div>

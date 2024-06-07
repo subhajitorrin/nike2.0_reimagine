@@ -11,8 +11,11 @@ import card6 from "../../assets/MovingCards/card6.jpg";
 import card7 from "../../assets/MovingCards/card7.jpg";
 
 function MovingCards() {
+  function handelLog(){
+    console.log("Form section");
+  }
   return (
-    <div className="movingCardsContainer" >
+    <div className="movingCardsContainer" onClick={handelLog}>
       <div className="cardsContainer">
         <div className="card card1">
           <img src={card1} alt="" />

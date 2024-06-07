@@ -32,10 +32,12 @@ at App.jsx line 13
 
   return (
     <div id="main" style={isLoading ? { height: "100vh" } : {}}>
+      <div className="blureffect"></div>
       <Cursor />
       <Loader isLoading={isLoading} setisLoading={setisLoading} />
       {/* <Navbar /> */}
       <FullscreenNavbar />
+      <Section />
       <Section />
       <Section />
       <MovingCards />

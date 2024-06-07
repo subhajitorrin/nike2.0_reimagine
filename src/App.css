@@ -7,3 +7,16 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
 }
+
+.blureffect {
+  height: 500vh;
+  width: 100vw;
+  background-color: rgba(17, 25, 40, 0.1);
+  backdrop-filter: blur(20px);
+  position: absolute;
+  z-index: 99999999;
+  opacity: 0;
+  /* display: none; */
+  transition: opacity 1s linear;
+  pointer-events:none;
+}
