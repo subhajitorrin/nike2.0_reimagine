@@ -1,0 +1,87 @@
+.navContents {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: 999999999;
+  color: white;
+  /* background-color: black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 1;
+}
+.navMiddle {
+  height: 80%;
+  width: 80%;
+  /* border: 1px solid white; */
+  display: flex;
+  justify-content: space-between;
+}
+.full-height {
+  height: 100%;
+}
+.navMiddleLeft {
+  width: 5%;
+  border-radius: 20px;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.navMiddleRight {
+  width: 93%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.navMiddleRightLeft {
+  /* width: 14%; */
+  width: 0%;
+  /* border: 1px solid white; */
+  background-color: rgb(81, 48, 114);
+  height: 100%;
+  border-radius: 20px;
+  /* transition: 0.3s all ease-in-out; */
+  display: flex;
+  flex-direction: column;
+  gap: 2.35rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  display: none;
+}
+.navMiddleRightRight {
+  /* width: 80%; */
+  width: 0%;
+  /* border: 1px solid white; */
+  background-color: rgb(101, 43, 43);
+  height: 100%;
+  border-radius: 20px;
+  /* transition: 0.5s all ease-in-out; */
+  display: none;
+}
+.navIcons {
+  font-size: 2rem;
+}
+.expandicon {
+  font-size: 2.6rem;
+  /* transition: .3s all linear; */
+}
+.iconNameList {
+  font-size: 1.3rem;
+}
+.navMiddleRightFullContainer {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  /* border: 1px solid white; */
+  background-color: rgb(93, 85, 85);
+}

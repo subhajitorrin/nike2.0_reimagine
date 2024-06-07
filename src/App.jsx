@@ -35,7 +35,6 @@ at App.jsx line 13
       <div className="blureffect"></div>
       <Cursor />
       <Loader isLoading={isLoading} setisLoading={setisLoading} />
-      {/* <Navbar /> */}
       <FullscreenNavbar />
       <Section />
       <Section />
