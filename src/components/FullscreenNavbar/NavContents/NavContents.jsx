@@ -10,6 +10,9 @@ import { PiMedalFill } from "react-icons/pi";
 import { TbBrandKickstarter } from "react-icons/tb";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiArrowRightSFill } from "react-icons/ri";
+import clip from "../../../assets/NavbarClip/nike_nav_clip.mp4";
+import clip2 from "../../../assets/NavbarClip/nikeclip2.mp4";
+import navimg from "../../../assets/NavbarClip/navimg.jpg";
 
 const iconList = [
   <PiMedalFill className="navIcons" />,
@@ -30,15 +33,23 @@ const iconNameList = [
   "Snekers",
 ];
 
-function NavContents({ navContentsRef,navContentIconsX }) {
+function NavContents({ navContentsRef, navContentIconsX }) {
   const [isExpanded, setisExpanded] = useState(false);
   const [isAnimationActive, setisAnimationActive] = useState(false);
+  const [isHovering, setisHovering] = useState(false);
+  const [isActiveSubPoints, setisActiveSubPoints] = useState(false);
+  const [ActiveSubPointIndex, setActiveSubPointIndex] = useState(-1);
   function handelExapnd() {
     if (isExpanded) {
       setisAnimationActive(true);
       setisExpanded(false);
       const t2 = gsap.timeline({
         onComplete: () => setisAnimationActive(false),
+      });
+      t2.to(".navTextSliderEffect", {
+        width: 0,
+        duration: 1,
+        ease: "power3.inOut",
       });
       t2.to(".navMiddleRightRight", {
         width: "0%",
@@ -106,6 +117,12 @@ function NavContents({ navContentsRef,navContentIconsX }) {
         duration: 1,
         ease: "power3.inOut",
       });
+      t1.to(".navTextSliderEffect", {
+        width: "370px",
+        duration: 1,
+        delay: 0.2,
+        ease: "power3.inOut",
+      });
     }
   }
   return (
@@ -119,7 +136,11 @@ function NavContents({ navContentsRef,navContentIconsX }) {
           >
             {iconList.map((item, index) => {
               return (
-                <div key={index} className="navContentIconsX" ref={navContentIconsX}>
+                <div
+                  key={index}
+                  className="navContentIconsX"
+                  ref={navContentIconsX}
+                >
                   {item}
                 </div>
               );
@@ -146,17 +167,80 @@ function NavContents({ navContentsRef,navContentIconsX }) {
                     marginLeft: "25px",
                     marginRight: "25px",
                   }}
+                  onMouseEnter={() => {
+                    setisHovering(true);
+                  }}
+                  onMouseLeave={() => {
+                    setisHovering(false);
+                  }}
+                  onClick={() => {
+                    setisActiveSubPoints(true);
+                    setActiveSubPointIndex(index);
+                  }}
                 >
                   <p key={index} className="iconNameList">
                     {item}
+                    <div
+                      className="navline"
+                      style={{
+                        width: ActiveSubPointIndex === index ? "100%" : "0%",
+                      }}
+                    ></div>
                   </p>
                   <RiArrowRightSFill style={{ fontSize: "1.5rem" }} />
                 </div>
               );
             })}
           </div>
-          <div className="navMiddleRightRight"></div>
-          <div className="navMiddleRightFullContainer"></div>
+          <div className="navMiddleRightRight">
+            <div
+              className="withHover"
+              style={{ opacity: isHovering || isActiveSubPoints ? 1 : 0 }}
+              onMouseLeave={() => {
+                setisActiveSubPoints(false);
+                setActiveSubPointIndex(-1);
+              }}
+            ></div>
+            <div
+              className="withoutHover"
+              style={{ opacity: isHovering || isActiveSubPoints ? 0 : 1 }}
+            >
+              <div className="withoutHoverimgcontainer">
+                <img src={navimg} />
+              </div>
+              <div className="withoutHovertextcontainer">
+                <h1>
+                  <span className="navtextup">There is</span>
+                  <br />
+                  <span
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      gap: "10px",
+                    }}
+                  >
+                    <span style={{ fontSize: "8rem" }}>no</span>
+                    <div className="navTextSliderEffect">
+                      <video src={clip2} muted autoPlay loop></video>
+                    </div>
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "5.9rem",
+                      position: "relative",
+                      top: "-1.5rem",
+                    }}
+                    className="navtextdown"
+                  >
+                    finish line
+                  </span>
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div className="navMiddleRightFullContainer">
+            <video src={clip} muted autoPlay loop></video>
+          </div>
         </div>
       </div>
       <div className="navLower"></div>

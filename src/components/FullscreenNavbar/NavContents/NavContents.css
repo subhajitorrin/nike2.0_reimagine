@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap");
 .navContents {
   height: 100vh;
   width: 100vw;
@@ -27,13 +28,16 @@
 .navMiddleLeft {
   width: 5%;
   border-radius: 20px;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 .navMiddleRight {
   width: 93%;
@@ -46,7 +50,6 @@
   /* width: 14%; */
   width: 0%;
   /* border: 1px solid white; */
-  background-color: rgb(81, 48, 114);
   height: 100%;
   border-radius: 20px;
   /* transition: 0.3s all ease-in-out; */
@@ -57,16 +60,21 @@
   padding-bottom: 2rem;
   overflow: hidden;
   display: none;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 .navMiddleRightRight {
   /* width: 80%; */
   width: 0%;
   /* border: 1px solid white; */
-  background-color: rgb(101, 43, 43);
+  /* background-color: rgb(101, 43, 43); */
   height: 100%;
   border-radius: 20px;
   /* transition: 0.5s all ease-in-out; */
   display: none;
+  overflow: hidden;
+  position: relative;
 }
 .navIcons {
   font-size: 2rem;
@@ -77,11 +85,103 @@
 }
 .iconNameList {
   font-size: 1.3rem;
+  position: relative;
+  font-family: sans-serif;
 }
 .navMiddleRightFullContainer {
   height: 100%;
   width: 100%;
   border-radius: 20px;
   /* border: 1px solid white; */
-  background-color: rgb(93, 85, 85);
+  /* background-color: rgb(93, 85, 85); */
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+}
+.navMiddleRightFullContainer video {
+  height: 100%;
+  scale: 1.06;
+  object-fit: cover;
+  object-position: center;
+}
+.withoutHover {
+  height: 100%;
+  width: 100%;
+  /* background-color: lightblue; */
+  font-family: "Montserrat";
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s linear;
+}
+.withoutHoverimgcontainer {
+  height: 90%;
+  width: 40%;
+  background-color: darkcyan;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.withoutHovertextcontainer {
+  width: 60%;
+  font-size: 4rem;
+  text-align: right;
+  line-height: 7rem;
+  white-space: none;
+  position: relative;
+}
+.navTextSliderEffect {
+  height: 110px;
+  /* width: 370px; */
+  width: 0px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid white;
+}
+.withoutHoverimgcontainer img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.navTextSliderEffect video {
+  width: 100%;
+  position: relative;
+  top: -50px;
+}
+.withHover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  transition: opacity 0.3s linear;
+}
+/* .iconNameList::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  top: 20px;
+  background-color: white;
+  border-radius: 20px;
+  width: 0;
+  transition: all 0.3s ease-in-out;
+}
+.iconNameList:hover::after {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+} */
+.navline {
+  border-bottom: 1px solid white;
+  width: 0;
+  transition: all 0.3s ease-in-out;
+}
+.iconNameList:hover .navline {
+  width: 100% !important;
+  transition: all 0.3s ease-in-out;
 }
