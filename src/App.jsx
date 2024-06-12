@@ -11,7 +11,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import FullscreenNavbar from "./components/FullscreenNavbar/FullscreenNavbar";
 
 function App() {
-  const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setisLoading] = useState(false);
   const locomotiveScroll = new LocomotiveScroll();
   const containerRef = useRef(null);
   useEffect(() => {
@@ -33,8 +33,8 @@ at App.jsx line 13
   return (
     <div id="main" style={isLoading ? { height: "100vh" } : {}}>
       <div className="blureffect"></div>
-      <Cursor />
-      <Loader isLoading={isLoading} setisLoading={setisLoading} />
+      {/* <Cursor /> */}
+      {/* <Loader isLoading={isLoading} setisLoading={setisLoading} /> */}
       <FullscreenNavbar />
       <Section />
       <Section />
