@@ -28,3 +28,50 @@
 .overlay svg {
   fill: rgba(0, 0, 0, 0.6);
 }
+.navarea-option{
+  display: flex;
+  gap: 1rem;
+
+}
+
+
+.navarea-option{
+  text-transform: uppercase;
+  position: relative;
+}
+.hoverEffect{
+  font-size: 1rem;
+  font-weight: 700;
+}
+.hoverEffect::before {
+  content: "";
+  position: absolute;
+  /* left: 0; */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  color: red;
+  transition: width 0.2s ease;
+}
+.hoverEffect:hover::before {
+  width: 100%;
+}
+
+.navlist1::before {
+  content: "FIND A STORE";
+}
+
+.navlist2::before {
+  content: "HELP";
+}
+
+.navlist3::before {
+  content: "JOIN US";
+}
+
+.navlist4::before {
+  content: "SIGN IN";
+}

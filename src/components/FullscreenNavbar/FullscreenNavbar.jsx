@@ -156,8 +156,14 @@ function FullscreenNavbar({ toggleNavbar,settoggleNavbar }) {
         )}
       </div>
       <div className="navarea">
-        <div className="">these are navbar left content</div>
-        <div className="">these are navbar right conenet</div>
+        <div className="navarea-option">
+          <span className="navlist1 hoverEffect">FIND A STORE</span>
+          <span className="navlist2 hoverEffect">HELP</span>
+        </div>
+        <div className="navarea-option">
+          <span className="navlist3 hoverEffect">JOIN US</span>
+          <span className="navlist4 hoverEffect"> SIGN IN</span>
+        </div>
       </div>
       <div className="overlay">
         <svg

@@ -12,8 +12,9 @@ import FullscreenNavbar from "./components/FullscreenNavbar/FullscreenNavbar";
 
 function App() {
   const [isLoading, setisLoading] = useState(true);
-  const [toggleNavbar, settoggleNavbar] = useState(false);
+  // const locomotiveScroll = new LocomotiveScroll();
   const containerRef = useRef(null);
+  const [toggleNavbar, settoggleNavbar] = useState(false);
   useEffect(() => {
     const handleMouseMove = (e) => {
       gsap.set(".cursor", {
@@ -62,10 +63,8 @@ at App.jsx line 13
       <div className="blureffect"></div>
       <Cursor />
       <Loader isLoading={isLoading} setisLoading={setisLoading} />
-      <FullscreenNavbar
-        toggleNavbar={toggleNavbar}
-        settoggleNavbar={settoggleNavbar}
-      />
+      <FullscreenNavbar   toggleNavbar={toggleNavbar}
+        settoggleNavbar={settoggleNavbar}/>
       <Section />
       <Section />
       <Section />
