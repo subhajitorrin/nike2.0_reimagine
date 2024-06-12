@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Loader.css";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import card1 from "../../assets/MovingCards/card1.jpg";
 import card2 from "../../assets/MovingCards/card2.jpg";
@@ -8,9 +7,12 @@ import card4 from "../../assets/MovingCards/card4.jpg";
 import card5 from "../../assets/MovingCards/card5.jpg";
 import card6 from "../../assets/MovingCards/card6.jpg";
 import card7 from "../../assets/MovingCards/card7.jpg";
+
 const cardsArr = [card1, card2, card4, card5, card6, card7];
+
 function ImgCard({ isLoading }) {
   const [imgLIst, setimgLIst] = useState(cardsArr);
+
   useEffect(() => {
     const animation = gsap.to(".imgCard", {
       display: "block",
@@ -22,7 +24,6 @@ function ImgCard({ isLoading }) {
     };
   }, [isLoading]);
 
-  
   return (
     <>
       {imgLIst.map((item, index) => {
@@ -30,7 +31,7 @@ function ImgCard({ isLoading }) {
         const rotation =
           index < len / 2 ? `-${index * 5}deg` : `${index * 5 - 20}deg`;
         return (
-          <div className="imgCard" style={{ transform: `rotate(${rotation})` }}>
+          <div key={`imgCard1-${index}`} className="imgCard" style={{ transform: `rotate(${rotation})` }}>
             <img src={item} alt="" />
           </div>
         );
@@ -40,7 +41,7 @@ function ImgCard({ isLoading }) {
         const rotation =
           index < len / 2 ? `-${index * 5}deg` : `${index * 5 - 20}deg`;
         return (
-          <div className="imgCard" style={{ transform: `rotate(${rotation})` }}>
+          <div key={`imgCard2-${index}`} className="imgCard" style={{ transform: `rotate(${rotation})` }}>
             <img src={item} alt="" />
           </div>
         );

@@ -69,7 +69,6 @@ const totalSubList = [
       [
         "Featured",
         "New Releases",
-
         "Bestsellers",
         "Member Exclusive",
         "Jordan",
@@ -151,6 +150,7 @@ function NavContents({ navContentsRef, navContentIconsX }) {
   const [isHovering, setisHovering] = useState(false);
   const [isActiveSubPoints, setisActiveSubPoints] = useState(false);
   const [ActiveSubPointIndex, setActiveSubPointIndex] = useState(-1);
+  
   function handelExapnd() {
     if (isExpanded) {
       setisAnimationActive(true);

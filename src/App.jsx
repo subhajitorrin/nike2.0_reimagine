@@ -21,7 +21,16 @@ function App() {
         y: e.clientY,
       });
     };
+    const handleMouseLeave = () => {
+      document.querySelector(".cursor").style.display = "none";
+    };
+
+    const handleMouseEnter = () => {
+      document.querySelector(".cursor").style.display = "block";
+    };
     window.addEventListener("mousemove", handleMouseMove);
+    document.querySelector("#main").addEventListener("mouseleave", handleMouseLeave);
+    document.querySelector("#main").addEventListener("mouseenter", handleMouseEnter);
   }, []);
 
   useEffect(() => {
