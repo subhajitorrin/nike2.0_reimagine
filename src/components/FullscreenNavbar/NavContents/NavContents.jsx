@@ -142,7 +142,197 @@ const totalSubList = [
         "Nike SB",
       ],
     ],
+
+
   },
+  
+  {
+    "item": [
+      [
+        "Featured",
+        "New Releases",
+        "Bestsellers",
+        "Member Exclusive",
+        "Jordan",
+        "Lifestyle Running",
+        "Customise with Nike By You",
+        "Sale",
+        "Running Shoe Finder",
+        "Sustainable Materials"
+      ],
+      [
+        "Jordan",
+        "All Jordan",
+        "New Jordan",
+        "Jordan Shoes",
+        "Jordan Clothing",
+        "Jordan Basketball",
+        "Jordan Lifestyle"
+      ],
+      [
+        "Shoes",
+        "All Shoes",
+        "Newest Sneakers",
+        "Jordan",
+        "Lifestyle",
+        "Running",
+        "Gym and Training",
+        "Basketball",
+        "Football",
+        "Sandals and Slides",
+        "Last Sizes Available",
+        "Customise with Nike By You",
+        "Top Picks Under ₹8,000"
+      ],
+      [
+        "Clothing",
+        "All Clothing",
+        "Performance Essentials",
+        "Tops and T-Shirts",
+        "Sports Bras",
+        "Pants and Leggings",
+        "Shorts",
+        "Hoodies and Sweatshirts",
+        "Jackets and Gilets",
+        "Skirts and Dresses",
+        "Modest Wear",
+        "Nike Maternity",
+        "Plus Size"
+      ],
+      [
+        "Accessories and Equipment",
+        "All Accessories and Equipment",
+        "Bags and Backpacks",
+        "Socks",
+        "Hats and Headwear"
+      ],
+      [
+        "Shop By Sport",
+        "Yoga",
+        "Running",
+        "Gym and Training",
+        "Basketball",
+        "Tennis",
+        "Golf",
+        "Football",
+        "Skateboarding"
+      ],
+      [
+        "Shop By Brand",
+        "Running",
+        "Nike Sportswear",
+        "NikeLab",
+        "Nike By You",
+        "Jordan",
+        "ACG",
+        "NBA",
+        "Nike SB"
+      ]
+    ]
+  },
+  {
+    item: [
+      [
+        "Featured",
+        "New Releases",
+        "Newest Sneakers",
+        "Easy On & Off",
+        "Bestsellers",
+        "Member Exclusive",
+        "Jordan",
+        "Last Sizes Available",
+        "Bags and Backpacks",
+        "Sale"
+      ],
+      [
+        "Boys' Shoes",
+        "All Shoes",
+        "Older Boys (7 - 14 years)",
+        "Younger Boys (4 - 7 years)",
+        "Babies and Toddlers (0 - 4 years)",
+        "Lifestyle",
+        "Jordan",
+        "Running",
+        "Basketball",
+        "Football",
+        "Sandals and Slides"
+      ],
+      [
+        "Girls' Shoes",
+        "All Shoes",
+        "Older Girls (7 - 14 years)",
+        "Younger Girls (4 - 7 years)",
+        "Babies and Toddlers (0 - 4 years)",
+        "Lifestyle",
+        "Jordan",
+        "Running",
+        "Basketball",
+        "Football",
+        "Sandals and Slides"
+      ],
+      [
+        "Accessories and Equipment",
+        "All Accessories and Equipment",
+        "Bags and Backpacks",
+        "Socks",
+        "Hats and Headwear"
+      ],
+      [
+        "Kids By Age",
+        "Older Kids (7 - 14 years)",
+        "Younger Kids (4 - 7 years)",
+        "Babies & Toddlers (0 - 4 years)"
+      ],
+      [
+        "Boys' Clothing",
+        "Tops and T-Shirts",
+        "Hoodies and Sweatshirts",
+        "Pants and Leggings",
+        "Shorts",
+        "All Boys' Clothing"
+      ],
+      [
+        "Girls' Clothing",
+        "Tops and T-Shirts",
+        "Sports Bras",
+        "Hoodies and Sweatshirts",
+        "Pants and Leggings",
+        "Shorts",
+        "All Girls' Clothing"
+      ]
+    ]
+  },
+  {
+    "item": [
+      [
+        "Sale",
+        "Shop All Sale",
+        "Shoes Sale",
+        "Clothing Sale",
+        "Accessories & Equipment Sale"
+      ],
+      [
+        "Sale",
+        "Shop All Sale",
+        "Shoes Sale",
+        "Clothing Sale",
+        "Accessories & Equipment Sale"
+      ],
+      [
+        "Sale",
+        "Shop All Sale",
+        "Shoes Sale",
+        "Clothing Sale",
+        "Accessories & Equipment Sale"
+      ],
+      [
+        "Kids' Sale",
+        "Shoes",
+        "Clothing"
+      ]
+    ]
+  }
+  
 ];
 
 function NavContents({ navContentsRef, navContentIconsX }) {
@@ -250,7 +440,7 @@ function NavContents({ navContentsRef, navContentIconsX }) {
               return (
                 <div
                   key={index}
-                  className="navContentIconsX"
+                  className="navContentIconsX "
                   ref={navContentIconsX}
                 >
                   {item}
@@ -267,7 +457,7 @@ function NavContents({ navContentsRef, navContentIconsX }) {
           </div>
         </div>
         <div className="navMiddleRight full-height">
-          <div className="navMiddleRightLeft">
+          <div className="navMiddleRightLeft" >
             {iconNameList.map((item, index) => {
               return (
                 <div
@@ -281,16 +471,19 @@ function NavContents({ navContentsRef, navContentIconsX }) {
                   }}
                   onMouseEnter={() => {
                     setisHovering(true);
+                    setisActiveSubPoints(true);
+                    setActiveSubPointIndex(index);
                   }}
                   onMouseLeave={() => {
                     setisHovering(false);
+                    // setActiveSubPointIndex(index);
                   }}
                   onClick={() => {
                     setisActiveSubPoints(true);
                     setActiveSubPointIndex(index);
                   }}
                 >
-                  <p key={index} className="iconNameList">
+                  <p key={index} className="iconNameList" >
                     {item}
                     <div
                       className="navline"
@@ -298,6 +491,7 @@ function NavContents({ navContentsRef, navContentIconsX }) {
                         width: ActiveSubPointIndex === index ? "100%" : "0%",
                       }}
                     ></div>
+                    
                   </p>
                   <RiArrowRightSFill style={{ fontSize: "1.5rem" }} />
                 </div>
