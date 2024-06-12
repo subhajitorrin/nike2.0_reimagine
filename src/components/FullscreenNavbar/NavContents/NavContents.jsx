@@ -13,6 +13,7 @@ import { RiArrowRightSFill } from "react-icons/ri";
 import clip from "../../../assets/NavbarClip/nike_nav_clip.mp4";
 import clip2 from "../../../assets/NavbarClip/nikeclip2.mp4";
 import navimg from "../../../assets/NavbarClip/navimg.jpg";
+import SubPoint from "./SubPoint";
 
 const iconList = [
   <PiMedalFill className="navIcons" />,
@@ -31,6 +32,117 @@ const iconNameList = [
   "Sales",
   "Cusotmise",
   "Snekers",
+];
+
+const totalSubList = [
+  {
+    item: [
+      [
+        "New & Featured",
+        "New Arrivals",
+        "Latest Shoes",
+        "Latest Clothing",
+        "SNKRS Launch Calendar",
+        "Get Em in SNKRS",
+        "Customise with Nike By You",
+        "Bestsellers",
+        "Member Exclusive",
+        "Top Kicks Under ₹8,000.00",
+      ],
+      [
+        "Shop Icons",
+        "Air Force 1",
+        "Air Jordan 1",
+        "Air Max",
+        "Dunk",
+        "Cortez",
+        "Blazer",
+        "Pegasus",
+      ],
+      ["New For Men", "Shoes", "Clothing", "Accessories", "Shop All New"],
+      ["New For Women", "Shoes", "Clothing", "Accessories", "Shop All New"],
+      ["New For Kids", "Shoes", "Clothing", "Accessories", "Shop All New"],
+    ],
+  },
+  {
+    item: [
+      [
+        "Featured",
+        "New Releases",
+
+        "Bestsellers",
+        "Member Exclusive",
+        "Jordan",
+        "Lifestyle Running",
+        "Customise with Nike By You",
+        "Sale",
+        "Running Shoe Finder",
+        "Sustainable Materials",
+      ],
+      [
+        "Jordan",
+        "All Jordan",
+        "New Jordan",
+        "Jordan Shoes",
+        "Jordan Clothing",
+        "Jordan Basketball",
+        "Jordan Lifestyle",
+      ],
+      [
+        "shoes",
+        "All Shoes",
+        "Newest Sneakers",
+        "Jordan",
+        "Lifestyle",
+        "Running",
+        "Gym and Training",
+        "Basketball",
+        "Football",
+        "Sandals and Slides",
+        "Last Sizes Available",
+        "Customise with Nike By You",
+        "Top Picks Under ₹8,000",
+      ],
+      [
+        "clothing",
+        "All Clothing",
+        "Tops and T-Shirts",
+        "Shorts",
+        "Pants and Leggings",
+        "Hoodies and Sweatshirts",
+        "Jackets and Gilets",
+        "Jerseys and Kits",
+      ],
+      [
+        "Accessories and Equipment",
+        "All Accessories and Equipment",
+        "Bags and Backpacks",
+        "Socks",
+        "Hats and Headwear",
+      ],
+      [
+        "Shop By Sport",
+        "Running",
+        "Basketball",
+        "Football",
+        "Golf",
+        "Tennis",
+        "Gym and Training",
+        "Yoga",
+      ],
+      [
+        "Shop By Brand",
+        "Running",
+        "Nike Sportswear",
+        "NikeLab",
+        "Nike By You",
+        "Jordan",
+        "ACG",
+        "NBA",
+        "Nike SB",
+      ],
+    ],
+  },
 ];
 
 function NavContents({ navContentsRef, navContentIconsX }) {
@@ -159,7 +271,7 @@ function NavContents({ navContentsRef, navContentIconsX }) {
             {iconNameList.map((item, index) => {
               return (
                 <div
-                  className=""
+                  className="navSubpointsContainer"
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -200,7 +312,15 @@ function NavContents({ navContentsRef, navContentIconsX }) {
                 setisActiveSubPoints(false);
                 setActiveSubPointIndex(-1);
               }}
-            ></div>
+            >
+              {totalSubList.map((item, index) => {
+                return index === ActiveSubPointIndex ? (
+                  <SubPoint sublist={item} />
+                ) : (
+                  ""
+                );
+              })}
+            </div>
             <div
               className="withoutHover"
               style={{ opacity: isHovering || isActiveSubPoints ? 0 : 1 }}

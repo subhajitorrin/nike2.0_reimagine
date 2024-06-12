@@ -5,9 +5,9 @@ import { RiMenu3Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import NavContents from "./NavContents/NavContents";
 
-function FullscreenNavbar({ setisNavActive }) {
+function FullscreenNavbar({ toggleNavbar,settoggleNavbar }) {
   const [scrollY, setscrollY] = useState(window.scrollY);
-  const [toggleNavbar, settoggleNavbar] = useState(false);
+  // const [toggleNavbar, settoggleNavbar] = useState(false);
   const [navOyyehActive, setnavOyyehActive] = useState(false);
   const pathRef = useRef(null);
   const menuRef = useRef(null);
