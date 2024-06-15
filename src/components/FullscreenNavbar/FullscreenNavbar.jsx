@@ -5,14 +5,12 @@ import { RiMenu3Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import NavContents from "./NavContents/NavContents";
 
-function FullscreenNavbar({ toggleNavbar,settoggleNavbar }) {
+function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
   const [scrollY, setscrollY] = useState(window.scrollY);
-  // const [toggleNavbar, settoggleNavbar] = useState(false);
   const [navOyyehActive, setnavOyyehActive] = useState(false);
   const pathRef = useRef(null);
   const menuRef = useRef(null);
   const navContentsRef = useRef(null);
-  const navContentIconsX = useRef(null);
 
   const start = "M0,502S175,272,500,272S1000,502,1000,502V0H0Z";
   const end = "M0,1005S175,995,500,995S1000,1005,1000,1005V0H0Z";
@@ -106,14 +104,6 @@ function FullscreenNavbar({ toggleNavbar,settoggleNavbar }) {
         delay: 0.9,
         duration: 0.6,
       });
-      t1.from(".navContentIconsX", {
-        opacity: 0,
-        x: -50,
-        duration: 0.3,
-        stagger: {
-          amount: 1,
-        },
-      });
     } else if (navContentsRef.current && !toggleNavbar) {
       const t1 = gsap.timeline();
       t1.to(navContentsRef.current, {
@@ -127,11 +117,10 @@ function FullscreenNavbar({ toggleNavbar,settoggleNavbar }) {
 
   return (
     <>
-      {/* {toggleNavbar ? <NavContents navContentsRef={navContentsRef} /> : <></>} */}
       {navOyyehActive && (
         <NavContents
           navContentsRef={navContentsRef}
-          navContentIconsX={navContentIconsX}
+          toggleNavbar={toggleNavbar}
         />
       )}
       <div
