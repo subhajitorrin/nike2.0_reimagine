@@ -5,6 +5,7 @@ import navimg1 from "../../../assets/NavbarClip/navimg.jpg";
 import clip1 from "../../../assets/NavbarClip/nikeclip2.mp4";
 import gsap from "gsap";
 import { IoSearch } from "react-icons/io5";
+import Tilt from "react-parallax-tilt";
 
 const navList = [
   "New & Featured",
@@ -15,6 +16,18 @@ const navList = [
   "Customise",
   "SNKRS",
 ];
+
+const defaultOptions = {
+  reverse: false, // reverse the tilt direction
+  max: 35, // max tilt rotation (degrees)
+  perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
+  scale: 1.1, // 2 = 200%, 1.5 = 150%, etc..
+  speed: 1000, // Speed of the enter/exit transition
+  transition: true, // Set a transition on enter/exit.
+  axis: null, // What axis should be disabled. Can be X or Y.
+  reset: true, // If the tilt effect has to be reset on exit.
+  easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
+};
 
 function NavContents({ navContentsRef, toggleNavbar }) {
   const navClipRef = useRef(null);
@@ -45,15 +58,17 @@ function NavContents({ navContentsRef, toggleNavbar }) {
         <div className="nright">
           <div className="navdefault">
             <div className="searchcontainer">
-              <input type="text" placeholder="Search your shoewear"/>
+              <input type="text" placeholder="Search your shoewear" />
               <div className="searchright">
                 <IoSearch style={{ fontSize: "1.5rem" }} />
               </div>
             </div>
             <div className="navdefaultleft">
-              <div className="navimgcontainer">
-                <img src={navimg1} />
-              </div>
+              <Tilt style={{ width: "100%", height: "100%" }}>
+                <div className="navimgcontainer">
+                  <img src={navimg1} />
+                </div>
+              </Tilt>
             </div>
             <div className="navdefaultright">
               <div className="navtextcontainer">

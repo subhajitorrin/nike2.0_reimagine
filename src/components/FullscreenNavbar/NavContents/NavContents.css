@@ -60,6 +60,7 @@
   height: 100%;
   display: flex;
   align-items: center;
+  margin-top: 5rem;
 }
 .navdefaultright {
   height: 100%;
@@ -74,6 +75,7 @@
   height: 80%;
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
 }
 .navimgcontainer img {
   height: 100%;
@@ -108,14 +110,14 @@
 .searchcontainer {
   position: absolute;
   right: 59px;
-  border: 1px solid rgba(255, 255, 255, .3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   width: 400px;
   height: 45px;
   border-radius: 20px;
   display: flex;
   overflow: hidden;
 }
-.searchcontainer input{
+.searchcontainer input {
   width: 85%;
   padding-left: 25px;
   border: none;
@@ -123,13 +125,13 @@
   background-color: transparent;
   color: white;
 }
-.searchcontainer .searchright{
+.searchcontainer .searchright {
   height: 100%;
   width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.searchcontainer ::placeholder{
-  font-size: .85rem;
+.searchcontainer ::placeholder {
+  font-size: 0.85rem;
 }
