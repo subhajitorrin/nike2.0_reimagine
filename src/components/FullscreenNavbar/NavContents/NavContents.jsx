@@ -64,10 +64,8 @@ function NavContents({ navContentsRef, toggleNavbar }) {
               </div>
             </div>
             <div className="navdefaultleft">
-              <Tilt style={{ width: "100%", height: "100%" }}>
-                <div className="navimgcontainer">
-                  <img src={navimg1} />
-                </div>
+              <Tilt className="navimgcontainer">
+                <img src={navimg1} />
               </Tilt>
             </div>
             <div className="navdefaultright">
