@@ -2,23 +2,13 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import React, { useRef, useState } from 'react'
 import ModelView from './ModelView'
-
 import * as THREE from 'three';
 import { Canvas } from "@react-three/fiber";
-import { View } from "@react-three/drei";
-
 
 const Model = () => {
-
-    // camera control for the model view
     const cameraControlSmall = useRef();
-
-    // model
     const small = useRef(new THREE.Group());
-
-    // rotation
     const [smallRotation, setSmallRotation] = useState(0);
-
 
     useGSAP(() => {
         gsap.to('#heading', {
@@ -28,21 +18,19 @@ const Model = () => {
     }, [])
 
     return (
-        <section className='common-padding' id='modelSection'>
-            <div className='screen-max-width'>
-                <div className='flex flex-col items-center mt-5'>
-                    <div className='w-full h-[75vh] md:h-[90vh] overflow-hidden relative'>
+        <section className='w-full h-full' id='modelSection'>
+            <div className='w-full h-full relative'>
+                <div className='flex flex-row items-start gap-20'> 
+                    <div className='w-1/2 h-full overflow-hidden relative'>
                         <Canvas
                             className='w-full h-full'
                             style={{
-                                position: 'fixed',
-                                top: 0,
-                                bottom: 0,
-                                right: 0,
-                                left: 0,
+                                position: 'relative',
                                 overflow: 'hidden',
+                                height: '100vh',
+                                backgroundColor:"black"
                             }}
-                            eventSource={document.getElementById('root')}
+                            eventSource={document.getElementById('modelSection')}
                         >
                             <ModelView
                                 groupRef={small}
@@ -52,13 +40,15 @@ const Model = () => {
                             />
                         </Canvas>
                     </div>
-                    <div className='mx-auto w-full'>
-                        <p className='text-sm font-light text-center mb-5'></p>
-                        <div className='flex-center'>
-                            
-                        </div>
+                    <div className='bg-gray-500 w-1/2 flex flex-col items-center justify-center'
+                        style={{
+                            height:"100vh"
+                        }}
+                    >
+                        <h1>3dmodel</h1>
                     </div>
                 </div>
+
             </div>
         </section>
     )
