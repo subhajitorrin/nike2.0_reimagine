@@ -1,54 +1,67 @@
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
 import React, { useRef, useState } from 'react'
 import ModelView from './ModelView'
+
+
 import * as THREE from 'three';
 import { Canvas } from "@react-three/fiber";
+import { View } from "@react-three/drei";
+
+// import { models, sizes } from "../constants";
+// import { animateWithGsapTimeline } from "../utils/animations";
 
 const Model = () => {
-    const cameraControlSmall = useRef();
-    const small = useRef(new THREE.Group());
-    const [smallRotation, setSmallRotation] = useState(0);
+    const [size, setSize] = useState('small');
 
-    useGSAP(() => {
-        gsap.to('#heading', {
-            y: 0,
-            opacity: 1
-        })
-    }, [])
+    // camera control for the model view
+    const cameraControlSmall = useRef();
+    const cameraControlLarge = useRef();
+
+    // model
+    const small = useRef( new THREE.Group());
+    const large = useRef( new THREE.Group());
+
+    // rotation
+    const [smallRotation,setSmallRotation] = useState(0);
+    const [largeRotation,setLargeRotation] = useState(0);
 
     return (
-        <section className='w-full h-full' id='modelSection'>
-            <div className='w-full h-full relative'>
-                <div className='flex flex-row items-start gap-20'> 
-                    <div className='w-1/2 h-full overflow-hidden relative'>
+        <section className='size-full'>
+            <div className='size-full'>
+                <div className='flex flex-col items-center mt-5'>
+                    <div className='w-full h-[75vh] md:h-[90vh] overflow-hidden relative'>
+                        <ModelView 
+                            index={1}
+                            groupRef={small}
+                            gsapType="view1"
+                            controlRef={cameraControlSmall}
+                            setRotationState={setSmallRotation}
+                            size={size}
+                        />
+
                         <Canvas
                             className='w-full h-full'
                             style={{
-                                position: 'relative',
+                                position: 'fixed',
+                                top:0,
+                                bottom:0,
+                                right:0,
+                                left:0,
                                 overflow: 'hidden',
-                                height: '100vh',
-                                backgroundColor:"black"
+                                backgroundColor:'black',
+                                zIndex:-1
                             }}
-                            eventSource={document.getElementById('modelSection')}
+                            eventSource={document.getElementById('root')}
                         >
-                            <ModelView
-                                groupRef={small}
-                                gsapType="view"
-                                controlRef={cameraControlSmall}
-                                setRotationState={setSmallRotation}
-                            />
+                            <View.Port />
                         </Canvas>
                     </div>
-                    <div className='bg-gray-500 w-1/2 flex flex-col items-center justify-center'
-                        style={{
-                            height:"100vh"
-                        }}
-                    >
-                        <h1>3dmodel</h1>
+                    <div className='mx-auto w-full'>
+                        <p className='text-sm font-light text-center mb-5'></p>
+                        <div className='flex-center'>
+
+                        </div>
                     </div>
                 </div>
-
             </div>
         </section>
     )

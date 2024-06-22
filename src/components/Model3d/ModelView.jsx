@@ -1,41 +1,35 @@
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import React, { Suspense, useEffect } from 'react';
+import { Html, OrbitControls, View } from '@react-three/drei';
+import React, { Suspense } from 'react';
 import Shoe from './Shoe';
 import * as THREE from 'three'
 
-const ModelView = ({groupRef, controlRef, setRotationState }) => {
-    useEffect(() => {
-        const controls = controlRef.current;
-        if (controls) {
-            const handleChange = () => {
-                setRotationState(controls.getAzimuthalAngle());
-            };
-            controls.addEventListener('change', handleChange);
-            return () => controls.removeEventListener('change', handleChange);
-        }
-    }, [controlRef, setRotationState]);
-
+const ModelView = ({ index, groupRef, gsapType, controlRef, setRotationState, size, item }) => {
     return (
-        <>
-            <PerspectiveCamera makeDefault position={[0, 0, 4]} />
-            
-            <ambientLight intensity={2} />
-            
+        <View
+            index={index}
+            id={gsapType}
+            className={`w-full h-full`}
+        >
+            <ambientLight intensity={1.5} />
+
+            <perspectiveCamera makeDefault position={[0, 0, 4]} />
+
             <OrbitControls
                 makeDefault
                 ref={controlRef}
                 enableZoom={false}
-                enablePan={true}
-                rotateSpeed={2}
-                target={new THREE.Vector3(0, 0.4, 0)}
+                enablePan={false}
+                rotateSpeed={1}
+                target={new THREE.Vector3(0, 0, 0)}
+                onEnd={() => setRotationState(controlRef.current.getAzimuthalAngle())}
             />
-            
-            <group ref={groupRef} name={`small`} position={[0, 0, 0]}>
-                <Suspense fallback={null}>
-                    <Shoe scale={[4, 4, 4]} />
+
+            <group ref={groupRef} name={'small'} position={[0, 0, 0]}>
+                <Suspense fallback={<Html><div>Loading</div></Html>}>
+                    <Shoe scale={[8, 8, 8]} item={item} size={size} />
                 </Suspense>
             </group>
-        </>
+        </View>
     )
 }
 
