@@ -18,5 +18,5 @@ html {
   opacity: 0;
   /* display: none; */
   transition: opacity 1s linear;
-  pointer-events:none;
+  pointer-events: none;
 }

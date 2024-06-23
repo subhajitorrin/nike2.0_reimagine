@@ -37,7 +37,7 @@ function LowerFooter() {
   }
 
   return (
-    <div className="lowerfooter" >
+    <div className="lowerfooter">
       <div className="footerBoxesContainer">
         <div className="footerbox">
           <ul>
@@ -83,7 +83,11 @@ function LowerFooter() {
           <li className="footerguidesicon" onMouseLeave={handleMouseLeave}>
             <div className="guideList" ref={guideHover}>
               {nikeProducts.map((item, index) => {
-                return <p key={index} className="guidelistitem">{item}</p>;
+                return (
+                  <p key={index} className="guidelistitem">
+                    {item}
+                  </p>
+                );
               })}
             </div>
             <span onMouseEnter={handleMouseEnter} className="spanGuide">

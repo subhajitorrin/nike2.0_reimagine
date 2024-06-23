@@ -9,7 +9,8 @@ import Section from "./components/TemporarySection/Section";
 import Cursor from "./components/Cursor/Cursor";
 import LocomotiveScroll from "locomotive-scroll";
 import FullscreenNavbar from "./components/FullscreenNavbar/FullscreenNavbar";
-import Model from './components/Model3d/Model'
+import Model from "./components/Model3d/Model";
+import Section1 from "./components/Section1/Section1";
 
 function App() {
   const [isLoading, setisLoading] = useState(true);
@@ -31,8 +32,12 @@ function App() {
       document.querySelector(".cursor").style.display = "block";
     };
     window.addEventListener("mousemove", handleMouseMove);
-    document.querySelector("#main").addEventListener("mouseleave", handleMouseLeave);
-    document.querySelector("#main").addEventListener("mouseenter", handleMouseEnter);
+    document
+      .querySelector("#main")
+      .addEventListener("mouseleave", handleMouseLeave);
+    document
+      .querySelector("#main")
+      .addEventListener("mouseenter", handleMouseEnter);
   }, []);
 
   useEffect(() => {
@@ -58,15 +63,17 @@ at App.jsx line 13
     <div
       id="main"
       style={{
-        height: isLoading ? "100vh" : "", 
+        height: isLoading ? "100vh" : "",
       }}
     >
       <div className="blureffect"></div>
       <Cursor />
       <Loader isLoading={isLoading} setisLoading={setisLoading} />
-      <FullscreenNavbar   toggleNavbar={toggleNavbar}
-        settoggleNavbar={settoggleNavbar}/>
-      <Section />
+      <FullscreenNavbar
+        toggleNavbar={toggleNavbar}
+        settoggleNavbar={settoggleNavbar}
+      />
+      <Section1 />
       <Model />
       <Section />
       <MovingCards />

@@ -14,7 +14,9 @@
   display: flex;
   justify-content: space-between;
   padding: 2vh;
-  background-color: darkslategrey;
+  background-color: transparent;
+  position: relative;
+  z-index: 201;
 }
 .menuicon {
   font-size: 1.6rem;
@@ -28,18 +30,16 @@
 .overlay svg {
   fill: rgba(0, 0, 0, 0.6);
 }
-.navarea-option{
+.navarea-option {
   display: flex;
   gap: 1rem;
-
 }
 
-
-.navarea-option{
+.navarea-option {
   text-transform: uppercase;
   position: relative;
 }
-.hoverEffect{
+.hoverEffect {
   font-size: 1rem;
   font-weight: 700;
 }
