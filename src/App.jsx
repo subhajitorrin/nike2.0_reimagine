@@ -58,7 +58,7 @@ at App.jsx line 13
     <div
       id="main"
       style={{
-        height: isLoading ? "100vh" : "",
+        height: isLoading ? "100vh" : "", 
       }}
     >
       <div className="blureffect"></div>
