@@ -14,7 +14,7 @@ const ModelView = ({
 }) => {
   return (
     <View index={index} id={gsapType} className={`w-full h-full`}>
-      <ambientLight intensity={1.5} />
+      <ambientLight intensity={1.2} />
 
       <perspectiveCamera makeDefault position={[0, 0, 4]} />
 

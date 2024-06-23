@@ -26,8 +26,8 @@ const Model = () => {
   return (
     <section className="size-full">
       <div className="size-full">
-        <div className="flex flex-col items-center mt-5">
-          <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
+        <div className="flex items-center mt-5">
+          <div className="w-[50%] h-full md:h-[90vh] overflow-hidden relative ">
             <ModelView
               index={1}
               groupRef={small}
@@ -54,9 +54,34 @@ const Model = () => {
               <View.Port />
             </Canvas>
           </div>
-          <div className="mx-auto w-full">
-            <p className="text-sm font-light text-center mb-5"></p>
-            <div className="flex-center"></div>
+          <div className="w-[50%] flex justify-center flex-col h-[90vh] items-center gap-[5rem]">
+            <p className="text-white px-[5rem]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Reiciendis consequuntur numquam laborum iusto consequatur vitae
+              ipsam vero eveniet! Quisquam consectetur, perspiciatis obcaecati
+              molestiae laboriosam iure omnis veniam accusamus numquam. Unde
+              nulla cumque velit odit quisquam ipsa laboriosam vitae eius
+              voluptatum, sapiente pariatur magni quo. Laudantium facere
+              repudiandae explicabo corporis beatae esse corrupti id laboriosam
+              tempore obcaecati consequuntur, dolore natus minima aut cumque
+              alias dolores, eligendi fugit vero cum quis modi. Aliquid
+              consequatur voluptatibus deleniti possimus eaque sit error, alias
+              aut recusandae maxime ipsam ipsa corporis dolorum voluptatem porro
+              quia doloremque voluptate sint dolores! Temporibus alias expedita,
+              nam nulla quis mollitia.
+            </p>
+            <div className="">
+              <p className="text-[15px] font-bold text-center mb-5 text-white">
+                This is text
+              </p>
+              <div className="flex gap-[.5rem] justify-center bg-[#2e2e30] px-[2rem] py-[.5rem] rounded-[20px]">
+                <div className="h-[20px] w-[20px] bg-white rounded-[50%] cursor-pointer"></div>
+                <div className="h-[20px] w-[20px] bg-red-900 rounded-[50%] cursor-pointer"></div>
+                <div className="h-[20px] w-[20px] bg-yellow-300 rounded-[50%] cursor-pointer"></div>
+                <div className="h-[20px] w-[20px] bg-lime-400 rounded-[50%] cursor-pointer"></div>
+                <div className="h-[20px] w-[20px] bg-green-600 rounded-[50%] cursor-pointer"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

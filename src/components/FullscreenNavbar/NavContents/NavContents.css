@@ -80,6 +80,7 @@
   height: 100%;
   position: relative;
   right: 20px;
+  border-radius: 20px;
 }
 .navtextcontainer {
   font-family: "Roboto Slab", serif;
