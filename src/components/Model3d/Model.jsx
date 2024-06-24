@@ -3,20 +3,16 @@ import ModelView from "./ModelView";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
-import { div } from "three/examples/jsm/nodes/Nodes.js";
-
-
+import Shoe1img from "./Images/Shoe1img.webp"
 
 const Model = () => {
-
   const ModelTargets = [
-    {label: "air1",url:"",value:"first"},
-    {label: "jordan",url:"",value:"second"},
-    {label: "air2",url:"",value:"third"},
-  ]
+    { label: "Nike TC 7900", url:Shoe1img, value: "first" },
+    { label: "jordan", url: Shoe1img, value: "second" },
+    { label: "air2", url: Shoe1img, value: "third" },
+  ];
 
-
-  const [size, setSize] = useState("first");
+  const [model, setModel] = useState("first");
 
   // camera control for the model view
   const cameraControlSmall = useRef();
@@ -42,9 +38,8 @@ const Model = () => {
               gsapType="view1"
               controlRef={cameraControlSmall}
               setRotationState={setSmallRotation}
-              size={size}
+              size={model}
             />
-
             <Canvas
               className="w-full h-full"
               style={{
@@ -63,23 +58,25 @@ const Model = () => {
             </Canvas>
           </div>
           <div className="absolute z-10 text-white">
-            
           </div>
         </div>
-        <div className="flex relative bottom-0 w-ful justify-center p-[2rem] gap-6">
-            {ModelTargets.map( ({label,url,value}) => (
-              <div key={label} className={`w-[5rem] h-[4rem] border rounded-xl text-white`}
-                style={{
-                  backgroundImage:url,
-                  backgroundPosition:"center",
-                  backgroundSize:"cover",
-                  objectFit:"cover"
-                }}
-                onClick={() => setSize(value)}
-              >
-                djfjsd
-              </div>
-            ))}
+        <div className="flex relative bottom-0 w-full justify-center p-[2rem] gap-6">
+          {ModelTargets.map(({ label, url, value }) => (
+            <div
+              key={label}
+              className={`relative w-[5rem] h-[4rem] rounded-xl text-black flex items-center justify-center text-sm font-bold hover:opacity-[0.8] hover:scale-110 transition-all`}
+              style={{
+                backgroundImage: `url(${url})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                objectFit: "cover",
+                
+              }}
+              onClick={() => setModel(value)}
+            >
+              {label}
+            </div>
+          ))}
         </div>
       </div>
     </section>
