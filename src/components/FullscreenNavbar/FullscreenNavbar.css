@@ -6,6 +6,7 @@
   left: 0;
   z-index: 99999999;
   pointer-events: none;
+  scale: 1.1;
 }
 /* .overlaySvg path {
   fill: black;

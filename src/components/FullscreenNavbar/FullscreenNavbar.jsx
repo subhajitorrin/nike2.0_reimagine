@@ -4,8 +4,10 @@ import "./FullscreenNavbar.css";
 import { RiMenu3Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import NavContents from "./NavContents/NavContents";
+import MobileViewNavContents from "./NavContents/MobileViewNavContents";
 
 function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [scrollY, setscrollY] = useState(window.scrollY);
   const [navOyyehActive, setnavOyyehActive] = useState(false);
   const pathRef = useRef(null);
@@ -115,14 +117,25 @@ function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
     }
   }, [toggleNavbar]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
-      {navOyyehActive && (
+      {windowWidth > 768 && navOyyehActive && (
         <NavContents
           navContentsRef={navContentsRef}
           toggleNavbar={toggleNavbar}
         />
       )}
+      {windowWidth <= 768 && navOyyehActive && <MobileViewNavContents toggleNavbar={toggleNavbar}/>}
       <div
         className=""
         style={{
@@ -158,7 +171,10 @@ function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
         <svg
           viewBox="0 0 1000 1005"
           className="overlaySvg"
-          style={{ filter: "url(#f1)" }}
+          style={{
+            filter: "url(#f1)",
+            height: windowWidth <= 768 ? "100vh" : "",
+          }}
         >
           <path ref={pathRef} d="M0,2S175,1,500,1S1000,1,1000,1V0H0Z"></path>
         </svg>
