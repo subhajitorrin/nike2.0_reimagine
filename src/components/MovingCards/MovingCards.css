@@ -2,7 +2,7 @@
   height: 800px;
   /* background-color: lightblue; */
   overflow: hidden;
-
+  background-color: white;
   display: flex;
 }
 .movingCardsContainer .cardsContainer {

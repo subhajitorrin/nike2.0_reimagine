@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ModelView from "./ModelView";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
@@ -7,7 +7,7 @@ import Shoe1img from "./Images/Shoe1img.webp"
 
 const Model = () => {
   const ModelTargets = [
-    { label: "Nike TC 7900", url:Shoe1img, value: "first" },
+    { label: "Nike TC 7900", url: Shoe1img, value: "first" },
     { label: "jordan", url: Shoe1img, value: "second" },
     { label: "air2", url: Shoe1img, value: "third" },
   ];
@@ -28,49 +28,42 @@ const Model = () => {
   const [largeRotation, setLargeRotation] = useState(0);
 
   return (
-    <section className="size-full">
-      <div className="size-full">
-        <div className="flex flex-col items-center mt-5">
-          <div className="w-[100%] h-full md:h-[90vh] overflow-hidden relative ">
-            <ModelView
-              index={1}
-              groupRef={first}
-              gsapType="view1"
-              controlRef={cameraControlSmall}
-              setRotationState={setSmallRotation}
-              size={model}
-            />
-            <Canvas
-              className="w-full h-full"
-              style={{
-                position: "fixed",
-                top: 0,
-                bottom: 0,
-                right: 0,
-                left: 0,
-                overflow: "hidden",
-                backgroundColor: "black",
-                zIndex: -1,
-              }}
-              eventSource={document.getElementById("root")}
-            >
-              <View.Port />
-            </Canvas>
-          </div>
-          <div className="absolute z-10 text-white">
-          </div>
-        </div>
-        <div className="flex relative bottom-0 w-full justify-center p-[2rem] gap-6">
+    <div className="relative w-full h-screen overflow-hidden" id="main">
+      <div className="absolute inset-0">
+        <ModelView
+          index={1}
+          groupRef={first}
+          gsapType="view1"
+          controlRef={cameraControlSmall}
+          setRotationState={setSmallRotation}
+          size={model}
+        />
+        <Canvas
+          className="w-full h-full"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            overflow: "hidden",
+            backgroundColor: "rgb(51, 49, 49)",
+            zIndex:-1
+          }}
+          eventSource={document.getElementById("main")}
+        >
+          <View.Port />
+        </Canvas>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4">
+        <div className="flex justify-center gap-4 flex-wrap">
           {ModelTargets.map(({ label, url, value }) => (
             <div
               key={label}
-              className={`relative w-[5rem] h-[4rem] rounded-xl text-black flex items-center justify-center text-sm font-bold hover:opacity-[0.8] hover:scale-110 transition-all`}
+              className="relative w-[5rem] h-[4rem] rounded-xl text-white flex items-center justify-center text-sm font-bold hover:opacity-[0.8] hover:scale-110 transition-all"
               style={{
                 backgroundImage: `url(${url})`,
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 objectFit: "cover",
-                
               }}
               onClick={() => setModel(value)}
             >
@@ -79,7 +72,7 @@ const Model = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
