@@ -6,13 +6,13 @@ function Section() {
     <div style={{position:"relative"}}>
       <div
         style={{
+          backgroundColor:"white",
           height: "100vh",
           width: "100vw",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "darkcyan",
-          backgroundImage:'url("https://wallpapercave.com/wp/wp4322015.jpg")',
+          zIndex:1,
         }}
       >
         This is temporary section

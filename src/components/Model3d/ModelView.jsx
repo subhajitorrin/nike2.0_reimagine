@@ -61,7 +61,7 @@ const ModelView = ({
         <Suspense
           fallback={
             <Html>
-              <div>Loading</div>
+              <div>isLoading</div>
             </Html>
           }
         >
