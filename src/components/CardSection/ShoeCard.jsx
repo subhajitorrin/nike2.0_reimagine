@@ -36,7 +36,7 @@ function ShoeCard({ shoe, title, desc }) {
   }
   return (
     <div
-      className="bg-white h-[480px] w-[450px] rounded-[20px] overflow-hidden z-[22]"
+      className="bg-white h-[25vw] w-[23.5vw] rounded-[20px] overflow-hidden z-[22]"
       onMouseEnter={handelHoverEnter}
       onMouseLeave={handelHoverLeave}
     >
@@ -44,11 +44,11 @@ function ShoeCard({ shoe, title, desc }) {
         <img src={shoe} className="relative right-[-10%]" ref={shoeCardRef} />
       </div>
       <div className="h-[30%]  flex justify-between items-center px-[1.7rem] text-black">
-        <div className="text-[1.2rem] leading-[100%]">
+        <div className="text-[1.2vw] leading-[100%]">
           <p>{title}</p>
           <p>{desc}</p>
         </div>
-        <div className="overflow-hidden relative border border-black border-opacity-[.3] p-[1rem] rounded-[50%] h-[60px] w-[60px] flex items-center justify-center">
+        <div className="overflow-hidden relative border border-black border-opacity-[.3] p-[1rem] rounded-[50%] h-[3vw] w-[3vw] flex items-center justify-center">
           <div
             ref={circleCoverRef}
             className="bg-[#eb244b] h-[60px] w-[100px] rounded-r-[35px] absolute z-[30] right-[100%] transition-all ease-linear"
