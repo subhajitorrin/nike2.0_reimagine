@@ -11,6 +11,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import FullscreenNavbar from "./components/FullscreenNavbar/FullscreenNavbar";
 import Model from "./components/Model3d/Model";
 import Section1 from "./components/Section1/Section1";
+import CardSection from "./components/CardSection/CardSection";
 
 function App() {
   const [isLoading, setisLoading] = useState(false);
@@ -74,7 +75,7 @@ at App.jsx line 13
         settoggleNavbar={settoggleNavbar}
       />
       <Section1 />
-      <Section />
+      <CardSection/>
       <Model />
       <Section />
       <MovingCards />
