@@ -32,7 +32,7 @@ const ModelView = ({
     <View index={index} id={gsapType} className="w-full h-full">
       <ambientLight intensity={2} />
       <perspectiveCamera makeDefault position={[0, 0, 4]} />
-      <group ref={groupRef} name={`group-${index}`} position={[0, -1.2, 1]}>
+      <group ref={groupRef} name={`group-${index}`} position={[0, 0, 1]}>
         <Suspense
           fallback={
             <Html>

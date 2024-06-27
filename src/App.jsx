@@ -78,6 +78,9 @@ at App.jsx line 13
       <CardSection />
       <Model />
       <Section />
+      <Section />
+      <Section />
+      <Section />
       <MovingCards />
       <Footer />
     </div>

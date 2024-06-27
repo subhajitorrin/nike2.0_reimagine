@@ -6,7 +6,7 @@ function Section() {
     <div style={{position:"relative"}}>
       <div
         style={{
-          backgroundColor:"white",
+          backgroundColor:"transparent",
           height: "100vh",
           width: "100vw",
           display: "flex",
