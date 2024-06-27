@@ -98,7 +98,7 @@ function LowerFooter() {
   } else {
     return (
       <div className="lowerfooter h-[529px]">
-        <div className="footerBoxesContainer border border-black">
+        <div className="footerBoxesContainer ">
           <div className="footerbox">
             <ul>
               <h3>Resources</h3>
@@ -137,7 +137,7 @@ function LowerFooter() {
             </div>
           </div>
         </div>
-        <div className="footerLinerContainer border border-black">
+        <div className="footerLinerContainer  ">
           <ul>
             <li>&#169;2024 Nike2.0, Inc. All rights reserved</li>
             <li className="footerguidesicon" onMouseLeave={handleMouseLeave}>
