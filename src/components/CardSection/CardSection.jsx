@@ -23,7 +23,7 @@ const shoeList = [
 
 function CardSection() {
   return (
-    <div className="w-full text-white flex flex-col items-center gap-[4rem] bg-[#f4f2f0] py-[5rem] relative">
+    <div className="z-[1000] w-full text-white flex flex-col items-center gap-[4rem] bg-[#f4f2f0] py-[5rem] relative">
       <div className="text-center text-[2rem] text-black ">
         Responsive Pegasus with <br />
         Air Zoom.
