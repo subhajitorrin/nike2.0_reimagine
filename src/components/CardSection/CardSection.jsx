@@ -5,6 +5,7 @@ import shoe1 from "../../assets/ShoeCardImgs/shoe1.png";
 import shoe2 from "../../assets/ShoeCardImgs/shoe2.png";
 import shoe3 from "../../assets/ShoeCardImgs/shoe3.png";
 import shoe4 from "../../assets/ShoeCardImgs/shoe4.png";
+import MobileShoeCard from "./MobileShoeCard";
 
 const shoeList = [
   { shoe: shoe1, title: "AIR JORDAN 1", desc: "Classic, coveted, enduring." },
@@ -33,12 +34,50 @@ function CardSection() {
     };
   }, []);
   if (innerWidth <= 768) {
+    return (
+      <div className="w-full text-white flex flex-col items-center gap-[4rem] bg-[#f4f2f0] py-[5rem] relative">
+        <div className="text-center text-[6vw] text-black mb-[10%]">
+          "Just do it.
+          <br />
+          Define your greatness."
+        </div>
+        <div className="w-[75%] flex gap-[2rem] flex-col items-center z-[22] relative">
+          <div className="text-[#eae6e3] font-[800] text-[22vw] z-[20] pointer-events-none absolute top-[-20vw]">
+            JORDAN
+          </div>
+          <MobileShoeCard
+            shoe={shoeList[0].shoe}
+            title={shoeList[0].title}
+            desc={shoeList[0].desc}
+          />
+          <MobileShoeCard
+            shoe={shoeList[1].shoe}
+            title={shoeList[1].title}
+            desc={shoeList[1].desc}
+          />
+          <MobileShoeCard
+            shoe={shoeList[2].shoe}
+            title={shoeList[2].title}
+            desc={shoeList[2].desc}
+          />
+          <MobileShoeCard
+            shoe={shoeList[3].shoe}
+            title={shoeList[3].title}
+            desc={shoeList[3].desc}
+          />
+        </div>
+        <div className="items-center text-[1.2rem] flex gap-[1rem] px-[2rem] py-[1.5rem] border rounded-[35px] bg-[#eb244b] text-white font-bold">
+          all shoes <HiArrowNarrowRight className="text-white text-[1.5rem]" />
+        </div>
+      </div>
+    );
   } else {
     return (
       <div className="w-full text-white flex flex-col items-center gap-[4rem] bg-[#f4f2f0] py-[5rem] relative">
         <div className="text-center text-[2rem] text-black ">
-          Responsive Pegasus with <br />
-          Air Zoom.
+          "Just do it.
+          <br />
+          Define your greatness."
         </div>
         <div className="text-[#eae6e3] absolute font-[800] text-[7rem] top-[11%] z-[20] pointer-events-none">
           JORDANSPORT
