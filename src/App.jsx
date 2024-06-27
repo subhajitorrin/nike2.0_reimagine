@@ -75,7 +75,7 @@ at App.jsx line 13
         settoggleNavbar={settoggleNavbar}
       />
       <Section1 />
-      <CardSection/>
+      <CardSection />
       <Model />
       <Section />
       <MovingCards />

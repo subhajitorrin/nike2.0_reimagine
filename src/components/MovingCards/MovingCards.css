@@ -4,6 +4,8 @@
   overflow: hidden;
   background-color: white;
   display: flex;
+  position: relative;
+  z-index: 1;
 }
 .movingCardsContainer .cardsContainer {
   display: grid;

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function UpperFooter() {
-  return (
-    <div className='upperfooter' >This is upperfooter</div>
-  )
+  return <div className="bg-white h-[30vh]">This is upperfooter</div>;
 }
 
-export default UpperFooter
+export default UpperFooter;
