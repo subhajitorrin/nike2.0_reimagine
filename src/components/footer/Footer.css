@@ -1,16 +1,10 @@
 .lowerfooter {
   /* border: 1px solid; */
   background-color: white;
-  height: 529px;
   display: flex;
   flex-direction: column;
   padding: 48px;
   font-family: sans-serif;
-}
-.footerbreakline {
-  border-top: 1px solid #e5e5e5;
-  margin-left: 48px;
-  margin-right: 48px;
 }
 .lowerfooter .footerBoxesContainer {
   width: 100%;

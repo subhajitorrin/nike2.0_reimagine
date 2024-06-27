@@ -6,7 +6,6 @@ function Footer() {
   return (
     <div className="relative z-10">
       <UpperFooter />
-      <div className="footerbreakline"></div>
       <LowerFooter />
     </div>
   );
