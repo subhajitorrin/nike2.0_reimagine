@@ -14,7 +14,9 @@
   gap: 2rem;
   height: 100%;
   position: relative;
-  /* animation: 20s slide infinite linear; */
+  transform: translateX(-40%);
+  animation: 20s slide infinite linear;
+  padding-top: 2rem;
 }
 
 .card {
@@ -115,10 +117,6 @@
   top: -45%;
 }
 
-.cardsContainer video {
-  border-radius: 20px !important;
-}
-
 @keyframes slide {
   from {
     transform: translateX(0);
@@ -129,7 +127,7 @@
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .card1 {
     height: 50vh;
     /* 500px / 1000px * 100 */
@@ -156,7 +154,7 @@
     width: 50vw;
     /* 500px / 1000px * 100 */
     position: relative;
-    top: 5%;
+    top: 0%;
     border-radius: 20px;
   }
 
@@ -192,9 +190,14 @@
     width: 85vw;
     /* 850px / 1000px * 100 */
     border-radius: 20px;
+    position: relative;
+    top: 10%;
   }
 
-  .cardsContainer video {
-    border-radius: 20px;
+  .cardsContainer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
   }
 }

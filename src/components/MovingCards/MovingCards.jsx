@@ -11,7 +11,7 @@ import card6 from "../../assets/MovingCards/card6.jpg";
 import card7 from "../../assets/MovingCards/card7.jpg";
 
 function MovingCards() {
-  function handelLog(){
+  function handelLog() {
     console.log("Form section");
   }
   return (
@@ -20,11 +20,11 @@ function MovingCards() {
         <div className="card card1">
           <img src={card1} alt="" />
         </div>
-        <div className="card card2">
-          <img src={card2} alt="" />
+        <div className="card card2 ">
+          <img src={card2} alt="" className="scale-[1.5]" />
         </div>
-        <div className="card card3">
-          <video src={card3} autoPlay muted loop />
+        <div className="card card3  rounded-[30px]">
+          <video src={card3} autoPlay muted loop className="rounded-[30px]" />
         </div>
         <div className="card card4">
           <img src={card4} alt="" />
@@ -45,11 +45,11 @@ function MovingCards() {
         <div className="card card1">
           <img src={card1} alt="" />
         </div>
-        <div className="card card2">
-          <img src={card2} alt="" />
+        <div className="card card2 ">
+          <img src={card2} alt="" className="scale-[1.5]" />
         </div>
         <div className="card card3">
-          <video src={card3} autoPlay muted loop />
+          <video src={card3} autoPlay muted loop className="rounded-[30px]" />
         </div>
         <div className="card card4">
           <img src={card4} alt="" />
