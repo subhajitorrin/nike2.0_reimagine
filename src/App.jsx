@@ -14,7 +14,7 @@ import Section1 from "./components/Section1/Section1";
 import CardSection from "./components/CardSection/CardSection";
 
 function App() {
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setisLoading] = useState(true);
   // const locomotiveScroll = new LocomotiveScroll();
   const containerRef = useRef(null);
   const [toggleNavbar, settoggleNavbar] = useState(false);
@@ -69,14 +69,14 @@ at App.jsx line 13
     >
       <div className="blureffect"></div>
       <Cursor />
-      {/* <Loader isLoading={isLoading} setisLoading={setisLoading} /> */}
+      <Loader isLoading={isLoading} setisLoading={setisLoading} />
       <FullscreenNavbar
         toggleNavbar={toggleNavbar}
         settoggleNavbar={settoggleNavbar}
       />
       <Section1 />
       <CardSection />
-      <Model />
+      {!isLoading && <Model />}
       <Section />
       <Section />
       <Section />

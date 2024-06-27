@@ -89,9 +89,9 @@ const Model = () => {
           <View.Port />
         </Canvas>
       </div>
-      <div 
-        id="scrollable-content" 
-        ref={scrollableContentRef} 
+      <div
+        id="scrollable-content"
+        ref={scrollableContentRef}
         className="absolute top-[100vh] left-0 w-full"
       >
         <ScrollableContent />
