@@ -28,7 +28,7 @@ function CardSection() {
         Responsive Pegasus with <br />
         Air Zoom.
       </div>
-      <div className="text-[#eae6e3] absolute font-[800] text-[7rem] top-[11%] z-[22]">
+      <div className="text-[#eae6e3] absolute font-[800] text-[7rem] top-[11%] z-[20] pointer-events-none">
         JORDANSPORT
       </div>
       <div className="h-[110vh] w-[75%] flex gap-[1rem] ">
