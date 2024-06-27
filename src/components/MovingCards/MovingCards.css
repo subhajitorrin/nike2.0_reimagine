@@ -7,56 +7,71 @@
   position: relative;
   z-index: 1;
 }
+
 .movingCardsContainer .cardsContainer {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-
   gap: 2rem;
   height: 100%;
   position: relative;
-  animation: 20s slide infinite linear;
+  /* animation: 20s slide infinite linear; */
 }
+
 .card {
   /* border: 1px solid; */
   border-radius: 30px;
   overflow: hidden;
 }
+
 .card1 {
   height: 500px;
   width: 600px;
   position: relative;
   top: 10%;
 }
+
 .card2 {
   height: 600px;
   width: 500px;
   position: relative;
   top: 15%;
 }
+
 .card3 {
   height: 600px;
   width: 500px;
   position: relative;
   top: 5%;
+  border-radius: 20px;
 }
+
 .card4 {
   height: 450px;
   width: 700px;
   position: relative;
   top: 29%;
 }
+
 .card5 {
   height: 400px;
   width: 600px;
 }
+
 .card6 {
   height: 300px;
   width: 450px;
 }
+
 .card7 {
   height: 700px;
   width: 850px;
 }
+
+.cardsContainer img {
+  border-radius: 20px;
+}
+
+/* convert all height width vw in that way they are responsive */
 
 .cardsContainer .card56Container {
   display: flex;
@@ -64,39 +79,122 @@
   gap: 1.5rem;
   align-items: center;
 }
+
 .cardsContainer img {
   width: 100%;
   object-fit: cover;
 }
+
 .cardsContainer .card2 img {
   height: 100%;
   width: auto;
   position: relative;
   left: -20%;
 }
+
 .cardsContainer video {
   height: 100%;
   scale: 1.09;
   position: relative;
   top: 25px;
+  border-radius: 20px;
 }
+
 .cardsContainer .card5 img {
   position: relative;
   top: -20%;
 }
+
 .cardsContainer .card7 img {
   position: relative;
   top: -26%;
 }
+
 .cardsContainer .card4 img {
   position: relative;
   top: -45%;
 }
+
+.cardsContainer video {
+  border-radius: 20px !important;
+}
+
 @keyframes slide {
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-100%);
+  }
+}
+
+@media (max-width:768px) {
+  .card1 {
+    height: 50vh;
+    /* 500px / 1000px * 100 */
+    width: 60vw;
+    /* 600px / 1000px * 100 */
+    position: relative;
+    top: 10%;
+    border-radius: 20px;
+  }
+
+  .card2 {
+    height: 40vh;
+    /* 600px / 1000px * 100 */
+    width: 70vw;
+    /* 500px / 1000px * 100 */
+    position: relative;
+    top: 15%;
+    border-radius: 20px;
+  }
+
+  .card3 {
+    height: 60vh;
+    /* 600px / 1000px * 100 */
+    width: 50vw;
+    /* 500px / 1000px * 100 */
+    position: relative;
+    top: 5%;
+    border-radius: 20px;
+  }
+
+  .card4 {
+    height: 45vh;
+    /* 450px / 1000px * 100 */
+    width: 70vw;
+    /* 700px / 1000px * 100 */
+    position: relative;
+    top: 29%;
+    border-radius: 20px;
+  }
+
+  .card5 {
+    height: 40vh;
+    /* 400px / 1000px * 100 */
+    width: 60vw;
+    /* 600px / 1000px * 100 */
+    border-radius: 20px;
+  }
+
+  .card6 {
+    height: 30vh;
+    /* 300px / 1000px * 100 */
+    width: 45vw;
+    /* 450px / 1000px * 100 */
+    border-radius: 20px;
+  }
+
+  .card7 {
+    height: 70vh;
+    /* 700px / 1000px * 100 */
+    width: 85vw;
+    /* 850px / 1000px * 100 */
+    border-radius: 20px;
+  }
+
+  .cardsContainer video {
+    border-radius: 20px;
   }
 }
