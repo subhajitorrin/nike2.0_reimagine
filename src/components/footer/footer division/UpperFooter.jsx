@@ -41,29 +41,13 @@ function UpperFooter() {
           {
             opacity: 0,
             scale: 10,
-            stagger: {
-              each: 0.2,
-              from: "center", // Stagger from the edges instead of center
-              grid: [3, 3], // Stagger in a grid pattern with 5 columns and 5 rows
-              ease: "power2.out", // Use a different easing function for a varied effect
+            y: function () {
+              return Math.random() * 2000 - 1000; // generates a random y position between -300 and 300
             },
-          },
-          "a"
-        );
-        t1.from(
-          ".textAnimationTop",
-          {
-            y: -100, // Move up
-            stagger: .1
-          },
-          "a"
-        );
-
-        t1.from(
-          ".textAnimationBottom",
-          {
-            y: 100, // Move down
-            opacity: 0,
+            stagger: {
+              amount: 1, // adjust the amount of stagger time
+            },
+            ease: "power2.inOut", // easing function for the stagger timing
           },
           "a"
         );
@@ -125,33 +109,12 @@ function UpperFooter() {
           {
             opacity: 0,
             scale: 7,
-            stagger: {
-              each: 0.1,
-              from: "start", // other options: "center", "end", "edges", etc.
-              grid: "auto", // specify rows and columns if needed
-              ease: "power2.inOut", // easing function for the stagger timing
+            y: function () {
+              return Math.random() * 1000 - 500; // generates a random y position between -300 and 300
             },
-          },
-          "a"
-        );
-        t1.from(
-          ".textAnimationLeft",
-          {
-            left: -500,
-          },
-          "a"
-        );
-        t1.from(
-          ".textAnimationRight",
-          {
-            right: -500,
-          },
-          "a"
-        );
-        t1.from(
-          ".textAnimationTop",
-          {
-            y: -1000,
+            stagger: {
+              amount: 1, // adjust the amount of stagger time
+            },
           },
           "a"
         );
