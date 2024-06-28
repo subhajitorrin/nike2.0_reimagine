@@ -79,7 +79,6 @@ at App.jsx line 13
       <Section1 />
       <CardSection />
       {!isLoading && <Model />}
-      {/* <Section /> */}
       <MovingCards />
       <Insta />
       {!isLoading && <Footer />}

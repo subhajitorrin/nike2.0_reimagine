@@ -9,7 +9,7 @@ html {
 }
 
 @media screen and (max-width: 767px) {
-  .cursor{
+  .cursor {
     opacity: 0;
   }
 }
@@ -30,4 +30,17 @@ html {
 .strokeText {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px white;
+}
+@media (max-width: 768px) {
+  .strokeText {
+    -webkit-text-stroke: .7px white;
+  }
+}
+.textAnimationSectionContainer div {
+  font-size: 7vw;
+  color: white;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: bold;
+  position: relative;
 }
