@@ -79,7 +79,7 @@ at App.jsx line 13
         settoggleNavbar={settoggleNavbar}
       />
       <SwipeComponent/>
-      <Section1 />
+      {/* <Section1 /> */}
       <CardSection />
       {!isLoading && <Model />}
       <MovingCards />
