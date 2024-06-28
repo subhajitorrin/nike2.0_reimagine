@@ -8,7 +8,7 @@
   flex-direction: column;
   user-select: none;
   position: fixed;
-  z-index: 10000;
+  z-index: 999999999999999999999999999999;
   transition: all .3s ease-in-out;
   user-select: none;
 }

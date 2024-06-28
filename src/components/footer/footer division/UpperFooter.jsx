@@ -51,6 +51,30 @@ function UpperFooter() {
           },
           "a"
         );
+        t1.from(
+          ".videoAnimationStg",
+          {
+            opacity: 0,
+            scale: 10,
+            y: function () {
+              return Math.random() * 2000 - 1000; // generates a random y position between -300 and 300
+            },
+            stagger: {
+              amount: 1, // adjust the amount of stagger time
+            },
+            ease: "power2.inOut", // easing function for the stagger timing
+          },
+          "a"
+        );
+        t1.to(videoRef.current, {
+          height: "25vh",
+          width: "90vw",
+          duration: 1,
+        });
+        t1.to(".textAnimationStg", {
+          opacity: 0,
+          stagger:.1
+        });
       },
       { scope: ref }
     );
@@ -74,8 +98,16 @@ function UpperFooter() {
             <br />
             <div
               ref={videoRef}
-              className="textAnimationStg border h-[40px] w-[70%] mt-[1vw] rounded-[10px]"
-            ></div>
+              className="flex items-center justify-center overflow-hidden videoAnimationStg border h-[40px] w-[70%] mt-[1vw] rounded-[10px]"
+            >
+              <video
+                src={clip}
+                muted
+                autoPlay
+                loop
+                className="scale-[2] w-full relative top-[1rem]"
+              ></video>
+            </div>
             <br />
             <div class="textAnimationStg  ">Just&nbsp;</div>
             <div class="textAnimationStg strokeText  ">&nbsp;do&nbsp;</div>

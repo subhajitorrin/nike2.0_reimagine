@@ -14,7 +14,7 @@ import Section1 from "./components/Section1/Section1";
 import CardSection from "./components/CardSection/CardSection";
 import Insta from "./components/Instasection/Insta";
 import UpperFooter from "./components/footer/footer division/UpperFooter";
-import SwipeComponent from "./components/HeroSwipe/SwipeComponent.jsx"
+import SwipeComponent from "./components/HeroSwipe/SwipeComponent.jsx";
 
 function App() {
   const [isLoading, setisLoading] = useState(true);
@@ -57,6 +57,20 @@ function App() {
     };
   }, [toggleNavbar]);
 
+  // useEffect(() => {
+  //   if (isLoading) {
+  //     document.querySelectorAll(".CursorTrail").forEach((item) => {
+  //       item.style.display = "none";
+  //     });
+  //   } else {
+  //     setTimeout(() => {
+  //       document.querySelectorAll(".CursorTrail").forEach((item) => {
+  //         item.style.display = "flex";
+  //       });
+  //     }, 1000);
+  //   }
+  // }, [isLoading]);
+
   /*****
 if you are commenting <Loader/> 
 then make isLoading usestate to false
@@ -64,7 +78,6 @@ at App.jsx line 13
 *****/
 
   return (
-
     <div
       id="main"
       style={{
@@ -78,7 +91,7 @@ at App.jsx line 13
         toggleNavbar={toggleNavbar}
         settoggleNavbar={settoggleNavbar}
       />
-      <SwipeComponent/>
+      <SwipeComponent />
       {/* <Section1 /> */}
       <CardSection />
       {!isLoading && <Model />}
