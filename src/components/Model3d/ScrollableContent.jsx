@@ -22,7 +22,7 @@ const ScrollableContent = () => {
 
   return (
     <div className="bg-transparent pt-screen relative">
-      <section ref={section1Ref} className="h-screen p-8 relative border-2 border-red-900">
+      <section ref={section1Ref} className="h-screen p-8 relative">
         <div className='absolute top-[10%] left-0 px-10'>
           <div ref={headings1Ref} className='headings1'>
             <h2 className="text-2xl font-bold mb-4">
@@ -43,7 +43,7 @@ const ScrollableContent = () => {
           </p>
         </div>
       </section>
-      <section ref={section1Ref} className="h-screen p-8 relative border-2 border-red-900">
+      <section ref={section1Ref} className="h-screen p-8 relative">
         <div className='absolute top-[10%] right-0 px-10'>
           <div ref={headings1Ref} className='headings1'>
             <h2 className="text-2xl font-bold mb-4">
@@ -64,7 +64,7 @@ const ScrollableContent = () => {
           </p>
         </div>
       </section>
-      <section ref={section1Ref} className="h-screen p-8 relative border-2 border-red-900">
+      <section ref={section1Ref} className="h-screen p-8 relative">
         <div className='absolute bottom-[10%] left-0 px-10'>
           <div ref={headings1Ref} className='headings1'>
             <h2 className="text-2xl font-bold mb-4">

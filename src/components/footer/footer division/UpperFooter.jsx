@@ -33,7 +33,6 @@ function UpperFooter() {
             end: "250% 50%",
             scrub: 2,
             pin: true,
-            markers: true,
           },
         });
         t1.from(
@@ -133,7 +132,6 @@ function UpperFooter() {
             end: "250% 50%",
             scrub: 2,
             pin: true,
-            markers: true,
           },
         });
         t1.from(

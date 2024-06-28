@@ -33,14 +33,14 @@ const Model = () => {
   const modelPositionRef = useRef(new THREE.Vector3(0, 0, 1));
 
   useEffect(() => {
-    const totalRotation = Math.PI * 2; // Full 360 degree rotation
+    const totalRotation = Math.PI * 3; // Full 360 degree rotation
 
     // ScrollTrigger for model rotation
     ScrollTrigger.create({
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 2,
+      scrub: 0.0001,
       onUpdate: (self) => {
         if (first.current) {
           const newRotation = self.progress * totalRotation;
@@ -56,7 +56,7 @@ const Model = () => {
       trigger: "#scrollable-content",
       start: "top bottom",
       end: "top top",
-      scrub: 2,
+      scrub: 0.0001,
       onUpdate: (self) => {
         if (scrollableContentRef.current) {
           gsap.to(scrollableContentRef.current, {
@@ -72,7 +72,7 @@ const Model = () => {
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 2,
+      scrub: 0.0001,
       onUpdate: (self) => {
         const progress = self.progress * 3; // Scale progress to 0-3 range (3 sections)
         let newX;
