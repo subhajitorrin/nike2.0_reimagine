@@ -60,7 +60,7 @@ const Model = () => {
       onUpdate: (self) => {
         if (scrollableContentRef.current) {
           gsap.to(scrollableContentRef.current, {
-            y: `${-self.progress * 200}vh`,
+            y: `${-self.progress * 300}vh`,
             ease: "none",
           });
         }
@@ -72,25 +72,32 @@ const Model = () => {
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: true,
+      scrub: 0.2,
       onUpdate: (self) => {
-        const progress = self.progress * 2; // Scale progress to 0-2 range
-        let newX, newZ;
+        const progress = self.progress * 4; // Scale progress to 0-3 range
+        let newX;
+        let newZ;
     
-        if (progress <= 1) {
-          // First 100vh: Move left and zoom in
-          newX = -2 * progress; // Move from 0 to -6
-          newZ = 1 - progress * 0.5; // Zoom in from 1 to 0.5
-        } else {
-          // Second 100vh: Move right and zoom out
-          newX = -2 + (progress - 1) * 12; // Move from -6 to 6
-          newZ = 0.5 + (progress - 1) * 0.5; // Zoom out from 0.5 back to 1
+        if (progress < 0.5) {
+          // First 100vh: Move from left to center
+          newX = progress * 2 ; // Move from -4 to 0
+          console.log("if " , progress , newX)
+        } else if (progress <= 1.5) {
+          // Second 100vh: Move from center to right
+          newX = (progress - 1) * 12; // Move from 0 to 4
+          console.log("else if " , progress , newX)
+        }
+        else if(progress <= 2) {
+          newX = (progress - 1) * 12 - newX;
+        }
+        else {
+          // Last 100vh: Move from right back to center
+          newX = 4 - (progress - 2) * 6; // Move from 4 to 0
         }
     
-        modelPositionRef.current.set(newX, -1, newZ);
+        modelPositionRef.current.set(newX, -1, 1);
       },
     });
-
   }, []);
 
   return (
