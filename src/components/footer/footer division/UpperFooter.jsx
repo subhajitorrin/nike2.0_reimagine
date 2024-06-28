@@ -84,7 +84,7 @@ function UpperFooter() {
           ref={mainRef}
           className="min-h-screen bg-black flex items-center justify-center"
         >
-          <p className="relative text-center leading-500 text-uppercase textAnimationSectionContainer">
+          <p className="tektur relative text-center leading-500 text-uppercase textAnimationSectionContainer">
             <div class="textAnimationStg   textAnimationTop ">Even&nbsp;</div>
             <div class="textAnimationStg   textAnimationTop ">if&nbsp;</div>
             <div class="textAnimationStg   textAnimationTop strokeText">
@@ -171,7 +171,7 @@ function UpperFooter() {
           ref={mainRef}
           className=" min-h-screen w-full flex items-center justify-center bg-black flex-col gap-8"
         >
-          <p className="relative text-center leading-500 text-uppercase">
+          <p className="relative text-center leading-500 text-uppercase tektur">
             <div class="inline-block text-white text-[3.5vw] uppercase  font-bold relative textAnimationStg textAnimationLeft strokeText">
               Even&nbsp;
             </div>

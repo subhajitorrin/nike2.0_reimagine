@@ -15,7 +15,7 @@
 .loaderContainer h1 {
   color: #eae6e3;
   font-size: 12rem;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
 .imgCard {
   height: 250px;

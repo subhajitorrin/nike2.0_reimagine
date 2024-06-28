@@ -4,7 +4,7 @@ import ImgCard from "./ImgCard";
 import gsap from "gsap";
 
 function Loader({ isLoading, setisLoading }) {
-  const [counter, setcounter] = useState(100);
+  const [counter, setcounter] = useState(0);
   // const [isLoading, setisLoading] = useState(true);
   useEffect(() => {
     if (counter < 50) {
@@ -36,8 +36,8 @@ function Loader({ isLoading, setisLoading }) {
 
   return (
     <div className="loaderContainer">
-      <div className="wrapper">
-        <h1>{counter}</h1>
+      <div className="wrapper ">
+        <h1 className="tektur">{counter}</h1>
         <div className="imglist">
           <ImgCard isLoading={isLoading} />;
         </div>

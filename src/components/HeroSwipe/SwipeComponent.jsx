@@ -83,9 +83,10 @@ function SwipeComponent() {
             nextEl: ".Next.Btn",
             prevEl: ".Prev.Btn",
           }}
-        //   autoplay={{
-        //       delay:4000,
-        //   }}
+          autoplay={{
+              delay:4000,
+              disableOnInteraction:false
+          }}
           speed={750}
           shortSwipes={true}
           spaceBetween={0}
