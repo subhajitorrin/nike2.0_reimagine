@@ -26,3 +26,8 @@ html {
   transition: opacity 1s linear;
   pointer-events: none;
 }
+
+.strokeText {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px white;
+}

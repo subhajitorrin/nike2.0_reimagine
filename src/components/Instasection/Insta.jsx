@@ -18,7 +18,8 @@ const Insta = () => {
   }, []);
   if (innerWidth <= 1000) {
     return (
-      <div className="bg-[#e13251] flex flex-col gap-[4rem] py-[5rem]">
+      <div className="bg-[#e13251] flex flex-col gap-[4rem] py-[5rem] relative ">
+        <div className="bg-white h-[5vh] w-full absolute top-0 left-0 "></div>
         <div className="relative ">
           <img
             src={img1}
@@ -71,7 +72,8 @@ const Insta = () => {
     );
   } else {
     return (
-      <div className="Insta-secContainer h-[170vh] bg-[#e13251]">
+      <div className="Insta-secContainer h-[170vh] bg-[#e13251] relative">
+        <div className="bg-white h-[5vh] w-full absolute top-[-20px] left-0"></div>
         <div className="absolute top-[50vh] left-[35%]">
           <h2
             className="text-[white] text-[3rem] leading-[100%] text-center z-[100]"
