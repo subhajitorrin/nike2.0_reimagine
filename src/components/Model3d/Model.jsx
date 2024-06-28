@@ -40,7 +40,7 @@ const Model = () => {
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 1,
+      scrub: 2,
       onUpdate: (self) => {
         if (first.current) {
           const newRotation = self.progress * totalRotation;
@@ -56,7 +56,7 @@ const Model = () => {
       trigger: "#scrollable-content",
       start: "top bottom",
       end: "top top",
-      scrub: true,
+      scrub: 2,
       onUpdate: (self) => {
         if (scrollableContentRef.current) {
           gsap.to(scrollableContentRef.current, {
@@ -72,36 +72,31 @@ const Model = () => {
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 0.2,
+      scrub: 2,
       onUpdate: (self) => {
-        const progress = self.progress * 4; // Scale progress to 0-3 range
+        const progress = self.progress * 3; // Scale progress to 0-3 range (3 sections)
         let newX;
         let newZ;
     
-        if (progress < 0.5) {
-          // First 100vh: Move from left to center
-          newX = progress * 2 ; // Move from -4 to 0
-          console.log("if " , progress , newX)
-        } else if (progress <= 1.5) {
-          // Second 100vh: Move from center to right
-          newX = (progress - 1) * 12; // Move from 0 to 4
-          console.log("else if " , progress , newX)
-        }
-        else if(progress <= 2) {
-          newX = (progress - 1) * 12 - newX;
-        }
-        else {
-          // Last 100vh: Move from right back to center
-          newX = 4 - (progress - 2) * 6; // Move from 4 to 0
+        if (progress < 1) {
+          // First section: Move from left to right
+          newX = -4 + progress * 6; // Move from -4 to 4
+        } else if (progress < 2) {
+          // Second section: Move from right to left
+          newX = 4 - (progress - 1) * 8; // Move from 4 to -4
+          newZ = 1 + (progress - 1) * 1
+        } else {
+          // Third section: Move from left to right again
+          newX = -4 + (progress - 2) * 6; // Move from -4 to 4
         }
     
-        modelPositionRef.current.set(newX, -1, 1);
+        modelPositionRef.current.set(newX, -1, newZ);
       },
     });
   }, []);
 
   return (
-    <div className="relative w-full h-[300vh]" id="main">
+    <div className="relative w-full h-[400vh]" id="main">
       <div className="fixed top-0 left-0 w-full h-screen">
         <ModelView
           index={1}
