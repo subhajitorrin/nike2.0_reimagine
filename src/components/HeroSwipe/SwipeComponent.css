@@ -20,8 +20,8 @@
   backdrop-filter: grayscale(10%); */
   position: relative;
   top:0;
-  z-index: 99;
-  background-color: yellow;
+  z-index: 990000;
+  background-color:rgb(255, 252, 252);
 }
 .my-swiper {
   width: 100%;

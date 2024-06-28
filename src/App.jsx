@@ -17,7 +17,7 @@ import UpperFooter from "./components/footer/footer division/UpperFooter";
 import SwipeComponent from "./components/HeroSwipe/SwipeComponent.jsx";
 
 function App() {
-  const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setisLoading] = useState(false);
   // const locomotiveScroll = new LocomotiveScroll();
   const containerRef = useRef(null);
   const [toggleNavbar, settoggleNavbar] = useState(false);
@@ -86,7 +86,7 @@ at App.jsx line 13
     >
       <div className="blureffect"></div>
       {/* <Cursor /> */}
-      <Loader isLoading={isLoading} setisLoading={setisLoading} />
+      {/* <Loader isLoading={isLoading} setisLoading={setisLoading} /> */}
       <FullscreenNavbar
         toggleNavbar={toggleNavbar}
         settoggleNavbar={settoggleNavbar}
