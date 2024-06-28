@@ -14,6 +14,7 @@ import Section1 from "./components/Section1/Section1";
 import CardSection from "./components/CardSection/CardSection";
 import Insta from "./components/Instasection/Insta";
 import UpperFooter from "./components/footer/footer division/UpperFooter";
+import SwipeComponent from "./components/HeroSwipe/SwipeComponent.jsx"
 
 function App() {
   const [isLoading, setisLoading] = useState(true);
@@ -63,6 +64,7 @@ at App.jsx line 13
 *****/
 
   return (
+
     <div
       id="main"
       style={{
@@ -76,6 +78,7 @@ at App.jsx line 13
         toggleNavbar={toggleNavbar}
         settoggleNavbar={settoggleNavbar}
       />
+      <SwipeComponent/>
       <Section1 />
       <CardSection />
       {!isLoading && <Model />}
