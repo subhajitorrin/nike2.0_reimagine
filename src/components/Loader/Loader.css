@@ -13,9 +13,10 @@
   user-select: none;
 }
 .loaderContainer h1 {
-  color: #eae6e3;
+  color: #c2bfbc;
   font-size: 12rem;
   /* font-family: sans-serif; */
+  opacity: .6;
 }
 .imgCard {
   height: 250px;

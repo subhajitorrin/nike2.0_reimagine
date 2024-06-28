@@ -60,7 +60,7 @@ function ShoeCard({ shoe, title, desc }) {
         <div className="h-[30%]  flex justify-between items-center px-[1.7rem] text-black">
           <div className="text-[1.2vw] leading-[100%]">
             <p>{title}</p>
-            <p>{desc}</p>
+            <p className="text-[#ACA3A3]">{desc}</p>
           </div>
           <div className="overflow-hidden relative border border-black border-opacity-[.3] p-[1rem] rounded-[50%] h-[3vw] w-[3vw] flex items-center justify-center">
             <div

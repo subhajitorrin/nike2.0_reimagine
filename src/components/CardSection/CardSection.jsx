@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ShoeCard from "./ShoeCard";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import shoe1 from "../../assets/ShoeCardImgs/shoe1.png";
@@ -6,6 +6,7 @@ import shoe2 from "../../assets/ShoeCardImgs/shoe2.png";
 import shoe3 from "../../assets/ShoeCardImgs/shoe3.png";
 import shoe4 from "../../assets/ShoeCardImgs/shoe4.png";
 import MobileShoeCard from "./MobileShoeCard";
+import gsap from "gsap";
 
 const shoeList = [
   { shoe: shoe1, title: "AIR JORDAN 1", desc: "Classic, coveted, enduring." },
@@ -35,8 +36,8 @@ function CardSection() {
   }, []);
   if (innerWidth <= 768) {
     return (
-      <div className="w-full text-white flex flex-col items-center gap-[4rem] bg-[#f4f2f0] py-[5rem] relative border  z-[1]">
-        <div className="text-center text-[6vw] text-black mb-[10%]">
+      <div className=" w-full text-white flex flex-col items-center gap-[4rem] bg-[#f4f2f0] py-[5rem] relative border  z-[1]">
+        <div className="tektur text-center text-[6vw] text-black mb-[10%]">
           "Just do it.
           <br />
           Define your greatness."
@@ -72,15 +73,26 @@ function CardSection() {
       </div>
     );
   } else {
+    const btnRef = useRef(null);
+    function handleMouseEnter() {
+      gsap.set(btnRef.current, {
+        backgroundColor:"white"
+      });
+    }
+    function handleMouseLeave() {
+      gsap.set(btnRef.current, {
+        backgroundColor:"#eb244b"
+      });
+    }
     return (
-      <div className="w-full text-white flex flex-col items-center gap-[4rem] bg-[#f4f2f0] py-[5rem] relative z-[1]">
+      <div className="tektur w-full text-white flex flex-col items-center gap-[4rem] bg-[#f4f2f0] py-[5rem] relative z-[1]">
         <div className="text-center text-[2rem] text-black ">
           "Just do it.
           <br />
           Define your greatness."
         </div>
-        <div className="text-[#eae6e3] absolute font-[800] text-[7rem] top-[11%] z-[20] pointer-events-none">
-          JORDANSPORT
+        <div className="text-[#eae6e3] strokeTextGray absolute font-[800] text-[7rem] top-[11%] z-[20] pointer-events-none">
+          JO<span className="">RDANSPO</span>RT
         </div>
         <div className="h-[110vh] w-[75%] flex gap-[1rem] ">
           <div className=" h-full w-[33%] flex items-center justify-center ">
@@ -110,7 +122,12 @@ function CardSection() {
             />
           </div>
         </div>
-        <div className="items-center text-[1.2rem] flex gap-[1rem] px-[2rem] py-[1.5rem] border rounded-[35px] bg-[#eb244b] text-white font-bold">
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          ref={btnRef}
+          className="items-center text-[1.2rem] flex gap-[1rem] px-[2rem] py-[1.5rem] border rounded-[35px] bg-[#eb244b] text-white font-bold"
+        >
           all shoes <HiArrowNarrowRight className="text-white text-[1.5rem]" />
         </div>
       </div>

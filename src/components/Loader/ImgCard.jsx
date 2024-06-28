@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Loader.css";
 import gsap from "gsap";
-import card1 from "../../assets/MovingCards/card1.jpg";
-import card2 from "../../assets/MovingCards/card2.jpg";
-import card4 from "../../assets/MovingCards/card4.jpg";
-import card5 from "../../assets/MovingCards/card5.jpg";
-import card6 from "../../assets/MovingCards/card6.jpg";
-import card7 from "../../assets/MovingCards/card7.jpg";
+import card1 from "../../assets/LoaderScreenImages/shoe1.jpg";
+import card2 from "../../assets/LoaderScreenImages/shoe2.jpg";
+import card4 from "../../assets/LoaderScreenImages/shoe3.jpg";
+import card5 from "../../assets/LoaderScreenImages/shoe4.jpg";
+import card6 from "../../assets/LoaderScreenImages/shoe5.jpg";
+import card7 from "../../assets/LoaderScreenImages/shoe6.jpg";
 
 const cardsArr = [card1, card2, card4, card5, card6, card7];
 
