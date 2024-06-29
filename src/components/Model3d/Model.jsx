@@ -33,19 +33,23 @@ const Model = () => {
   const modelPositionRef = useRef(new THREE.Vector3(0, 0, 1));
 
   useEffect(() => {
-    const totalRotation = Math.PI * 3; // Full 360 degree rotation
+    const totalRotation = Math.PI * 6; // Full 360 degree rotation
 
     // ScrollTrigger for model rotation
     ScrollTrigger.create({
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 0.0001,
+      scrub: 3,
       onUpdate: (self) => {
         if (first.current) {
           const newRotation = self.progress * totalRotation;
           const rotationChange = newRotation - rotationRef.current;
-          first.current.rotation.y += rotationChange;
+          gsap.to(first.current.rotation, {
+            y: `+=${rotationChange}`,
+            duration: 0.5,
+            ease: "power2.out"
+          });
           rotationRef.current = newRotation;
         }
       },
@@ -56,12 +60,13 @@ const Model = () => {
       trigger: "#scrollable-content",
       start: "top bottom",
       end: "top top",
-      scrub: 0.0001,
+      scrub: 3,
       onUpdate: (self) => {
         if (scrollableContentRef.current) {
           gsap.to(scrollableContentRef.current, {
             y: `${-self.progress * 300}vh`,
-            ease: "none",
+            duration: 0.5,
+            ease: "power2.out"
           });
         }
       },
@@ -72,25 +77,33 @@ const Model = () => {
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 0.0001,
+      scrub: 3,
       onUpdate: (self) => {
-        const progress = self.progress * 3; // Scale progress to 0-3 range (3 sections)
-        let newX;
-        let newZ;
-    
+        const progress = self.progress * 4;
+        let newX, newZ;
+
         if (progress < 1) {
-          // First section: Move from left to right
-          newX = -4 + progress * 6; // Move from -4 to 4
-        } else if (progress < 2) {
-          // Second section: Move from right to left
-          newX = 4 - (progress - 1) * 8; // Move from 4 to -4
-          newZ = 1 + (progress - 1) * 1
-        } else {
-          // Third section: Move from left to right again
-          newX = -4 + (progress - 2) * 6; // Move from -4 to 4
+          newX = gsap.utils.interpolate(-2, 0, gsap.utils.clamp(0, 1, progress));
+          newZ = 1;
+        } else if (progress < 1.5) {
+          newX = gsap.utils.interpolate(0, -6, gsap.utils.clamp(0, 1, progress - 1));
+          newZ = gsap.utils.interpolate(1, 2, gsap.utils.clamp(0, 1, progress - 1));
+        } else if(progress < 2) {
+          newX = gsap.utils.interpolate(-2, 4, gsap.utils.clamp(0, 1, progress - 2));
+          console.log(progress)
+          newZ = 1;
         }
-    
-        modelPositionRef.current.set(newX, -1, newZ);
+        else {
+          newX = gsap.utils.interpolate(0, 4, gsap.utils.clamp(0, 1, progress - 2));
+        }
+
+        gsap.to(modelPositionRef.current, {
+          x: newX,
+          y: -1,
+          z: newZ,
+          duration: 0.5,
+          ease: "power2.out"
+        });
       },
     });
   }, []);
