@@ -67,6 +67,7 @@
 .card7 {
   height: 700px;
   width: 850px;
+ 
 }
 
 .cardsContainer img {
@@ -90,31 +91,28 @@
 .cardsContainer .card2 img {
   height: 100%;
   width: auto;
-  position: relative;
-  left: -20%;
+ 
 }
 
 .cardsContainer video {
   height: 100%;
   scale: 1.09;
-  position: relative;
-  top: 25px;
+
   border-radius: 20px;
 }
 
 .cardsContainer .card5 img {
   position: relative;
-  top: -20%;
+ 
 }
 
 .cardsContainer .card7 img {
   position: relative;
-  top: -26%;
 }
 
 .cardsContainer .card4 img {
   position: relative;
-  top: -45%;
+ 
 }
 
 @keyframes slide {

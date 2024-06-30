@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./MovingCards.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import card1 from "../../assets/MovingCards/card1.jpg";
-import card2 from "../../assets/MovingCards/card2.jpg";
+import card1 from "../../assets/MovingCards/asset 28.jpeg";
+import card2 from "../../assets/MovingCards/asset 29.jpeg";
 import card3 from "../../assets/MovingCards/card3.mp4";
-import card4 from "../../assets/MovingCards/card4.jpg";
-import card5 from "../../assets/MovingCards/card5.jpg";
-import card6 from "../../assets/MovingCards/card6.jpg";
-import card7 from "../../assets/MovingCards/card7.jpg";
+import card4 from "../../assets/MovingCards/asset 31.jpeg";
+import card5 from "../../assets/MovingCards/asset 22.jpeg";
+import card6 from "../../assets/MovingCards/asset 23.jpeg";
+import card7 from "../../assets/MovingCards/asset 25.jpeg";
 
 function MovingCards() {
   function handelLog() {
