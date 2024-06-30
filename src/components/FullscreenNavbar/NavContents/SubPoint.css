@@ -6,7 +6,6 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
   padding-left: 10%;
-  overflow-y: auto;
   padding-top: 5%;
   padding-bottom: 5%;
 }
@@ -14,7 +13,7 @@
   height: auto;
   width: 350px;
   border-radius: 20px;
-  /* border: 1px solid white; */
+  border: 1px solid white;
   padding: 5% 7%;
   font-size: 1.3rem;
   font-family: sans-serif;
