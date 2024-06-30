@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -10,101 +10,160 @@ const ScrollableContent = () => {
   const containerRef = useRef(null);
   const childRef1 = useRef(null);
   const childRef2 = useRef(null);
+  const section2Ref = useRef(null);
+  const section3Ref = useRef(null);
 
-  const text = "DOMINANT THE SUMMITS SUMMITS".split(" ");
-  const subject = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus cupiditate maxime inventore magni illum dolores corrupti, eveniet aliquam aliquid tempora quas? Quibusdam quas est neque nemo ratione, ad iusto Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quis dicta, deleniti nihil laborum consequuntur voluptatum error dolorem animi itaque? ....".split(" ");
+  const section1 = {
+    title: "A Journey Through Time",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nemo illum, sit optio numquam deleniti, ipsam accusamus provident quod iure saepe, repellendus sapiente sunt necessitatibus aperiam adipisci. Nihil unde alias odit quo qui? Unde molestias architecto minima non sequi atque dolor veniam perferendis? Nobis odio corrupti beatae delectus. A, aliquam?",
+  };
 
-  useGSAP(() => {
-      gsap.to(containerRef.current, {
+  useGSAP(
+    () => {
+      const t1 = gsap.timeline({
         scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 90%',
-          end: 'top 10%',
-          scrub: 5,
-          scroller: containerRef.current,
-        },
-      });
-      gsap.from('.headings1 h2', {
-        opacity: 0,
-        y: 50,
-        stagger: {
-          amount: 1,
-        },
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: childRef1.current,
-          start: 'top 90%',
-          end: 'top 50%',
-          scrub: true,
+          trigger: section2Ref.current,
+          start: "50% 50%",
+          end: "200% 50%",
+          scrub: 1,
+          pin: true,
           markers: true,
         },
       });
-      gsap.from('.headings2', {
+      t1.from(".TextAnimationSection1", {
         opacity: 0,
-        y: 50,
+        scale: 3,
+        y: function () {
+          return Math.random() * 600 - 300;
+        },
         stagger: {
           amount: 1,
         },
-        ease: "power2.inOut",
-        scrollTrigger: {
-          trigger: childRef2.current,
-          start: 'top 90%',
-          end: 'top 20%',
-          scrub: 5,
+      });
+      t1.to(".TextAnimationSection1", {
+        duration: 5,
+      });
+      t1.to(".TextAnimationSection1", {
+        opacity: 0,
+        scale: 2,
+        y: function () {
+          return Math.random() * 200 - 100;
+        },
+        stagger: {
+          amount: 1,
         },
       });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(st => st.kill());
-    };
-  }, { scope: containerRef });
+      return () => {
+        t1.kill();
+      };
+    },
+    { scope: containerRef }
+  );
+  useGSAP(
+    () => {
+      const t1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: section3Ref.current,
+          start: "50% 50%",
+          end: "200% 50%",
+          scrub: 1,
+          pin: true,
+          markers: true,
+        },
+      });
+      t1.from(".TextAnimationSection2", {
+        opacity: 0,
+        scale: 3,
+        y: function () {
+          return Math.random() * 600 - 300;
+        },
+        stagger: {
+          amount: 1,
+        },
+      });
+      t1.to(".TextAnimationSection2", {
+        duration: 5,
+      });
+      t1.to(".TextAnimationSection2", {
+        opacity: 0,
+        scale: 2,
+        y: function () {
+          return Math.random() * 200 - 100;
+        },
+        stagger: {
+          amount: 1,
+        },
+      });
+      return () => {
+        t1.kill();
+      };
+    },
+    { scope: containerRef }
+  );
 
   return (
-    <div ref={containerRef} className="bg-transparent pt-screen relative border-2 border-red-900">
-      <section className="h-screen p-8 relative animated-section">
-        <div className='absolute top-[10%] left-0 px-10 border-4 opacity-1' ref={childRef1}>
-          <div className='headings1'>
-            <h2 className="text-2xl font-bold mb-4">
-              DOMINANT THE SUMMITS SUMMITS
-            </h2>
-            <h2 className="text-4xl font-bold mb-4">
-              DOMINANT THE SUMMITS SUMMITS
-            </h2>
-          </div>
-          <p className='w-[30rem]'>
-            {subject.map((el, index) => (
-              <span key={index}>{el} </span>
-            ))}
-          </p>
-        </div>
-      </section>
-      <section className="h-screen p-8 relative">
-
-      </section>
-      <section className="h-screen p-8 relative">
-
-      </section>
-      <section className="h-screen p-8 relative animated-section" ref={childRef2}>
-        <div className='absolute bottom-[60%] right-0 ml-[2rem] border-4 opacity-1'>
-          <div className='headings2'>
-            <h2 className="text-2xl font-bold mb-4">
-              {text.map((el, index) => (
-                <span key={index}>{el} </span>
+    <div
+      ref={containerRef}
+      className="bg-transparent relative border-2 border-red-900 h-[400vh]"
+    >
+      <div className="">
+        <div
+          ref={section2Ref}
+          className="modelSection2 h-screen border-black border pt-[10rem]"
+        >
+          <div className="absolute right-0 w-[40vw] h-[40vh] border border-black flex items-center justify-center flex-col">
+            <h1 className="TextAnimationSection1 text-[2vw] font-bold tektur">
+              {section1.title.split(" ").map((word, index) => (
+                <div
+                  className="TextAnimationSection1 relative inline-block"
+                  key={index}
+                >
+                  {word}&nbsp;
+                </div>
               ))}
-            </h2>
-            <h2 className="text-4xl font-bold mb-4">
-              {text.map((el, index) => (
-                <span key={index}>{el} </span>
+            </h1>
+            <p>
+              {section1.desc.split(" ").map((word, index) => (
+                <div
+                  className="TextAnimationSection1 relative inline-block"
+                  key={index}
+                >
+                  {word}&nbsp;
+                </div>
               ))}
-            </h2>
+            </p>
           </div>
-          <p className='w-[30rem]'>
-            {subject.map((el, index) => (
-              <span key={index}>{el} </span>
-            ))}
-          </p>
         </div>
-      </section>
+      </div>
+      <div className="">
+        <div
+          ref={section3Ref}
+          className="modelSection2 h-screen border-black border pt-[10rem]"
+        >
+          <div className="w-[40vw] h-[40vh] border border-black flex items-center justify-center flex-col">
+            <h1 className="TextAnimationSection2 text-[2vw] font-bold tektur">
+              {section1.title.split(" ").map((word, index) => (
+                <div
+                  className="TextAnimationSection2 relative inline-block"
+                  key={index}
+                >
+                  {word}&nbsp;
+                </div>
+              ))}
+            </h1>
+            <p>
+              {section1.desc.split(" ").map((word, index) => (
+                <div
+                  className="TextAnimationSection2 relative inline-block"
+                  key={index}
+                >
+                  {word}&nbsp;
+                </div>
+              ))}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

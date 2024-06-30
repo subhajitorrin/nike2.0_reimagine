@@ -57,21 +57,21 @@ const Model = () => {
     });
 
     // ScrollTrigger for scrollable content animation
-    ScrollTrigger.create({
-      trigger: "#scrollable-content",
-      start: "top bottom",
-      end: "top top",
-      scrub: 100,
-      onUpdate: (self) => {
-        if (scrollableContentRef.current) {
-          gsap.to(scrollableContentRef.current, {
-            y: `${-self.progress * 300}vh`,
-            duration: 0.5,
-            ease: "power2.out"
-          });
-        }
-      },
-    });
+    // ScrollTrigger.create({
+    //   trigger: "#scrollable-content",
+    //   start: "top bottom",
+    //   end: "top top",
+    //   scrub: 100,
+    //   onUpdate: (self) => {
+    //     if (scrollableContentRef.current) {
+    //       gsap.to(scrollableContentRef.current, {
+    //         y: `${-self.progress * 300}vh`,
+    //         duration: 0.5,
+    //         ease: "power2.out"
+    //       });
+    //     }
+    //   },
+    // });
 
     // Updated ScrollTrigger for model position
     ScrollTrigger.create({
@@ -107,6 +107,9 @@ const Model = () => {
         });
       },
     });
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
@@ -139,8 +142,8 @@ const Model = () => {
       </div>
       <div
         id="scrollable-content"
-        ref={scrollableContentRef}
-        className="absolute top-[100vh] left-0 w-full"
+        // ref={scrollableContentRef}
+        className="absolute top-0 left-0 w-full"
       >
         <ScrollableContent />
       </div>
