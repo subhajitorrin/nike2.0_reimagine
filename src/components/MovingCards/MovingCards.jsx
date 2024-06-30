@@ -15,7 +15,7 @@ function MovingCards() {
     console.log("Form section");
   }
   return (
-    <div className="movingCardsContainer  bg-white" onClick={handelLog}>
+    <div className="movingCardsContainer  bg-black h-screen" onClick={handelLog}>
       <div className="cardsContainer">
         <div className="card card1">
           <img src={card1} alt="" />
