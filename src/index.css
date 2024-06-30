@@ -126,6 +126,13 @@ canvas {
   font-family: tektur;
   src: url("./assets/Tektur-Variable.ttf");
 }
+@font-face {
+  font-family: vtregular;
+  src: url("./assets/VT323-Regular.ttf");
+}
+.vtregular {
+  font-family: vtregular;
+}
 .tektur {
   font-family: tektur;
 }

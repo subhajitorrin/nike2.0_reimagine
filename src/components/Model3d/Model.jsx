@@ -113,7 +113,7 @@ const Model = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[400vh]" id="main">
+    <div className="relative w-full h-[450vh]" id="main">
       <div className="fixed top-0 left-0 w-full h-screen">
         <ModelView
           index={1}

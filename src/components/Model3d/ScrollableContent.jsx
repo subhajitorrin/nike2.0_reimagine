@@ -14,7 +14,7 @@ const ScrollableContent = () => {
   const section3Ref = useRef(null);
 
   const section1 = {
-    title: "A Journey Through Time",
+    title: "  A Journey Through Time ",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nemo illum, sit optio numquam deleniti, ipsam accusamus provident quod iure saepe, repellendus sapiente sunt necessitatibus aperiam adipisci. Nihil unde alias odit quo qui? Unde molestias architecto minima non sequi atque dolor veniam perferendis? Nobis odio corrupti beatae delectus. A, aliquam?",
   };
 
@@ -27,7 +27,6 @@ const ScrollableContent = () => {
           end: "200% 50%",
           scrub: 1,
           pin: true,
-          markers: true,
         },
       });
       t1.from(".TextAnimationSection1", {
@@ -65,10 +64,9 @@ const ScrollableContent = () => {
         scrollTrigger: {
           trigger: section3Ref.current,
           start: "50% 50%",
-          end: "200% 50%",
+          end: "150% 50%",
           scrub: 1,
           pin: true,
-          markers: true,
         },
       });
       t1.from(".TextAnimationSection2", {
@@ -104,25 +102,22 @@ const ScrollableContent = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-transparent relative border-2 border-red-900 h-[400vh]"
+      className="bg-transparent relative  h-[400vh] px-[5rem]"
     >
       <div className="">
-        <div
-          ref={section2Ref}
-          className="modelSection2 h-screen border-black border pt-[10rem]"
-        >
-          <div className="absolute right-0 w-[40vw] h-[40vh] border border-black flex items-center justify-center flex-col">
-            <h1 className="TextAnimationSection1 text-[2vw] font-bold tektur">
+        <div ref={section2Ref} className="modelSection2 h-screen  pt-[10rem]">
+          <div className="absolute right-0 w-[40vw] h-[40vh]  flex items-center justify-center flex-col gap-[1rem]">
+            <h1 className="TextAnimationSection1 text-[2vw] font-bold tektur text-[#9e8b5c] rounded-[10px] overflow-hidden">
               {section1.title.split(" ").map((word, index) => (
                 <div
-                  className="TextAnimationSection1 relative inline-block"
+                  className="TextAnimationSection1 relative inline-block bg-black"
                   key={index}
                 >
                   {word}&nbsp;
                 </div>
               ))}
             </h1>
-            <p>
+            <p className="vtregular text-[1.4vw]">
               {section1.desc.split(" ").map((word, index) => (
                 <div
                   className="TextAnimationSection1 relative inline-block"
@@ -136,22 +131,19 @@ const ScrollableContent = () => {
         </div>
       </div>
       <div className="">
-        <div
-          ref={section3Ref}
-          className="modelSection2 h-screen border-black border pt-[10rem]"
-        >
-          <div className="w-[40vw] h-[40vh] border border-black flex items-center justify-center flex-col">
-            <h1 className="TextAnimationSection2 text-[2vw] font-bold tektur">
+        <div ref={section3Ref} className="modelSection2 h-screen  pt-[10rem]">
+          <div className="w-[40vw] h-[40vh]  flex items-center justify-center flex-col gap-[1rem]">
+            <h1 className="TextAnimationSection2 text-[2vw] font-bold tektur text-[#9e8b5c] rounded-[10px] overflow-hidden">
               {section1.title.split(" ").map((word, index) => (
                 <div
-                  className="TextAnimationSection2 relative inline-block"
+                  className="TextAnimationSection2 relative inline-block bg-black"
                   key={index}
                 >
                   {word}&nbsp;
                 </div>
               ))}
             </h1>
-            <p>
+            <p className="vtregular text-[1.4vw]">
               {section1.desc.split(" ").map((word, index) => (
                 <div
                   className="TextAnimationSection2 relative inline-block"
