@@ -1,24 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import Loader  from "./components/Loader/Loader";
 import MovingCards from "./components/MovingCards/MovingCards";
 import "./App.css";
 import gsap from "gsap";
-import Loader from "./components/Loader/Loader";
-import Section from "./components/TemporarySection/Section";
-import Cursor from "./components/Cursor/Cursor";
 import LocomotiveScroll from "locomotive-scroll";
 import FullscreenNavbar from "./components/FullscreenNavbar/FullscreenNavbar";
 import Model from "./components/Model3d/Model";
-import Section1 from "./components/Section1/Section1";
 import CardSection from "./components/CardSection/CardSection";
 import Insta from "./components/Instasection/Insta";
 import UpperFooter from "./components/footer/footer division/UpperFooter";
 import SwipeComponent from "./components/HeroSwipe/SwipeComponent.jsx";
 
 function App() {
-  const [isLoading, setisLoading] = useState(false);
-  // const locomotiveScroll = new LocomotiveScroll();
+  const [isLoading, setisLoading] = useState(true);
+  const locomotiveScroll = new LocomotiveScroll();
   const containerRef = useRef(null);
   const [toggleNavbar, settoggleNavbar] = useState(false);
   useEffect(() => {
@@ -57,19 +54,19 @@ function App() {
     };
   }, [toggleNavbar]);
 
-  // useEffect(() => {
-  //   if (isLoading) {
-  //     document.querySelectorAll(".CursorTrail").forEach((item) => {
-  //       item.style.display = "none";
-  //     });
-  //   } else {
-  //     setTimeout(() => {
-  //       document.querySelectorAll(".CursorTrail").forEach((item) => {
-  //         item.style.display = "flex";
-  //       });
-  //     }, 1000);
-  //   }
-  // }, [isLoading]);
+  useEffect(() => {
+    if (isLoading) {
+      document.querySelectorAll(".CursorTrail").forEach((item) => {
+        item.style.display = "none";
+      });
+    } else {
+      setTimeout(() => {
+        document.querySelectorAll(".CursorTrail").forEach((item) => {
+          item.style.display = "flex";
+        });
+      }, 1000);
+    }
+  }, [isLoading]);
 
   /*****
 if you are commenting <Loader/> 
@@ -86,18 +83,18 @@ at App.jsx line 13
     >
       <div className="blureffect"></div>
       {/* <Cursor /> */}
-      {/* <Loader isLoading={isLoading} setisLoading={setisLoading} /> */}
+      <Loader isLoading={isLoading} setisLoading={setisLoading} />
       <FullscreenNavbar
         toggleNavbar={toggleNavbar}
         settoggleNavbar={settoggleNavbar}
       />
       <SwipeComponent />
-      {/* <Section1 /> */}
       <CardSection />
       {!isLoading && <Model />}
+      {!isLoading && <UpperFooter />}
       <MovingCards />
       <Insta />
-      {!isLoading && <Footer />}
+      <Footer />
     </div>
   );
 }

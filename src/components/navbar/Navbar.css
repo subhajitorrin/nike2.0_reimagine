@@ -2,14 +2,15 @@
     height: 12vh;
     width: 100%;
     padding: 2rem;
-    z-index: 1000;
-    background-color: transparent;
+    z-index: 10000000;
+    background: white;
     /* border: 1px solid black; */
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     position: relative;
+    top: 0;
     /* background-color: red; */
 }
 

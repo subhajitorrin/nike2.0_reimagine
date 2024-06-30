@@ -14,8 +14,8 @@ const ScrollableContent = () => {
   const section3Ref = useRef(null);
 
   const section1 = {
-    title: "  A Journey Through Time ",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nemo illum, sit optio numquam deleniti, ipsam accusamus provident quod iure saepe, repellendus sapiente sunt necessitatibus aperiam adipisci. Nihil unde alias odit quo qui? Unde molestias architecto minima non sequi atque dolor veniam perferendis? Nobis odio corrupti beatae delectus. A, aliquam?",
+    title: "Elevate Your Performance with Nike",
+    desc: "Elevate your performance with Nike, where cutting-edge technology meets unparalleled design to enhance your athletic prowess. Whether you're a seasoned athlete or just beginning your fitness journey, Nike's innovative gear and apparel are crafted to support and empower you every step of the way. Experience the perfect blend of comfort, durability, and style, ensuring that you can push your limits and achieve your personal best.",
   };
 
   useGSAP(
@@ -107,20 +107,20 @@ const ScrollableContent = () => {
       <div className="">
         <div ref={section2Ref} className="modelSection2 h-screen  pt-[10rem]">
           <div className="absolute right-0 w-[40vw] h-[40vh]  flex items-center justify-center flex-col gap-[1rem]">
-            <h1 className="TextAnimationSection1 text-[2vw] font-bold tektur text-[#9e8b5c] rounded-[10px] overflow-hidden">
+            <h1 className="TextAnimationSection1 text-[2.2vw] font-bold tektur text-[#9e8b5c] rounded-[10px] overflow-hidden">
               {section1.title.split(" ").map((word, index) => (
                 <div
-                  className="TextAnimationSection1 relative inline-block bg-black"
+                  className="TextAnimationSection1 relative inline-block bg-black text-white "
                   key={index}
                 >
                   {word}&nbsp;
                 </div>
               ))}
             </h1>
-            <p className="vtregular text-[1.4vw]">
+            <p className="vtregular text-[1.4vw] font-[300]">
               {section1.desc.split(" ").map((word, index) => (
                 <div
-                  className="TextAnimationSection1 relative inline-block"
+                  className="TextAnimationSection1 relative inline-block text-gray-400"
                   key={index}
                 >
                   {word}&nbsp;
@@ -133,20 +133,20 @@ const ScrollableContent = () => {
       <div className="">
         <div ref={section3Ref} className="modelSection2 h-screen  pt-[10rem]">
           <div className="w-[40vw] h-[40vh]  flex items-center justify-center flex-col gap-[1rem]">
-            <h1 className="TextAnimationSection2 text-[2vw] font-bold tektur text-[#9e8b5c] rounded-[10px] overflow-hidden">
+            <h1 className="TextAnimationSection2 text-[2.2vw] font-bold tektur text-[#9e8b5c] rounded-[10px] overflow-hidden">
               {section1.title.split(" ").map((word, index) => (
                 <div
-                  className="TextAnimationSection2 relative inline-block bg-black"
+                  className="TextAnimationSection2 relative inline-block bg-black text-white"
                   key={index}
                 >
                   {word}&nbsp;
                 </div>
               ))}
             </h1>
-            <p className="vtregular text-[1.4vw]">
+            <p className="vtregular text-[1.4vw] font-[300]">
               {section1.desc.split(" ").map((word, index) => (
                 <div
-                  className="TextAnimationSection2 relative inline-block"
+                  className="TextAnimationSection2 relative inline-block text-gray-400"
                   key={index}
                 >
                   {word}&nbsp;

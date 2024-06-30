@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { enablePageScroll,disablePageScroll } from "scroll-lock";
 import { gsap } from "gsap";
 import "./FullscreenNavbar.css";
 import { RiMenu3Fill } from "react-icons/ri";

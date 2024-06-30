@@ -56,24 +56,24 @@ const Model = () => {
       
     });
 
-    // ScrollTrigger for scrollable content animation
-    // ScrollTrigger.create({
-    //   trigger: "#scrollable-content",
-    //   start: "top bottom",
-    //   end: "top top",
-    //   scrub: 100,
-    //   onUpdate: (self) => {
-    //     if (scrollableContentRef.current) {
-    //       gsap.to(scrollableContentRef.current, {
-    //         y: `${-self.progress * 300}vh`,
-    //         duration: 0.5,
-    //         ease: "power2.out"
-    //       });
-    //     }
-    //   },
-    // });
+    //ScrollTrigger for scrollable content animation
+    ScrollTrigger.create({
+      trigger: "#scrollable-content",
+      start: "top bottom",
+      end: "top top",
+      scrub: 100,
+      onUpdate: (self) => {
+        if (scrollableContentRef.current) {
+          gsap.to(scrollableContentRef.current, {
+            y: `${-self.progress * 300}vh`,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        }
+      },
+    });
 
-    // Updated ScrollTrigger for model position
+    //Updated ScrollTrigger for model position
     ScrollTrigger.create({
       trigger: "#main",
       start: "top top",
@@ -87,7 +87,7 @@ const Model = () => {
           newX = gsap.utils.interpolate(-2, 0, gsap.utils.clamp(0, 1, progress));
           newZ = 1;
         } else if (progress < 1.5) {
-          newX = gsap.utils.interpolate(0, -2, gsap.utils.clamp(0, 1, progress - 1));
+          newX = gsap.utils.interpolate(-1, -2, gsap.utils.clamp(0, 1, progress - 1));
           newZ = gsap.utils.interpolate(1, 2, gsap.utils.clamp(0, 1, progress - 1));
         } else if(progress < 2) {
           newX = gsap.utils.interpolate(0, 1, gsap.utils.clamp(0, 1, progress - 1));
@@ -113,7 +113,7 @@ const Model = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[450vh]" id="main">
+    <div className="relative w-full h-[300vh] md:h-[400vh]" id="main">
       <div className="fixed top-0 left-0 w-full h-screen">
         <ModelView
           index={1}
@@ -131,7 +131,7 @@ const Model = () => {
             top: 0,
             left: 0,
             overflow: "hidden",
-            backgroundColor: "white",
+            backgroundColor: "#005147",
             zIndex: -1000,
           }}
           eventSource={document.getElementById("main")}

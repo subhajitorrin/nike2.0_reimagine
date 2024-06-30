@@ -5,7 +5,6 @@ import UpperFooter from "../footer/footer division/UpperFooter";
 function Footer() {
   return (
     <div className="relative z-10">
-      <UpperFooter/>
       <LowerFooter />
     </div>
   );
