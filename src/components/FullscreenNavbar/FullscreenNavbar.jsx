@@ -145,13 +145,13 @@ function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
       >
         {!toggleNavbar ? (
           <RiMenu3Fill
-            className="menuicon"
+            className="menuicon text-black"
             ref={menuRef}
             onClick={activeFullscreenNavbar}
           />
         ) : (
           <RxCross2
-            className="menuicon"
+            className="menuicon text-white"
             ref={menuRef}
             onClick={reverseActiveFullscreenNavbar}
           />
