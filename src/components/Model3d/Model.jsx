@@ -33,14 +33,14 @@ const Model = () => {
   const modelPositionRef = useRef(new THREE.Vector3(0, 0, 1));
 
   useEffect(() => {
-    const totalRotation = Math.PI * 6; // Full 360 degree rotation
+    const totalRotation = Math.PI * 14; // Full 360 degree rotation
 
     // ScrollTrigger for model rotation
     ScrollTrigger.create({
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 3,
+      scrub: 100,
       onUpdate: (self) => {
         if (first.current) {
           const newRotation = self.progress * totalRotation;
@@ -60,7 +60,7 @@ const Model = () => {
       trigger: "#scrollable-content",
       start: "top bottom",
       end: "top top",
-      scrub: 3,
+      scrub: 100,
       onUpdate: (self) => {
         if (scrollableContentRef.current) {
           gsap.to(scrollableContentRef.current, {
@@ -77,7 +77,7 @@ const Model = () => {
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 3,
+      scrub: 100,
       onUpdate: (self) => {
         const progress = self.progress * 4;
         let newX, newZ;
@@ -86,15 +86,15 @@ const Model = () => {
           newX = gsap.utils.interpolate(-2, 0, gsap.utils.clamp(0, 1, progress));
           newZ = 1;
         } else if (progress < 1.5) {
-          newX = gsap.utils.interpolate(0, -6, gsap.utils.clamp(0, 1, progress - 1));
+          newX = gsap.utils.interpolate(0, -2, gsap.utils.clamp(0, 1, progress - 1));
           newZ = gsap.utils.interpolate(1, 2, gsap.utils.clamp(0, 1, progress - 1));
         } else if(progress < 2) {
-          newX = gsap.utils.interpolate(-2, 4, gsap.utils.clamp(0, 1, progress - 2));
+          newX = gsap.utils.interpolate(0, 1, gsap.utils.clamp(0, 1, progress - 1));
           console.log(progress)
           newZ = 1;
         }
         else {
-          newX = gsap.utils.interpolate(0, 4, gsap.utils.clamp(0, 1, progress - 2));
+          newX = gsap.utils.interpolate(0, 1, gsap.utils.clamp(0, 1, progress - 1));
         }
 
         gsap.to(modelPositionRef.current, {
@@ -128,7 +128,7 @@ const Model = () => {
             left: 0,
             overflow: "hidden",
             backgroundColor: "white",
-            zIndex: -1,
+            zIndex: -1000,
           }}
           eventSource={document.getElementById("main")}
         >
