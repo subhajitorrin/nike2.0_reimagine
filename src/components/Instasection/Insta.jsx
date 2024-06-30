@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Insta.css";
-import img1 from "../../assets/MovingCards/card1.jpg";
-import img2 from "../../assets/MovingCards/card2.jpg";
+
+
+import img1 from "../../assets/InstaSection/instasection2.jpg"
+import img2 from "../../assets/InstaSection/instasection3.jpg"
+import img3 from "../../assets/InstaSection/instasection4.jpg"
+import img4 from "../../assets/InstaSection/img4.jpg"
 import { FaInstagram } from "react-icons/fa";
 
 const Insta = () => {
@@ -29,16 +33,14 @@ const Insta = () => {
         </div>
         <div className="cards img2">
           <img
-            src={img1}
+            src={img2}
             alt="Card 2"
             className="w-[150px] rounded-[20px] relative left-[10%]"
           />
         </div>
         <div className="">
           <h2 className="text-[white] text-[7vw] leading-[120%] text-center z-[100] relative top-[-10vw] left-[3vw]">
-            Lorem, ipsum dolor <br />
-            sit amet <br />
-            consectetur adipisicing
+          Achieve your best with Nike’s <br /> elite gear designed for champions
           </h2>
         </div>
         <div
@@ -56,16 +58,16 @@ const Insta = () => {
         </div>
         <div className="">
           <img
-            src={img2}
+            src={img3}
             alt="Card 3"
             className="w-[250px] rounded-[20px] relative left-[15%]"
           />
         </div>
         <div className="">
           <img
-            src={img1}
+            src={img4}
             alt="Card 5"
-            className="h-[150px] rounded-[20px] relative right-[-45%]"
+            className="h-[250px] rounded-[20px] relative right-[-45%]"
           />
         </div>
       </div>
@@ -81,9 +83,7 @@ const Insta = () => {
             data-scroll-speed=".5"
             data-scroll-position="bottom"
           >
-            Lorem, ipsum dolor <br />
-            sit amet consectetur adipisicing <br /> elit. Perspiciatis,
-            quisquam!
+           Achieve your best with Nike’s <br /> elite gear designed for champions
           </h2>
         </div>
 
@@ -127,7 +127,7 @@ const Insta = () => {
         </div>
         <div className="cards img2">
           <img
-            src={img1}
+            src={img2}
             alt="Card 2"
             data-scroll
             data-scroll-speed=".3"
@@ -136,7 +136,7 @@ const Insta = () => {
         </div>
         <div className="cards img3">
           <img
-            src={img2}
+            src={img3}
             alt="Card 3"
             data-scroll
             data-scroll-speed="1.7"
@@ -145,7 +145,7 @@ const Insta = () => {
         </div>
         <div className="cards img5">
           <img
-            src={img1}
+            src={img4}
             alt="Card 5"
             data-scroll
             data-scroll-speed="1"

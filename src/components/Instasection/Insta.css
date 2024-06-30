@@ -6,7 +6,7 @@
 
 .Insta-secContainer .img1 img {
   margin-top: 2rem;
-  height: 200px;
+  height: 300px;
   border-radius: 10px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .Insta-secContainer .img2 img {
-  height: 250px;
+  height: 350px;
   border-radius: 10px;
   position: absolute;
   left: 120px;
@@ -28,7 +28,7 @@
 }
 
 .Insta-secContainer .img3 img {
-  width: 350px;
+  width: 450px;
   border-radius: 10px;
 }
 
@@ -44,7 +44,7 @@
   justify-content: flex-end;
   align-items: center;
   position: absolute;
-  top: 900px;
+  top: 920px;
   right: 500px;
 }
 
@@ -54,7 +54,8 @@
 }
 
 .Insta-secContainer .img5 img {
-  width: 400px;
+  /* width: 400px; */
+  height: 500px;
   border-radius: 10px;
   position: absolute;
   top: 650px;
