@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ModelWrapper = ({ modelRef, positionRef }) => {
+const ModelWrapper = ({ modelRef, positionRef  }) => {
   useFrame(() => {
     if (modelRef.current && positionRef.current) {
       modelRef.current.position.copy(positionRef.current);
@@ -33,14 +33,14 @@ const Model = () => {
   const modelPositionRef = useRef(new THREE.Vector3(0, 0, 1));
 
   useEffect(() => {
-    const totalRotation = Math.PI * 6; // Full 360 degree rotation
+    const totalRotation = Math.PI * 14; // Full 360 degree rotation
 
     // ScrollTrigger for model rotation
     ScrollTrigger.create({
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 3,
+      scrub: 100,
       onUpdate: (self) => {
         if (first.current) {
           const newRotation = self.progress * totalRotation;
@@ -53,31 +53,32 @@ const Model = () => {
           rotationRef.current = newRotation;
         }
       },
+      
     });
 
     // ScrollTrigger for scrollable content animation
-    ScrollTrigger.create({
-      trigger: "#scrollable-content",
-      start: "top bottom",
-      end: "top top",
-      scrub: 3,
-      onUpdate: (self) => {
-        if (scrollableContentRef.current) {
-          gsap.to(scrollableContentRef.current, {
-            y: `${-self.progress * 300}vh`,
-            duration: 0.5,
-            ease: "power2.out"
-          });
-        }
-      },
-    });
+    // ScrollTrigger.create({
+    //   trigger: "#scrollable-content",
+    //   start: "top bottom",
+    //   end: "top top",
+    //   scrub: 100,
+    //   onUpdate: (self) => {
+    //     if (scrollableContentRef.current) {
+    //       gsap.to(scrollableContentRef.current, {
+    //         y: `${-self.progress * 300}vh`,
+    //         duration: 0.5,
+    //         ease: "power2.out"
+    //       });
+    //     }
+    //   },
+    // });
 
     // Updated ScrollTrigger for model position
     ScrollTrigger.create({
       trigger: "#main",
       start: "top top",
       end: "bottom bottom",
-      scrub: 3,
+      scrub: 100,
       onUpdate: (self) => {
         const progress = self.progress * 4;
         let newX, newZ;
@@ -86,15 +87,15 @@ const Model = () => {
           newX = gsap.utils.interpolate(-2, 0, gsap.utils.clamp(0, 1, progress));
           newZ = 1;
         } else if (progress < 1.5) {
-          newX = gsap.utils.interpolate(0, -6, gsap.utils.clamp(0, 1, progress - 1));
+          newX = gsap.utils.interpolate(0, -2, gsap.utils.clamp(0, 1, progress - 1));
           newZ = gsap.utils.interpolate(1, 2, gsap.utils.clamp(0, 1, progress - 1));
         } else if(progress < 2) {
-          newX = gsap.utils.interpolate(-2, 4, gsap.utils.clamp(0, 1, progress - 2));
+          newX = gsap.utils.interpolate(0, 1, gsap.utils.clamp(0, 1, progress - 1));
           console.log(progress)
           newZ = 1;
         }
         else {
-          newX = gsap.utils.interpolate(0, 4, gsap.utils.clamp(0, 1, progress - 2));
+          newX = gsap.utils.interpolate(0, 1, gsap.utils.clamp(0, 1, progress - 1));
         }
 
         gsap.to(modelPositionRef.current, {
@@ -106,10 +107,13 @@ const Model = () => {
         });
       },
     });
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
-    <div className="relative w-full h-[400vh]" id="main">
+    <div className="relative w-full h-[450vh]" id="main">
       <div className="fixed top-0 left-0 w-full h-screen">
         <ModelView
           index={1}
@@ -128,7 +132,7 @@ const Model = () => {
             left: 0,
             overflow: "hidden",
             backgroundColor: "white",
-            zIndex: -1,
+            zIndex: -1000,
           }}
           eventSource={document.getElementById("main")}
         >
@@ -138,8 +142,8 @@ const Model = () => {
       </div>
       <div
         id="scrollable-content"
-        ref={scrollableContentRef}
-        className="absolute top-[100vh] left-0 w-full"
+        // ref={scrollableContentRef}
+        className="absolute top-0 left-0 w-full"
       >
         <ScrollableContent />
       </div>

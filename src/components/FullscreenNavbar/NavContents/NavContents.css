@@ -135,10 +135,13 @@
 .searchcontainer ::placeholder {
   font-size: 0.85rem;
 }
-.subpoint{
+.subpoint {
   width: 85%;
   height: 100%;
   border-radius: 10px;
   background-color: rgb(105, 105, 105);
+  opacity: .7;
   overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #9d9d9d rgba(0, 0, 0, 0);
 }

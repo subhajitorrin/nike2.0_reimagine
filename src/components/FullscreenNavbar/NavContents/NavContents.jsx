@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./NavContents.css";
-import { FaCaretRight } from "react-icons/fa";
+import { FaCaretRight, FaLeaf } from "react-icons/fa";
 import navimg1 from "../../../assets/NavbarClip/navimg.jpg";
 import clip1 from "../../../assets/NavbarClip/nikeclip2.mp4";
 import gsap from "gsap";
@@ -8,15 +8,7 @@ import { IoSearch } from "react-icons/io5";
 import Tilt from "react-parallax-tilt";
 import SubPoint from "./SubPoint";
 
-const navList = [
-  "New & Featured",
-  "Men",
-  "Women",
-  "Kids",
-  "Sale",
-  "Customise",
-  "SNKRS",
-];
+const navList = ["New & Featured", "Men", "Women", "Kids", "Sale"];
 const totalSubList = [
   {
     item: [
@@ -127,7 +119,7 @@ const totalSubList = [
     ],
   },
   {
-    "item": [
+    item: [
       [
         "Featured",
         "New Releases",
@@ -138,7 +130,7 @@ const totalSubList = [
         "Customise with Nike By You",
         "Sale",
         "Running Shoe Finder",
-        "Sustainable Materials"
+        "Sustainable Materials",
       ],
       [
         "Jordan",
@@ -147,7 +139,7 @@ const totalSubList = [
         "Jordan Shoes",
         "Jordan Clothing",
         "Jordan Basketball",
-        "Jordan Lifestyle"
+        "Jordan Lifestyle",
       ],
       [
         "Shoes",
@@ -162,7 +154,7 @@ const totalSubList = [
         "Sandals and Slides",
         "Last Sizes Available",
         "Customise with Nike By You",
-        "Top Picks Under ₹8,000"
+        "Top Picks Under ₹8,000",
       ],
       [
         "Clothing",
@@ -177,14 +169,14 @@ const totalSubList = [
         "Skirts and Dresses",
         "Modest Wear",
         "Nike Maternity",
-        "Plus Size"
+        "Plus Size",
       ],
       [
         "Accessories and Equipment",
         "All Accessories and Equipment",
         "Bags and Backpacks",
         "Socks",
-        "Hats and Headwear"
+        "Hats and Headwear",
       ],
       [
         "Shop By Sport",
@@ -195,7 +187,7 @@ const totalSubList = [
         "Tennis",
         "Golf",
         "Football",
-        "Skateboarding"
+        "Skateboarding",
       ],
       [
         "Shop By Brand",
@@ -206,9 +198,9 @@ const totalSubList = [
         "Jordan",
         "ACG",
         "NBA",
-        "Nike SB"
-      ]
-    ]
+        "Nike SB",
+      ],
+    ],
   },
   {
     item: [
@@ -222,7 +214,7 @@ const totalSubList = [
         "Jordan",
         "Last Sizes Available",
         "Bags and Backpacks",
-        "Sale"
+        "Sale",
       ],
       [
         "Boys' Shoes",
@@ -235,7 +227,7 @@ const totalSubList = [
         "Running",
         "Basketball",
         "Football",
-        "Sandals and Slides"
+        "Sandals and Slides",
       ],
       [
         "Girls' Shoes",
@@ -248,20 +240,20 @@ const totalSubList = [
         "Running",
         "Basketball",
         "Football",
-        "Sandals and Slides"
+        "Sandals and Slides",
       ],
       [
         "Accessories and Equipment",
         "All Accessories and Equipment",
         "Bags and Backpacks",
         "Socks",
-        "Hats and Headwear"
+        "Hats and Headwear",
       ],
       [
         "Kids By Age",
         "Older Kids (7 - 14 years)",
         "Younger Kids (4 - 7 years)",
-        "Babies & Toddlers (0 - 4 years)"
+        "Babies & Toddlers (0 - 4 years)",
       ],
       [
         "Boys' Clothing",
@@ -269,7 +261,7 @@ const totalSubList = [
         "Hoodies and Sweatshirts",
         "Pants and Leggings",
         "Shorts",
-        "All Boys' Clothing"
+        "All Boys' Clothing",
       ],
       [
         "Girls' Clothing",
@@ -278,41 +270,36 @@ const totalSubList = [
         "Hoodies and Sweatshirts",
         "Pants and Leggings",
         "Shorts",
-        "All Girls' Clothing"
-      ]
-    ]
+        "All Girls' Clothing",
+      ],
+    ],
   },
   {
-    "item": [
+    item: [
       [
         "Sale",
         "Shop All Sale",
         "Shoes Sale",
         "Clothing Sale",
-        "Accessories & Equipment Sale"
+        "Accessories & Equipment Sale",
       ],
       [
         "Sale",
         "Shop All Sale",
         "Shoes Sale",
         "Clothing Sale",
-        "Accessories & Equipment Sale"
+        "Accessories & Equipment Sale",
       ],
       [
         "Sale",
         "Shop All Sale",
         "Shoes Sale",
         "Clothing Sale",
-        "Accessories & Equipment Sale"
+        "Accessories & Equipment Sale",
       ],
-      [
-        "Kids' Sale",
-        "Shoes",
-        "Clothing"
-      ]
-    ]
-  }
-
+      ["Kids' Sale", "Shoes", "Clothing"],
+    ],
+  },
 ];
 
 const defaultOptions = {
@@ -329,14 +316,21 @@ const defaultOptions = {
 
 function NavContents({ navContentsRef, toggleNavbar }) {
   const [isSublistHover, setisSublistHover] = useState(null);
-  const [sublistContainerMouseMove, setsublistContainerMouseMove] = useState(false);
+  const [isHardIndex, setisHardIndex] = useState(null);
+  const [isHardActive, setisHardActive] = useState(false);
+  const [sublistContainerMouseMove, setsublistContainerMouseMove] =
+    useState(false);
   function handelSublistMouseEnter() {
-    setsublistContainerMouseMove(true)
+    setsublistContainerMouseMove(true);
     console.log(sublistContainerMouseMove);
   }
   function handelSublistMouseLeave() {
-    setsublistContainerMouseMove(false)
+    setsublistContainerMouseMove(false);
+    setisHardActive(false)
     console.log(sublistContainerMouseMove);
+  }
+  function handleMouseClick() {
+    setisHardActive(true);
   }
 
   const navClipRef = useRef(null);
@@ -357,13 +351,19 @@ function NavContents({ navContentsRef, toggleNavbar }) {
         <div className="nleft">
           {navList.map((item, index) => {
             return (
-              <div className="navlistseperator" onMouseEnter={handelSublistMouseEnter} onClick={handelSublistMouseEnter}>
+              <div
+                className="navlistseperator"
+                onMouseEnter={handelSublistMouseEnter}
+                onClick={handleMouseClick}
+              >
                 <span
                   className="navlistnames"
                   onMouseEnter={() => {
                     setisSublistHover(index);
                   }}
-                  onMouseLeave={handelSublistMouseLeave}
+                  onClick={() => {
+                    setisHardIndex(index);
+                  }}
                 >
                   {item}
                 </span>
@@ -373,9 +373,9 @@ function NavContents({ navContentsRef, toggleNavbar }) {
             );
           })}
         </div>
-
-        {
-          !sublistContainerMouseMove ? (<div className="nright">
+        {}
+        {!isHardActive ? (
+          <div className="nright">
             <div className="navdefault">
               <div className="searchcontainer">
                 <input type="text" placeholder="Search your shoewear" />
@@ -415,24 +415,20 @@ function NavContents({ navContentsRef, toggleNavbar }) {
                 </div>
               </div>
             </div>
-          </div>) : (<div className="subpoint" onMouseLeave={handelSublistMouseLeave}>
+          </div>
+        ) : (
+          <div className="subpoint" onMouseLeave={handelSublistMouseLeave}>
             <li>
-
-              {
-                totalSubList.map((item, index) => {
-                  return index === isSublistHover ? (
-                    <SubPoint sublist={item} />
-                  ) : (
-                    ""
-                  );
-                })}
-
+              {totalSubList.map((item, index) => {
+                return index === isSublistHover ? (
+                  <SubPoint sublist={item} />
+                ) : (
+                  ""
+                );
+              })}
             </li>
-          </div>)
-        }
-
-
-
+          </div>
+        )}
       </div>
       <div className="navBottom"></div>
     </div>

@@ -14,8 +14,8 @@ function Model(props) {
   const { nodes, materials } = useGLTF('/models/nike_air_max_90_premium.glb')
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={0.021}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0.25, 1]} scale={0.021}>
+        <group rotation={[Math.PI / 2, 0.5, 0]}>
           <mesh
             castShadow
             receiveShadow
