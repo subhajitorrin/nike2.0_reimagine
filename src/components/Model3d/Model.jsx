@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ModelWrapper = ({ modelRef, positionRef }) => {
+const ModelWrapper = ({ modelRef, positionRef  }) => {
   useFrame(() => {
     if (modelRef.current && positionRef.current) {
       modelRef.current.position.copy(positionRef.current);
@@ -53,6 +53,7 @@ const Model = () => {
           rotationRef.current = newRotation;
         }
       },
+      
     });
 
     // ScrollTrigger for scrollable content animation

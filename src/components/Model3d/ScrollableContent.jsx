@@ -21,14 +21,14 @@ const ScrollableContent = () => {
           start: 'top 90%',
           end: 'top 10%',
           scrub: 5,
-          scroller: containerRef.current, // specify the container as the scroller
+          scroller: containerRef.current,
         },
       });
       gsap.from('.headings1 h2', {
         opacity: 0,
         y: 50,
         stagger: {
-          amount: 1, // adjust the amount of stagger time
+          amount: 1,
         },
         ease: "power2.inOut",
         scrollTrigger: {
@@ -43,7 +43,7 @@ const ScrollableContent = () => {
         opacity: 0,
         y: 50,
         stagger: {
-          amount: 1, // adjust the amount of stagger time
+          amount: 1,
         },
         ease: "power2.inOut",
         scrollTrigger: {
