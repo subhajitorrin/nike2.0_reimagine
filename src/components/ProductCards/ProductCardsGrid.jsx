@@ -3,7 +3,55 @@ import "./ProductCardsGrid.css";
 import ProductCard from "../ProductCardShow/ProductCard";
 import { useEffect, useState } from "react";
 import Product from "./Product";
-import { airJordanXxxVii5 , airMax2701 , customPhantomLuna1 , jordanStadium1 , jordanStayLoyal1 , jumpmanMvp1 , lebronNxxtGen1 , airForce1Wild1 } from '../../../public/Shoes'
+import {
+  airJordanXxxVii1,
+  airJordanXxxVii2,
+  airJordanXxxVii3,
+  airJordanXxxVii4,
+  airJordanXxxVii5,
+  airMax2701,
+  airMax2702,
+  airMax2703,
+  airMax2704,
+  airMax2705,
+  airMax2706,
+  airMax2707,
+  customPhantomLuna1,
+  customPhantomLuna2,
+  customPhantomLuna3,
+  customPhantomLuna4,
+  customPhantomLuna5,
+  customPhantomLuna6,
+  customPhantomLuna7,
+  jordanStadium1,
+  jordanStadium2,
+  jordanStadium3,
+  jordanStadium4,
+  jordanStadium5,
+  jordanStadium6,
+  jordanStayLoyal1,
+  jordanStayLoyal2,
+  jordanStayLoyal3,
+  jordanStayLoyal4,
+  jordanStayLoyal5,
+  jumpmanMvp1,
+  jumpmanMvp2,
+  jumpmanMvp3,
+  jumpmanMvp4,
+  jumpmanMvp5,
+  jumpmanMvp6,
+  lebronNxxtGen1,
+  lebronNxxtGen2,
+  lebronNxxtGen3,
+  lebronNxxtGen4,
+  lebronNxxtGen5,
+  lebronNxxtGen6,
+  airForce1Wild1,
+  airForce1Wild2,
+  airForce1Wild3,
+  airForce1Wild4,
+
+} from '../../../public/Shoes'
 
 function ProductCardsGrid() {
   const [innerWidth, setinnerWidth] = useState(window.innerWidth);
@@ -53,99 +101,99 @@ function ProductCardsGrid() {
   const [ShowInitial, setShowInitial] = useState([
     {
       firstslide:
-        "https://cdn.pixabay.com/photo/2024/01/26/06/49/elderly-man-8533488_960_720.png",
+        airJordanXxxVii1,
       secondslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airJordanXxxVii2,
       thirdslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airJordanXxxVii3,
       fourthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airJordanXxxVii4,
       fifthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airJordanXxxVii5,
     },
     {
       firstslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airMax2702,
       secondslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airMax2703,
       thirdslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airMax2704,
       fourthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airMax2705,
       fifthslide:
-        "https://cdn.pixabay.com/photo/2024/01/26/06/49/elderly-man-8533488_960_720.png",
+        airMax2706,
     },
     {
       firstslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        customPhantomLuna2,
       secondslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        customPhantomLuna3,
       thirdslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        customPhantomLuna4,
       fourthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        customPhantomLuna5,
       fifthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        customPhantomLuna6,
     },
     {
       firstslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jordanStadium2,
       secondslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jordanStadium3,
       thirdslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jordanStadium4,
       fourthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jordanStadium5,
       fifthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jordanStadium6,
     },
     {
       firstslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jordanStayLoyal1,
       secondslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jordanStayLoyal2,
       thirdslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jordanStayLoyal3,
       fourthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jordanStayLoyal4,
       fifthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jordanStayLoyal5,
     },
     {
       firstslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jumpmanMvp2,
       secondslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jumpmanMvp3,
       thirdslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jumpmanMvp4,
       fourthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jumpmanMvp5,
       fifthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        jumpmanMvp6,
     },
     {
       firstslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        lebronNxxtGen2,
       secondslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        lebronNxxtGen3,
       thirdslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        lebronNxxtGen4,
       fourthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        lebronNxxtGen5,
       fifthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        lebronNxxtGen6,
     },
     {
       firstslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airForce1Wild1,
       secondslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airForce1Wild2,
       thirdslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airForce1Wild3,
       fourthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airForce1Wild4,
       fifthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+        airMax2707
     },
   ]);
   useEffect(() => {
@@ -191,7 +239,7 @@ function ProductCardsGrid() {
       });
     });
 
-    return () => {};
+    return () => { };
   }, []);
 
   if (innerWidth > 1000) {
