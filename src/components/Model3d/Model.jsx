@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ModelWrapper = ({ modelRef, positionRef  }) => {
+const ModelWrapper = ({ modelRef, positionRef }) => {
   useFrame(() => {
     if (modelRef.current && positionRef.current) {
       modelRef.current.position.copy(positionRef.current);
@@ -48,12 +48,11 @@ const Model = () => {
           gsap.to(first.current.rotation, {
             y: `+=${rotationChange}`,
             duration: 0.5,
-            ease: "power2.out"
+            ease: "power2.out",
           });
           rotationRef.current = newRotation;
         }
       },
-      
     });
 
     //ScrollTrigger for scrollable content animation
@@ -67,14 +66,14 @@ const Model = () => {
           gsap.to(scrollableContentRef.current, {
             y: `${-self.progress * 400}vh`,
             duration: 0.5,
-            ease: "power2.out"
+            ease: "power2.out",
           });
         }
       },
     });
 
     //Updated ScrollTrigger for model position
-    if (window.innerWidth > 768){
+    if (window.innerWidth > 768) {
       ScrollTrigger.create({
         trigger: "#main",
         start: "top top",
@@ -87,12 +86,12 @@ const Model = () => {
           if (progress < 0.25) {
             newX = gsap.utils.interpolate(-2, 0, progress * 4);
             newZ = 1;
-          } else if (progress < 0.5) {
+          } else if (progress < 0.46) {
             newX = gsap.utils.interpolate(-1, -2, (progress - 0.25) * 2);
             newZ = gsap.utils.interpolate(0, 1, (progress - 0.25) * 2);
           } else if (progress < 0.65) {
             newX = gsap.utils.interpolate(0.7, 0, (progress - 1) * 2);
-            newZ = gsap.utils.interpolate(0, 1, (progress - 0.5));
+            newZ = gsap.utils.interpolate(0, 1, progress - 0.5);
           } else {
             newX = 1;
             newZ = gsap.utils.interpolate(0, 1, (progress - 1) * 2);
@@ -103,7 +102,7 @@ const Model = () => {
             y: -1,
             z: newZ,
             duration: 0.5,
-            ease: "power2.out"
+            ease: "power2.out",
           });
         },
       });
