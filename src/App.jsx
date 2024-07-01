@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
-import Loader  from "./components/Loader/Loader";
+import Loader from "./components/Loader/Loader";
 import MovingCards from "./components/MovingCards/MovingCards";
 import "./App.css";
 import gsap from "gsap";
@@ -13,17 +13,13 @@ import Insta from "./components/Instasection/Insta";
 import UpperFooter from "./components/footer/footer division/UpperFooter";
 import SwipeComponent from "./components/HeroSwipe/SwipeComponent.jsx";
 
-import ProductCardsGrid from "./components/ProductCards/ProductCardsGrid.jsx"
-
-
-
-
-
+import ProductCardsGrid from "./components/ProductCards/ProductCardsGrid.jsx";
 
 function App() {
   const [isLoading, setisLoading] = useState(true);
   const locomotiveScroll = new LocomotiveScroll();
   const containerRef = useRef(null);
+  const [showModel, setShowModel] = useState(false);
   const [toggleNavbar, settoggleNavbar] = useState(false);
   // useEffect(() => {
   //   const handleMouseMove = (e) => {
@@ -81,6 +77,17 @@ then make isLoading usestate to false
 at App.jsx line 13
 *****/
 
+  useEffect(() => {
+    if (!isLoading) {
+      const timer = setTimeout(() => {
+        setShowModel(true);
+      }, 700); // 1 second delay
+
+      // Cleanup timer if component unmounts before delay
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
+
   return (
     <div
       id="main"
@@ -96,10 +103,10 @@ at App.jsx line 13
         settoggleNavbar={settoggleNavbar}
       />
       <SwipeComponent />
-      <ProductCardsGrid/>
+      <ProductCardsGrid />
       <CardSection />
-      {!isLoading && <Model />}
-      {!isLoading && <UpperFooter />}
+      {isLoading ? <p>Loading...</p> : showModel && <Model />}
+      {isLoading ? <p>Loading...</p> : showModel && <UpperFooter />}
       <MovingCards />
       <Insta />
       <Footer />
