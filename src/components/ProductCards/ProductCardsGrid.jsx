@@ -1,4 +1,5 @@
 import React from "react";
+import { RxCross2 } from "react-icons/rx";
 import "./ProductCardsGrid.css";
 import ProductCard from "../ProductCardShow/ProductCard";
 import { useEffect, useState } from "react";
@@ -176,17 +177,25 @@ function ProductCardsGrid() {
     const Target = document.querySelector(".produced");
 
     const closebtn = document.querySelector(".closebtn");
+    closebtn.style.pointerEvents = "none";
     Product.forEach((item, index) => {
       item.addEventListener("click", () => {
         Target.style.opacity = 1;
         Target.classList.remove("pointerevent");
         closebtn.style.opacity = 1;
-        console.log("hey");
-        console.log(Product);
-        console.log(TargetProductCardSwipe);
-        console.log(index);
+        // console.log("hey");
+        // console.log(Product);
+        // console.log(TargetProductCardSwipe);
+        // console.log(index);
         TargetProductCardSwipe[index].style.opacity = 1;
         TargetProductCardSwipe[index].style.pointerEvents = "auto";
+
+        //***orrin****//
+        const navMenu = document.querySelector(".menuicon");
+        navMenu.style.transition = "none";
+        navMenu.style.opacity = 0;
+        closebtn.style.pointerEvents = "auto";
+        //*******//
 
         closebtn.addEventListener("click", () => {
           Target.style.opacity = 0;
@@ -194,6 +203,11 @@ function ProductCardsGrid() {
           closebtn.style.opacity = 0;
           TargetProductCardSwipe[index].style.pointerEvents = "none";
           TargetProductCardSwipe[index].style.opacity = 0;
+
+          //***orrin****//
+          navMenu.style.opacity = 1;
+          closebtn.style.pointerEvents = "none";
+          //*******//
         });
       });
     });
@@ -204,10 +218,12 @@ function ProductCardsGrid() {
   if (innerWidth > 1000) {
     return (
       <>
-        <div className="closebtn"></div>
+        <div className="closebtn bg-transparent">
+          <RxCross2 className="text-[2rem]" />
+        </div>
         <div className="produced pointerevent">
           {ShowInitial.map((i) => {
-            console.log(i);
+            // console.log(i);
             return (
               <div className="boom">
                 <ProductCard

@@ -44,18 +44,20 @@ function App() {
   //     .addEventListener("mouseenter", handleMouseEnter);
   // }, []);
 
-  useEffect(() => {
-    let locomotiveScroll = null;
-    if (!toggleNavbar) {
-      locomotiveScroll = new LocomotiveScroll();
-    }
 
-    return () => {
-      if (locomotiveScroll) {
-        locomotiveScroll.destroy();
-      }
-    };
-  }, [toggleNavbar]);
+  // locomotive off on navclick
+  // useEffect(() => {
+  //   let locomotiveScroll = null;
+  //   if (!toggleNavbar) {
+  //     locomotiveScroll = new LocomotiveScroll();
+  //   }
+
+  //   return () => {
+  //     if (locomotiveScroll) {
+  //       locomotiveScroll.destroy();
+  //     }
+  //   };
+  // }, [toggleNavbar]);
 
   // useEffect(() => {
   //   if (isLoading) {
