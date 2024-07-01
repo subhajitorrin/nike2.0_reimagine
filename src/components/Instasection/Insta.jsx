@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Insta.css";
 
-
-import img1 from "../../assets/InstaSection/instasection2.jpg"
-import img2 from "../../assets/InstaSection/instasection3.jpg"
-import img3 from "../../assets/InstaSection/instasection4.jpg"
-import img4 from "../../assets/InstaSection/img4.jpg"
+import img1 from "../../assets/InstaSection/instasection2.jpg";
+import img2 from "../../assets/InstaSection/instasection3.jpg";
+import img3 from "../../assets/InstaSection/instasection4.jpg";
+import img4 from "../../assets/InstaSection/img4.jpg";
 import { FaInstagram } from "react-icons/fa";
 
 const Insta = () => {
@@ -40,7 +39,8 @@ const Insta = () => {
         </div>
         <div className="">
           <h2 className="text-[white] text-[7vw] leading-[120%] text-center z-[100] relative top-[-10vw] left-[3vw]">
-          Achieve your best with Nike’s <br /> elite gear designed for champions
+            Achieve your best with Nike’s <br /> elite gear designed for
+            champions
           </h2>
         </div>
         <div
@@ -76,14 +76,15 @@ const Insta = () => {
     return (
       <div className="Insta-secContainer h-[170vh] bg-[#e13251] relative">
         <div className="bg-[#e13251] h-[5vh] w-full absolute top-[-20px] left-0"></div>
-        <div className="absolute top-[50vh] left-[35%]">
+        <div className="absolute top-[60vh] left-[35%]">
           <h2
             className="text-[white] text-[3rem] leading-[100%] text-center z-[100]"
             data-scroll
-            data-scroll-speed=".5"
+            data-scroll-speed=".4"
             data-scroll-position="bottom"
           >
-           Achieve your best with Nike’s <br /> elite gear designed for champions
+            Achieve your best with Nike’s <br /> elite gear designed for
+            champions
           </h2>
         </div>
 
@@ -130,7 +131,7 @@ const Insta = () => {
             src={img2}
             alt="Card 2"
             data-scroll
-            data-scroll-speed=".3"
+            data-scroll-speed=".7"
             data-scroll-position="bottom"
           />
         </div>
@@ -139,7 +140,7 @@ const Insta = () => {
             src={img3}
             alt="Card 3"
             data-scroll
-            data-scroll-speed="1.7"
+            data-scroll-speed="1"
             data-scroll-position="bottom"
           />
         </div>
@@ -148,7 +149,7 @@ const Insta = () => {
             src={img4}
             alt="Card 5"
             data-scroll
-            data-scroll-speed="1"
+            data-scroll-speed=".5"
             data-scroll-position="bottom"
           />
         </div>
