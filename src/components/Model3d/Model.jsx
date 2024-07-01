@@ -132,7 +132,7 @@ const Model = () => {
             top: 0,
             left: 0,
             overflow: "hidden",
-            backgroundColor: "#005147",
+            backgroundColor: "#f4f2f0", //background color of the 3d model
             zIndex: -1,
           }}
           eventSource={document.getElementById("main")}

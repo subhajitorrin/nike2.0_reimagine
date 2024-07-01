@@ -105,7 +105,10 @@ const ScrollableContent = () => {
       className="bg-transparent relative  h-[500vh] px-[5rem]"
     >
       <div className="">
-        <div ref={section2Ref} className="modelSection2 h-screen  pt-[10rem]">
+        <div
+          ref={section2Ref}
+          className="modelSection2 h-screen  pt-[15rem] mt-[20rem] "
+        >
           <div className="absolute right-0 w-[40vw] h-[40vh]  flex items-center justify-center flex-col gap-[1rem]">
             <h1 className="TextAnimationSection1 text-[2.2vw] font-bold tektur text-[#9e8b5c] rounded-[10px] overflow-hidden">
               {section1.title.split(" ").map((word, index) => (
@@ -131,11 +134,13 @@ const ScrollableContent = () => {
         </div>
       </div>
       <div className="">
-        <div className="modelSection2 h-screen  pt-[10rem]">
-        </div>
+        <div className="modelSection2 h-screen  pt-[10rem]"></div>
       </div>
       <div className="">
-        <div ref={section3Ref} className="modelSection2 h-screen  pt-[10rem]">
+        <div
+          ref={section3Ref}
+          className="modelSection2 h-screen  pt-[10rem] mt-[9rem]"
+        >
           <div className="w-[40vw] h-[40vh]  flex items-center justify-center flex-col gap-[1rem]">
             <h1 className="TextAnimationSection2 text-[2.2vw] font-bold tektur text-[#9e8b5c] rounded-[10px] overflow-hidden">
               {section1.title.split(" ").map((word, index) => (
