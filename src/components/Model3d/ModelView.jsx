@@ -17,7 +17,7 @@ const ModelView = ({
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setScale([4, 4, 4]);
+        setScale([5, 5, 5]);
       } else {
         setScale([8, 8, 8]);
       }

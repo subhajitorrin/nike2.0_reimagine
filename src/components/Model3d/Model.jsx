@@ -74,38 +74,40 @@ const Model = () => {
     });
 
     //Updated ScrollTrigger for model position
-    ScrollTrigger.create({
-      trigger: "#main",
-      start: "top top",
-      end: "bottom bottom",
-      scrub: 100,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        let newX, newZ;
-    
-        if (progress < 0.25) {
-          newX = gsap.utils.interpolate(-2, 0, progress * 4);
-          newZ = 1;
-        } else if (progress < 0.5) {
-          newX = gsap.utils.interpolate(-1, -2, (progress - 0.25) * 2);
-          newZ = gsap.utils.interpolate(0, 1, (progress - 0.25) * 2);
-        } else if (progress < 0.65) {
-          newX = gsap.utils.interpolate(0.7, 0, (progress - 1) * 2);
-          newZ = gsap.utils.interpolate(0, 1, (progress - 0.5));
-        } else {
-          newX = 1;
-          newZ = gsap.utils.interpolate(0, 1, (progress - 1) * 2);
-        }
-    
-        gsap.to(modelPositionRef.current, {
-          x: newX,
-          y: -1,
-          z: newZ,
-          duration: 0.5,
-          ease: "power2.out"
-        });
-      },
-    });
+    if (window.innerWidth > 768){
+      ScrollTrigger.create({
+        trigger: "#main",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 100,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          let newX, newZ;
+
+          if (progress < 0.25) {
+            newX = gsap.utils.interpolate(-2, 0, progress * 4);
+            newZ = 1;
+          } else if (progress < 0.5) {
+            newX = gsap.utils.interpolate(-1, -2, (progress - 0.25) * 2);
+            newZ = gsap.utils.interpolate(0, 1, (progress - 0.25) * 2);
+          } else if (progress < 0.65) {
+            newX = gsap.utils.interpolate(0.7, 0, (progress - 1) * 2);
+            newZ = gsap.utils.interpolate(0, 1, (progress - 0.5));
+          } else {
+            newX = 1;
+            newZ = gsap.utils.interpolate(0, 1, (progress - 1) * 2);
+          }
+
+          gsap.to(modelPositionRef.current, {
+            x: newX,
+            y: -1,
+            z: newZ,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        },
+      });
+    }
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
