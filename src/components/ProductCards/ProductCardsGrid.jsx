@@ -3,6 +3,7 @@ import "./ProductCardsGrid.css";
 import ProductCard from "../ProductCardShow/ProductCard";
 import { useEffect, useState } from "react";
 import Product from "./Product";
+import { airJordanXxxVii5 , airMax2701 , customPhantomLuna1 , jordanStadium1 , jordanStayLoyal1 , jumpmanMvp1 , lebronNxxtGen1 , airForce1Wild1 } from '../../../public/Shoes'
 
 function ProductCardsGrid() {
   const [innerWidth, setinnerWidth] = useState(window.innerWidth);
@@ -18,35 +19,35 @@ function ProductCardsGrid() {
   const [Initial, setInitial] = useState([
     {
       name: "AirJordan",
-      img: "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+      img: airJordanXxxVii5,
     },
     {
       name: "AirForce",
-      img: "https://cdn.pixabay.com/photo/2024/01/26/06/49/elderly-man-8533488_960_720.png",
+      img: airMax2701,
     },
     {
       name: "Dunk",
-      img: "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+      img: customPhantomLuna1,
     },
     {
       name: "Blazer",
-      img: "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+      img: jordanStadium1,
     },
     {
       name: "AirJordan",
-      img: "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+      img: jordanStayLoyal1,
     },
     {
       name: "AirJordan",
-      img: "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+      img: airForce1Wild1,
     },
     {
       name: "AirJordan",
-      img: "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+      img: lebronNxxtGen1,
     },
     {
       name: "AirJordan",
-      img: "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
+      img: jumpmanMvp1,
     },
   ]);
   const [ShowInitial, setShowInitial] = useState([
