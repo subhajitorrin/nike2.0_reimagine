@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { enablePageScroll,disablePageScroll } from "scroll-lock";
+import { enablePageScroll, disablePageScroll } from "scroll-lock";
 import { gsap } from "gsap";
 import "./FullscreenNavbar.css";
 import { RiMenu3Fill } from "react-icons/ri";
@@ -136,15 +136,19 @@ function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
           toggleNavbar={toggleNavbar}
         />
       )}
-      {windowWidth <= 768 && navOyyehActive && <MobileViewNavContents toggleNavbar={toggleNavbar}/>}
+      {windowWidth <= 768 && navOyyehActive && (
+        <MobileViewNavContents toggleNavbar={toggleNavbar} />
+      )}
       <div
         className=""
         style={{
-          opacity: `${scrollY > 150 ? "1" : "0"}`,
-          pointerEvents: `${scrollY > 150 ? "auto" : "none"}`,
+          opacity: `${toggleNavbar ? "1" : scrollY > 150 ? "1" : "0"}`,
+          pointerEvents: `${
+            toggleNavbar ? "auto" : scrollY > 150 ? "auto" : "none"
+          }`,
         }}
       >
-        {!toggleNavbar ? (
+        {!navOyyehActive ? (
           <RiMenu3Fill
             className="menuicon text-black"
             ref={menuRef}

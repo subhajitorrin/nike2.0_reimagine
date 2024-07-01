@@ -16,7 +16,7 @@ html {
 }
 
 .blureffect {
-  height: 500vh;
+  height: 100%;
   width: 100vw;
   background-color: rgba(17, 25, 40, 0.1);
   backdrop-filter: blur(20px);
@@ -38,7 +38,7 @@ html {
 }
 @media (max-width: 768px) {
   .strokeText {
-    -webkit-text-stroke: .7px white;
+    -webkit-text-stroke: 0.7px white;
   }
 }
 .textAnimationSectionContainer div {

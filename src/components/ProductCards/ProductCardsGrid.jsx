@@ -177,7 +177,6 @@ function ProductCardsGrid() {
     const Target = document.querySelector(".produced");
 
     const closebtn = document.querySelector(".closebtn");
-    closebtn.style.pointerEvents = "none";
     Product.forEach((item, index) => {
       item.addEventListener("click", () => {
         Target.style.opacity = 1;
