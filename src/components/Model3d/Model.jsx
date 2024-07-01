@@ -87,10 +87,10 @@ const Model = () => {
           newX = gsap.utils.interpolate(-2, 0, progress * 4);
           newZ = 1;
         } else if (progress < 0.5) {
-          newX = gsap.utils.interpolate(0, -2, (progress - 0.25) * 2);
+          newX = gsap.utils.interpolate(-1, -2, (progress - 0.25) * 2);
           newZ = gsap.utils.interpolate(0, 1, (progress - 0.25) * 2);
         } else if (progress < 0.65) {
-          newX = gsap.utils.interpolate(1, 0, (progress - 1) * 2);
+          newX = gsap.utils.interpolate(0.7, 0, (progress - 1) * 2);
           newZ = gsap.utils.interpolate(0, 1, (progress - 0.5));
         } else {
           newX = 1;
