@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import clip from "../../../assets/BackClip/backclip.mov";
 import { SiNike } from "react-icons/si";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import mountain from "../../../assets/mountainend.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -72,7 +73,7 @@ function UpperFooter() {
         });
         t1.to(".textAnimationStg", {
           opacity: 0,
-          stagger:.1
+          stagger: 0.1,
         });
       },
       { scope: ref }
@@ -81,8 +82,16 @@ function UpperFooter() {
       <div ref={ref}>
         <div
           ref={mainRef}
-          className="min-h-screen bg-black flex items-center justify-center"
+          className="min-h-screen bg-[#0c0b0a] flex items-center justify-center"
         >
+          <div
+            className="h-screen w-full absolute top-[-98%]"
+            style={{
+              backgroundImage: `url(${mountain})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          ></div>
           <p className="tektur relative text-center leading-500 text-uppercase textAnimationSectionContainer">
             <div class="textAnimationStg   textAnimationTop ">Even&nbsp;</div>
             <div class="textAnimationStg   textAnimationTop ">if&nbsp;</div>
@@ -167,8 +176,16 @@ function UpperFooter() {
       <div ref={ref}>
         <div
           ref={mainRef}
-          className=" min-h-screen w-full flex items-center justify-center bg-black flex-col gap-8"
+          className=" min-h-screen w-full flex items-center justify-center bg-[#0c0b0a] flex-col gap-8"
         >
+          <div
+            className="h-screen w-full absolute top-[-98%]"
+            style={{
+              backgroundImage: `url(${mountain})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          ></div>
           <p className="relative text-center leading-500 text-uppercase tektur">
             <div class="inline-block text-white text-[3.5vw] uppercase  font-bold relative textAnimationStg textAnimationLeft strokeText">
               Even&nbsp;
