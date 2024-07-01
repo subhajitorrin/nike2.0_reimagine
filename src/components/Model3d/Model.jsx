@@ -1,167 +1,153 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import React, { useRef, useState, useEffect } from "react";
+import ModelView from "./ModelView";
+import ScrollableContent from "./ScrollableContent";
+import * as THREE from "three";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { View } from "@react-three/drei";
+import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(useGSAP);
 
-const ScrollableContent = () => {
-  const containerRef = useRef(null);
-  const childRef1 = useRef(null);
-  const childRef2 = useRef(null);
-  const section2Ref = useRef(null);
-  const section3Ref = useRef(null);
+const ModelWrapper = ({ modelRef, positionRef  }) => {
+  useFrame(() => {
+    if (modelRef.current && positionRef.current) {
+      modelRef.current.position.copy(positionRef.current);
+    }
+  });
 
-  const section1 = {
-    title: "Elevate Your Performance with Nike",
-    desc: "Elevate your performance with Nike, where cutting-edge technology meets unparalleled design to enhance your athletic prowess. Whether you're a seasoned athlete or just beginning your fitness journey, Nike's innovative gear and apparel are crafted to support and empower you every step of the way. Experience the perfect blend of comfort, durability, and style, ensuring that you can push your limits and achieve your personal best.",
-  };
+  return null;
+};
 
-  useGSAP(
-    () => {
-      const t1 = gsap.timeline({
-        scrollTrigger: {
-          trigger: section2Ref.current,
-          start: "50% 50%",
-          end: "200% 50%",
-          scrub: 1,
-          pin: true,
-        },
-      });
-      t1.from(".TextAnimationSection1", {
-        opacity: 0,
-        scale: 3,
-        y: function () {
-          return Math.random() * 600 - 300;
-        },
-        stagger: {
-          amount: 1,
-        },
-      });
-      t1.to(".TextAnimationSection1", {
-        duration: 5,
-      });
-      t1.to(".TextAnimationSection1", {
-        opacity: 0,
-        scale: 2,
-        y: function () {
-          return Math.random() * 200 - 100;
-        },
-        stagger: {
-          amount: 1,
-        },
-      });
-      return () => {
-        t1.kill();
-      };
-    },
-    { scope: containerRef }
-  );
-  useGSAP(
-    () => {
-      const t1 = gsap.timeline({
-        scrollTrigger: {
-          trigger: section3Ref.current,
-          start: "50% 50%",
-          end: "150% 50%",
-          scrub: 1,
-          pin: true,
-        },
-      });
-      t1.from(".TextAnimationSection2", {
-        opacity: 0,
-        scale: 3,
-        y: function () {
-          return Math.random() * 600 - 300;
-        },
-        stagger: {
-          amount: 1,
-        },
-      });
-      t1.to(".TextAnimationSection2", {
-        duration: 5,
-      });
-      t1.to(".TextAnimationSection2", {
-        opacity: 0,
-        scale: 2,
-        y: function () {
-          return Math.random() * 200 - 100;
-        },
-        stagger: {
-          amount: 1,
-        },
-      });
-      return () => {
-        t1.kill();
-      };
-    },
-    { scope: containerRef }
-  );
+const Model = () => {
+  const [model, setModel] = useState("first");
+  const cameraControlSmall = useRef();
+  const cameraControlLarge = useRef();
+  const first = useRef(new THREE.Group());
+  const second = useRef(new THREE.Group());
+  const third = useRef(new THREE.Group());
+  const [smallRotation, setSmallRotation] = useState(0);
+  const [largeRotation, setLargeRotation] = useState(0);
+  const rotationRef = useRef(0);
+  const scrollableContentRef = useRef(null);
+  const modelPositionRef = useRef(new THREE.Vector3(0, 0, 1));
+
+  useEffect(() => {
+    const totalRotation = Math.PI * 14; // Full 360 degree rotation
+
+    // ScrollTrigger for model rotation
+    ScrollTrigger.create({
+      trigger: "#main",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 100,
+      onUpdate: (self) => {
+        if (first.current) {
+          const newRotation = self.progress * totalRotation;
+          const rotationChange = newRotation - rotationRef.current;
+          gsap.to(first.current.rotation, {
+            y: `+=${rotationChange}`,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+          rotationRef.current = newRotation;
+        }
+      },
+      
+    });
+
+    //ScrollTrigger for scrollable content animation
+    ScrollTrigger.create({
+      trigger: "#scrollable-content",
+      start: "top bottom",
+      end: "top top",
+      scrub: 100,
+      onUpdate: (self) => {
+        if (scrollableContentRef.current) {
+          gsap.to(scrollableContentRef.current, {
+            y: `${-self.progress * 400}vh`,
+            duration: 0.5,
+            ease: "power2.out"
+          });
+        }
+      },
+    });
+
+    //Updated ScrollTrigger for model position
+    ScrollTrigger.create({
+      trigger: "#main",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 100,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        let newX, newZ;
+    
+        if (progress < 0.25) {
+          newX = gsap.utils.interpolate(-2, 0, progress * 4);
+          newZ = 1;
+        } else if (progress < 0.5) {
+          newX = gsap.utils.interpolate(0, -2, (progress - 0.25) * 2);
+          newZ = gsap.utils.interpolate(0, 1, (progress - 0.25) * 2);
+        } else if (progress < 0.65) {
+          newX = gsap.utils.interpolate(1, 0, (progress - 1) * 2);
+          newZ = gsap.utils.interpolate(0, 1, (progress - 0.5));
+        } else {
+          newX = 1;
+          newZ = gsap.utils.interpolate(0, 1, (progress - 1) * 2);
+        }
+    
+        gsap.to(modelPositionRef.current, {
+          x: newX,
+          y: -1,
+          z: newZ,
+          duration: 0.5,
+          ease: "power2.out"
+        });
+      },
+    });
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="bg-transparent relative  h-[500vh] px-[5rem]"
-    >
-      <div className="">
-        <div ref={section2Ref} className="modelSection2 h-screen  pt-[10rem]">
-          <div className="absolute right-0 w-[40vw] h-[40vh]  flex items-center justify-center flex-col gap-[1rem]">
-            <h1 className="TextAnimationSection1 text-[2.2vw] font-bold tektur text-[#9e8b5c] rounded-[10px] overflow-hidden">
-              {section1.title.split(" ").map((word, index) => (
-                <div
-                  className="TextAnimationSection1 relative inline-block bg-black text-white "
-                  key={index}
-                >
-                  {word}&nbsp;
-                </div>
-              ))}
-            </h1>
-            <p className="vtregular text-[1.4vw] font-[300]">
-              {section1.desc.split(" ").map((word, index) => (
-                <div
-                  className="TextAnimationSection1 relative inline-block text-gray-400"
-                  key={index}
-                >
-                  {word}&nbsp;
-                </div>
-              ))}
-            </p>
-          </div>
-        </div>
+    <div className="relative w-full h-[600vh]" id="main">
+      <div className="fixed top-0 left-0 w-full h-screen">
+        <ModelView
+          index={1}
+          groupRef={first}
+          gsapType="view1"
+          controlRef={cameraControlSmall}
+          setRotationState={setSmallRotation}
+          size={model}
+          modelPosition={modelPositionRef.current}
+        />
+        <Canvas
+          className="w-full h-full"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            overflow: "hidden",
+            backgroundColor: "#005147",
+            zIndex: -1,
+          }}
+          eventSource={document.getElementById("main")}
+        >
+          <View.Port />
+          <ModelWrapper modelRef={first} positionRef={modelPositionRef} />
+        </Canvas>
       </div>
-      <div className="">
-        <div className="modelSection2 h-screen  pt-[10rem]">
-        </div>
-      </div>
-      <div className="">
-        <div ref={section3Ref} className="modelSection2 h-screen  pt-[10rem]">
-          <div className="w-[40vw] h-[40vh]  flex items-center justify-center flex-col gap-[1rem]">
-            <h1 className="TextAnimationSection2 text-[2.2vw] font-bold tektur text-[#9e8b5c] rounded-[10px] overflow-hidden">
-              {section1.title.split(" ").map((word, index) => (
-                <div
-                  className="TextAnimationSection2 relative inline-block bg-black text-white"
-                  key={index}
-                >
-                  {word}&nbsp;
-                </div>
-              ))}
-            </h1>
-            <p className="vtregular text-[1.4vw] font-[300]">
-              {section1.desc.split(" ").map((word, index) => (
-                <div
-                  className="TextAnimationSection2 relative inline-block text-gray-400"
-                  key={index}
-                >
-                  {word}&nbsp;
-                </div>
-              ))}
-            </p>
-          </div>
-        </div>
+      <div
+        id="scrollable-content"
+        // ref={scrollableContentRef}
+        className="absolute top-0 left-0 w-full"
+      >
+        <ScrollableContent />
       </div>
     </div>
   );
 };
 
-export default ScrollableContent;
+export default Model;
