@@ -321,16 +321,16 @@ function NavContents({ navContentsRef, toggleNavbar }) {
   const [sublistContainerMouseMove, setsublistContainerMouseMove] =
     useState(false);
   function handelSublistMouseEnter() {
-    setsublistContainerMouseMove(true);
-    console.log(sublistContainerMouseMove);
+    // setsublistContainerMouseMove(true);
+    // console.log(sublistContainerMouseMove);
   }
   function handelSublistMouseLeave() {
-    setsublistContainerMouseMove(false);
-    setisHardActive(false)
-    console.log(sublistContainerMouseMove);
+    // setsublistContainerMouseMove(false);
+    // setisHardActive(false)
+    // console.log(sublistContainerMouseMove);
   }
   function handleMouseClick() {
-    setisHardActive(true);
+    // setisHardActive(true);
   }
 
   const navClipRef = useRef(null);

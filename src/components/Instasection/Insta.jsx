@@ -78,7 +78,7 @@ const Insta = () => {
         <div className="bg-[#e13251] h-[5vh] w-full absolute top-[-20px] left-0"></div>
         <div className="absolute top-[60vh] left-[35%]">
           <h2
-            className="text-[white] text-[3rem] leading-[100%] text-center z-[100]"
+            className="text-[white] text-[3rem] leading-[100%] text-center z-[100] tektur"
             data-scroll
             data-scroll-speed=".4"
             data-scroll-position="bottom"

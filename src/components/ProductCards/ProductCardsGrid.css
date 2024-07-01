@@ -38,19 +38,22 @@
   border-bottom-left-radius: 30px;
   background-color: red;
   transition: all 0.3s linear;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2); /* orrin */
 }
 .product:hover {
   scale: 1.1;
   transition: all 0.3s linear;
 }
-.product:hover ~ .product {
-  opacity: 0.6;
+/* .product:hover ~ .product {
+  opacity: 0.8;
   transition: all 0.3s linear;
 }
+/* orrin */
+/*
 .product:has(~ .product:hover) {
-  opacity: 0.6;
+  opacity: 0.8;
   transition: all 0.3s linear;
-}
+} */
 .produced {
   position: fixed;
   z-index: 9999999;

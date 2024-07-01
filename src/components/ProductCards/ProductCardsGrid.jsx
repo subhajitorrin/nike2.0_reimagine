@@ -50,8 +50,7 @@ import {
   airForce1Wild2,
   airForce1Wild3,
   airForce1Wild4,
-
-} from '../../../public/Shoes'
+} from "../../../public/Shoes";
 
 function ProductCardsGrid() {
   const [innerWidth, setinnerWidth] = useState(window.innerWidth);
@@ -100,100 +99,60 @@ function ProductCardsGrid() {
   ]);
   const [ShowInitial, setShowInitial] = useState([
     {
-      firstslide:
-        airJordanXxxVii1,
-      secondslide:
-        airJordanXxxVii2,
-      thirdslide:
-        airJordanXxxVii3,
-      fourthslide:
-        airJordanXxxVii4,
-      fifthslide:
-        airJordanXxxVii5,
+      firstslide: airJordanXxxVii1,
+      secondslide: airJordanXxxVii2,
+      thirdslide: airJordanXxxVii3,
+      fourthslide: airJordanXxxVii4,
+      fifthslide: airJordanXxxVii5,
     },
     {
-      firstslide:
-        airMax2702,
-      secondslide:
-        airMax2703,
-      thirdslide:
-        airMax2704,
-      fourthslide:
-        airMax2705,
-      fifthslide:
-        airMax2706,
+      firstslide: airMax2702,
+      secondslide: airMax2703,
+      thirdslide: airMax2704,
+      fourthslide: airMax2705,
+      fifthslide: airMax2706,
     },
     {
-      firstslide:
-        customPhantomLuna2,
-      secondslide:
-        customPhantomLuna3,
-      thirdslide:
-        customPhantomLuna4,
-      fourthslide:
-        customPhantomLuna5,
-      fifthslide:
-        customPhantomLuna6,
+      firstslide: customPhantomLuna2,
+      secondslide: customPhantomLuna3,
+      thirdslide: customPhantomLuna4,
+      fourthslide: customPhantomLuna5,
+      fifthslide: customPhantomLuna6,
     },
     {
-      firstslide:
-        jordanStadium2,
-      secondslide:
-        jordanStadium3,
-      thirdslide:
-        jordanStadium4,
-      fourthslide:
-        jordanStadium5,
-      fifthslide:
-        jordanStadium6,
+      firstslide: jordanStadium2,
+      secondslide: jordanStadium3,
+      thirdslide: jordanStadium4,
+      fourthslide: jordanStadium5,
+      fifthslide: jordanStadium6,
     },
     {
-      firstslide:
-        jordanStayLoyal1,
-      secondslide:
-        jordanStayLoyal2,
-      thirdslide:
-        jordanStayLoyal3,
-      fourthslide:
-        jordanStayLoyal4,
-      fifthslide:
-        jordanStayLoyal5,
+      firstslide: jordanStayLoyal1,
+      secondslide: jordanStayLoyal2,
+      thirdslide: jordanStayLoyal3,
+      fourthslide: jordanStayLoyal4,
+      fifthslide: jordanStayLoyal5,
     },
     {
-      firstslide:
-        jumpmanMvp2,
-      secondslide:
-        jumpmanMvp3,
-      thirdslide:
-        jumpmanMvp4,
-      fourthslide:
-        jumpmanMvp5,
-      fifthslide:
-        jumpmanMvp6,
+      firstslide: jumpmanMvp2,
+      secondslide: jumpmanMvp3,
+      thirdslide: jumpmanMvp4,
+      fourthslide: jumpmanMvp5,
+      fifthslide: jumpmanMvp6,
     },
     {
-      firstslide:
-        lebronNxxtGen2,
-      secondslide:
-        lebronNxxtGen3,
-      thirdslide:
-        lebronNxxtGen4,
-      fourthslide:
-        lebronNxxtGen5,
-      fifthslide:
-        lebronNxxtGen6,
+      firstslide: lebronNxxtGen2,
+      secondslide: lebronNxxtGen3,
+      thirdslide: lebronNxxtGen4,
+      fourthslide: lebronNxxtGen5,
+      fifthslide: lebronNxxtGen6,
     },
     {
-      firstslide:
-        airForce1Wild1,
-      secondslide:
-        airForce1Wild2,
-      thirdslide:
-        airForce1Wild3,
-      fourthslide:
-        airForce1Wild4,
-      fifthslide:
-        airMax2707
+      firstslide: airForce1Wild1,
+      secondslide: airForce1Wild2,
+      thirdslide: airForce1Wild3,
+      fourthslide: airForce1Wild4,
+      fifthslide: airMax2707,
     },
   ]);
   useEffect(() => {
@@ -239,7 +198,7 @@ function ProductCardsGrid() {
       });
     });
 
-    return () => { };
+    return () => {};
   }, []);
 
   if (innerWidth > 1000) {
@@ -278,7 +237,10 @@ function ProductCardsGrid() {
           return (
             <div
               key={index}
-              style={{ backgroundImage: `url(${item.img})` }}
+              style={{
+                backgroundImage: `url(${item.img})`,
+                boxShadow: "2px 2px 20px rgba(0, 0, 0, 0.2)",
+              }}
               className="flex flex-col items-center justify-end gap-[1rem] pb-[2rem] mobileProductionSectionCards overflow-hidden h-full min-w-[80vw] mx-[2rem] rounded-tr-[20px] rounded-bl-[20px]"
             >
               <span className=" text-white text-[1.5rem] tektur">
