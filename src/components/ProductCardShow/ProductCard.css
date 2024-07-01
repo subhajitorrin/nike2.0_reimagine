@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.bgContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: blur(50%);
+  background-color: rgba(255, 255, 255, 0.4);
+  /* -webkit-backdrop-filter: blur(20px); */
+  backdrop-filter: blur(10px);
+}
+.mySwiper {
+  width: 100% !important;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mySwiperSlide {
+  height: 60% !important;
+  top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ProductImages {
+  width: 20%;
+  height: 100%;
+  border-radius: 50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mySwiperSlide:nth-child(1) .ProductImages {
+  background-color: red;
+}
+.mySwiperSlide:nth-child(2) .ProductImages {
+  background-color: purple;
+}
+.mySwiperSlide:nth-child(3) .ProductImages {
+  background-color: orange;
+}
+.mySwiperSlide:nth-child(4) .ProductImages {
+  background-color: pink;
+}
+.mySwiperSlide:nth-child(5) .ProductImages {
+  background-color: green;
+}
+
+
+
+.swiper-slide-next .ProductImages {
+    scale:0.9
+  }
+ 
+.swiper-slide-next + * .ProductImages{
+   opacity:0;
+}
+.swiper-slide-next + * + * .ProductImages{
+    opacity:0;
+  
+ }
+
+ .swiper-slide-next + * + * + * .ProductImages{
+    opacity:0;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.swiper-slide-prev>.ProductImages {
+    scale:0.9;
+}
+.mySwiperSlide:has( + .swiper-slide-prev + * ) > .ProductImages{
+   opacity: 0;
+}
+.mySwiperSlide:has(+ * + .swiper-slide-prev + *  ) > .ProductImages{
+    opacity: 0;
+ }
+ .mySwiperSlide:has( + * + * + .swiper-slide-prev + *  ) > .ProductImages{
+    opacity: 0;
+ }
+
+
+.swiper-pagination{
+  position: absolute !important;
+  top:85% !important;
+ z-index: 9;
+}
+
+
+
+
+
+
+
+.ShoeName{
+  font-size: 2rem;
+  color:white
+}

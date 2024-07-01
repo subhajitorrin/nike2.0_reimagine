@@ -13,6 +13,13 @@ import Insta from "./components/Instasection/Insta";
 import UpperFooter from "./components/footer/footer division/UpperFooter";
 import SwipeComponent from "./components/HeroSwipe/SwipeComponent.jsx";
 
+import ProductCardsGrid from "./components/ProductCards/ProductCardsGrid.jsx"
+
+
+
+
+
+
 function App() {
   const [isLoading, setisLoading] = useState(true);
   const locomotiveScroll = new LocomotiveScroll();
@@ -89,6 +96,7 @@ at App.jsx line 13
         settoggleNavbar={settoggleNavbar}
       />
       <SwipeComponent />
+      <ProductCardsGrid/>
       <CardSection />
       {!isLoading && <Model />}
       {!isLoading && <UpperFooter />}
