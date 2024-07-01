@@ -5,6 +5,16 @@ import { useEffect, useState } from "react";
 import Product from "./Product";
 
 function ProductCardsGrid() {
+  const [innerWidth, setinnerWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    function handleResize() {
+      setinnerWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const [Initial, setInitial] = useState([
     {
       name: "AirJordan",
@@ -50,7 +60,7 @@ function ProductCardsGrid() {
       fourthslide:
         "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
       fifthslide:
-        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg"
+        "https://cdn.pixabay.com/photo/2024/03/26/15/12/sunset-8657085_1280.jpg",
     },
     {
       firstslide:
@@ -182,34 +192,58 @@ function ProductCardsGrid() {
 
     return () => {};
   }, []);
-  return (
-    <>
-      <div className="closebtn"></div>
-      <div className="produced pointerevent">
-        {ShowInitial.map((i) => {
-          console.log(i);
+
+  if (innerWidth > 1000) {
+    return (
+      <>
+        <div className="closebtn"></div>
+        <div className="produced pointerevent">
+          {ShowInitial.map((i) => {
+            console.log(i);
+            return (
+              <div className="boom">
+                <ProductCard
+                  firstslide={i.firstslide}
+                  secondslide={i.secondslide}
+                  thirdslide={i.thirdslide}
+                  fourthslide={i.fourthslide}
+                  fifthslide={i.fifthslide}
+                />
+              </div>
+            );
+          })}
+        </div>
+        <div className="ContainerX">
+          <div className="ProductContainer">
+            {Initial.map((i) => {
+              return <Product name={i.name} img={i.img} />;
+            })}
+          </div>
+        </div>
+      </>
+    );
+  } else {
+    return (
+      <div className="bg-[#f4f2f0] mobileViewProductSection h-[60vh] relative z-[1]  px-[1rem] py-[3rem] flex overflow-y-auto top-[1px] ">
+        {Initial.map((item, index) => {
           return (
-            <div className="boom">
-              <ProductCard
-                firstslide={i.firstslide}
-                secondslide={i.secondslide}
-                thirdslide={i.thirdslide}
-                fourthslide={i.fourthslide}
-                fifthslide={i.fifthslide}
-              />
+            <div
+              key={index}
+              style={{ backgroundImage: `url(${item.img})` }}
+              className="flex flex-col items-center justify-end gap-[1rem] pb-[2rem] mobileProductionSectionCards overflow-hidden h-full min-w-[80vw] mx-[2rem] rounded-tr-[20px] rounded-bl-[20px]"
+            >
+              <span className=" text-white text-[1.5rem] tektur">
+                {item.name}
+              </span>
+              <div className="rounded-[20px] px-[1rem] py-[.2rem] bg-white text-black">
+                See more
+              </div>
             </div>
           );
         })}
       </div>
-      <div className="ContainerX">
-        <div className="ProductContainer">
-          {Initial.map((i) => {
-            return <Product name={i.name} img={i.img} />;
-          })}
-        </div>
-      </div>
-    </>
-  );
+    );
+  }
 }
 
 export default ProductCardsGrid;

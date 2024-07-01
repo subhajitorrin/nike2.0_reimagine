@@ -4,7 +4,7 @@ import ImgCard from "./ImgCard";
 import gsap from "gsap";
 
 function Loader({ isLoading, setisLoading }) {
-  const [counter, setcounter] = useState(0);
+  const [counter, setcounter] = useState(100);
   // const [isLoading, setisLoading] = useState(true);
   useEffect(() => {
     if (counter < 50) {

@@ -1,7 +1,6 @@
 .product{
     flex-shrink: 0;
-    width: 200px;
-    height: 240px;
+
     border-top-right-radius: 30px;
     border-bottom-left-radius: 30px;
     transition: all 0.3s linear;

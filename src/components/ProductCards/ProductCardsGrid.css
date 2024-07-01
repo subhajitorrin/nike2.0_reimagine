@@ -1,93 +1,90 @@
-
-
-
-
-.ContainerX{
-    width: 100vw;
-    height: 100vh;
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    position:relative;
-    z-index:1
+/* .mobileViewProductSection {
+  scrollbar-width: none;
+} */
+.mobileProductionSectionCards {
+  background-position: center;
+  background-size: cover;
 }
-.ProductContainer{
-    max-width: 100vw;
-    background-color: aqua;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    padding: 15rem;
-    flex-wrap: wrap;
-    max-height: 200vw;overflow-y: auto;
-    scroll-behavior: smooth;
-    gap:2rem;
+
+.ContainerX {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
 }
-.product{
-    flex-shrink: 0;
-    width: 200px;
-    height: 240px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    background-color: red;
-    transition: all 0.3s linear;
+.ProductContainer {
+  max-width: 100vw;
+  background-color: #f4f2f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 15rem;
+  flex-wrap: wrap;
+  overflow-wrap: normal;
+  max-height: 200vw;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  gap: 2rem;
 }
-.product:hover{
-    scale:1.1;
-    transition: all 0.3s linear;
+.product {
+  flex-shrink: 0;
+  width: 15vw;
+  height: 20rem;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: red;
+  transition: all 0.3s linear;
+}
+.product:hover {
+  scale: 1.1;
+  transition: all 0.3s linear;
 }
 .product:hover ~ .product {
-    opacity:0.5;
-    transition: all 0.3s linear;
-
+  opacity: 0.6;
+  transition: all 0.3s linear;
 }
-.product:has(~.product:hover){
-    opacity:0.5;
-    transition: all 0.3s linear;
-
+.product:has(~ .product:hover) {
+  opacity: 0.6;
+  transition: all 0.3s linear;
 }
-.produced{
-    position: fixed;
-    z-index: 9999999;
-    opacity:0;
-    top:0px;
+.produced {
+  position: fixed;
+  z-index: 9999999;
+  opacity: 0;
+  top: 0px;
 }
-.pointerevent{
-    pointer-events:none;
+.pointerevent {
+  pointer-events: none;
 }
-.closebtn{
-    width: 60px;
-    height: 60px;
-    position: fixed;
-    top:5%;
-    right: 0px;
-    margin-right: 2rem;
-    z-index: 999999999999999999999999999999;
-    background-color: black;
-    opacity:0;
-    border-radius:100px ;
+.closebtn {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  top: 5%;
+  right: 0px;
+  margin-right: 2rem;
+  z-index: 999999999999999999999999999999;
+  background-color: black;
+  opacity: 0;
+  border-radius: 100px;
 }
 
-.boom{
-    opacity: 0;
-    background-color: transparent;
-    position: fixed;
-    pointer-events: none;
+.boom {
+  opacity: 0;
+  background-color: transparent;
+  position: fixed;
+  pointer-events: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 1450px) {
+  .ContainerX {
+    height: 200vh;
+  }
+  .ContainerX .product {
+    width: 20vw;
+  }
+}
