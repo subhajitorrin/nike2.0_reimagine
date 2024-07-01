@@ -102,7 +102,7 @@ const ScrollableContent = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-transparent relative  h-[400vh] px-[5rem]"
+      className="bg-transparent relative  h-[500vh] px-[5rem]"
     >
       <div className="">
         <div ref={section2Ref} className="modelSection2 h-screen  pt-[10rem]">
@@ -128,6 +128,10 @@ const ScrollableContent = () => {
               ))}
             </p>
           </div>
+        </div>
+      </div>
+      <div className="">
+        <div className="modelSection2 h-screen  pt-[10rem]">
         </div>
       </div>
       <div className="">
