@@ -25,28 +25,28 @@ function App() {
   const locomotiveScroll = new LocomotiveScroll();
   const containerRef = useRef(null);
   const [toggleNavbar, settoggleNavbar] = useState(false);
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      gsap.set(".cursor", {
-        x: e.clientX,
-        y: e.clientY,
-      });
-    };
-    const handleMouseLeave = () => {
-      document.querySelector(".cursor").style.display = "none";
-    };
+  // useEffect(() => {
+  //   const handleMouseMove = (e) => {
+  //     gsap.set(".cursor", {
+  //       x: e.clientX,
+  //       y: e.clientY,
+  //     });
+  //   };
+  //   const handleMouseLeave = () => {
+  //     document.querySelector(".cursor").style.display = "none";
+  //   };
 
-    const handleMouseEnter = () => {
-      document.querySelector(".cursor").style.display = "block";
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    document
-      .querySelector("#main")
-      .addEventListener("mouseleave", handleMouseLeave);
-    document
-      .querySelector("#main")
-      .addEventListener("mouseenter", handleMouseEnter);
-  }, []);
+  //   const handleMouseEnter = () => {
+  //     document.querySelector(".cursor").style.display = "block";
+  //   };
+  //   window.addEventListener("mousemove", handleMouseMove);
+  //   document
+  //     .querySelector("#main")
+  //     .addEventListener("mouseleave", handleMouseLeave);
+  //   document
+  //     .querySelector("#main")
+  //     .addEventListener("mouseenter", handleMouseEnter);
+  // }, []);
 
   useEffect(() => {
     let locomotiveScroll = null;
@@ -61,19 +61,19 @@ function App() {
     };
   }, [toggleNavbar]);
 
-  useEffect(() => {
-    if (isLoading) {
-      document.querySelectorAll(".CursorTrail").forEach((item) => {
-        item.style.display = "none";
-      });
-    } else {
-      setTimeout(() => {
-        document.querySelectorAll(".CursorTrail").forEach((item) => {
-          item.style.display = "flex";
-        });
-      }, 1000);
-    }
-  }, [isLoading]);
+  // useEffect(() => {
+  //   if (isLoading) {
+  //     document.querySelectorAll(".CursorTrail").forEach((item) => {
+  //       item.style.display = "none";
+  //     });
+  //   } else {
+  //     setTimeout(() => {
+  //       document.querySelectorAll(".CursorTrail").forEach((item) => {
+  //         item.style.display = "flex";
+  //       });
+  //     }, 1000);
+  //   }
+  // }, [isLoading]);
 
   /*****
 if you are commenting <Loader/> 

@@ -7,6 +7,7 @@ import shoe3 from "../../assets/ShoeCardImgs/shoe3.png";
 import shoe4 from "../../assets/ShoeCardImgs/shoe4.png";
 import MobileShoeCard from "./MobileShoeCard";
 import gsap from "gsap";
+import "./CardSection.css";
 
 const shoeList = [
   { shoe: shoe1, title: "AIR JORDAN 1", desc: "Classic, coveted, enduring." },
@@ -73,17 +74,6 @@ function CardSection() {
       </div>
     );
   } else {
-    const btnRef = useRef(null);
-    function handleMouseEnter() {
-      gsap.set(btnRef.current, {
-        backgroundColor:"white"
-      });
-    }
-    function handleMouseLeave() {
-      gsap.set(btnRef.current, {
-        backgroundColor:"#eb244b"
-      });
-    }
     return (
       <div className="tektur w-full text-white flex flex-col items-center gap-[4rem] bg-[#f4f2f0] py-[5rem] relative z-[1]">
         <div className="text-center text-[2rem] text-black ">
@@ -122,13 +112,8 @@ function CardSection() {
             />
           </div>
         </div>
-        <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          ref={btnRef}
-          className="items-center text-[1.2rem] flex gap-[1rem] px-[2rem] py-[1.5rem] border rounded-[35px] bg-[#eb244b] text-white font-bold"
-        >
-          all shoes <HiArrowNarrowRight className="text-white text-[1.5rem]" />
+        <div className="cardSectionShoeButton items-center text-[1.2rem] flex gap-[1rem] px-[2rem] py-[1.5rem] border rounded-[35px]  font-bold">
+          all shoes <HiArrowNarrowRight className="shoeBtnRightArrIcon text-white text-[1.5rem]" />
         </div>
       </div>
     );

@@ -1,0 +1,19 @@
+.cardSectionShoeButton {
+  cursor: pointer;
+  background-color: #eb244b;
+  transition: all 0.3s linear;
+}
+
+.cardSectionShoeButton:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.cardSectionShoeButton:hover .shoeBtnRightArrIcon {
+  color: #eb244b;
+}
+
+.shoeBtnRightArrIcon {
+  transition: all 0.4s linear;
+}

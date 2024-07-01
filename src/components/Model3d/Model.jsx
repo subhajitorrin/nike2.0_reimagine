@@ -65,7 +65,7 @@ const Model = () => {
       onUpdate: (self) => {
         if (scrollableContentRef.current) {
           gsap.to(scrollableContentRef.current, {
-            y: `${-self.progress * 300}vh`,
+            y: `${-self.progress * 400}vh`,
             duration: 0.5,
             ease: "power2.out"
           });
@@ -113,7 +113,7 @@ const Model = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[300vh] md:h-[400vh]" id="main">
+    <div className="relative w-full h-[400vh] md:h-[400vh]" id="main">
       <div className="fixed top-0 left-0 w-full h-screen">
         <ModelView
           index={1}

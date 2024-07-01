@@ -1,34 +1,34 @@
-.CursorTrail{
-    width: 18px;
-    height: 18px;
-    border-radius: 50px;
-    z-index: 9999999999;
-    background-color:red;
-    box-sizing: border-box;
-    background-repeat: no-repeat;
-    background-position: center;
-    position:fixed;
-    color:white;
-    font-size: 4rem;
-    top:0;
-    left:0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    object-fit: contain;
-    align-items: center;
-    pointer-events: none;
+.CursorTrail {
+  width: 18px;
+  height: 18px;
+  border-radius: 50px;
+  z-index: 9999999999;
+  background-color: red;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  color: white;
+  font-size: 4rem;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  object-fit: contain;
+  align-items: center;
+  pointer-events: none;
 }
-.dot{
-    width: 9px;
-    height: 9px;
-    border-radius: 20px;
-    background-color: white;
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 20px;
+  background-color: white;
 }
 
 @media only screen and (max-width: 768px) {
-    .CursorTrail{
-        display: none;
-    }
+  .CursorTrail {
+    display: none;
+  }
 }
