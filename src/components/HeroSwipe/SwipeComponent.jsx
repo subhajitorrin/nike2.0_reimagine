@@ -23,19 +23,23 @@ import RoadPlatform from "../../assets/SwipeSectionAsset/RoadPlatform.gif";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { SiNike } from "react-icons/si";
+import { useExtractColor } from "react-extract-colors";
 // import NikeLogoBg from "../../assets/NikeLogoBg.jpeg"
+const bg = 'rgba(0,0,0,0)'
 
 function handleMovement(e) {
-  let Moveimg = document.querySelectorAll(".HeroShoe");
-  Moveimg.forEach((item) => {
-    const Axis = item.getBoundingClientRect();
-    const x = (e.clientX - Axis.left) / Axis.width;
-    const y = (e.clientY - Axis.top) / Axis.height;
-    const Movex = (x - 0.2) * 20;
-    const Movey = (y - 0.2) * 20;
-    item.style.transform = `translate(${Movex}px,${Movey}px)`;
-  });
+  
+  // let Moveimg = document.querySelectorAll(".HeroShoe");
+  // Moveimg.forEach((item) => {
+  //   const Axis = item.getBoundingClientRect();
+  //   const x = (e.clientX - Axis.left) / Axis.width;
+  //   const y = (e.clientY - Axis.top) / Axis.height;
+  //   const Movex = (x - 0.2) * 20;
+  //   const Movey = (y - 0.2) * 20;
+  //   item.style.transform = `translate(${Movex}px,${Movey}px)`;
+  // });
 }
+
 
 function handleEnter1() {
   let IncreaseDiv1 = document.querySelector(".lengthdiv1");
@@ -63,6 +67,46 @@ function handleLeave2() {
 function handleMouseMoveHero() {}
 
 function SwipeComponent() {
+const HeroImage = [AirJordan,Dunk,Blazer,AirForce]
+
+let i=0;
+let empty=[]
+for(i=0;i<HeroImage.length;i++){
+  const { dominantColor, darkerColor, lighterColor } = useExtractColor(HeroImage[i]);
+  empty[i]=dominantColor;
+}
+
+// const [index, setIndex] = useState(0)
+
+// let Finalcolor;
+// function HandleForward(){
+//   console.log(index);
+//   console.log(empty);
+//   console.log(empty[index]);
+   
+//    console.log("Empty",empty[index])
+//    console.log("Final",Finalcolor)
+//    if(index===3 || index===-1){
+
+//     setIndex(0)
+//   }else{
+//   setIndex(previous=>previous+1)
+// }
+//   Finalcolor = empty[index];
+  
+// }
+
+// function Handlebackward(){
+//   console.log(empty);
+//   if(index<0){
+//     setIndex(4)
+//    }
+//   setIndex(previous=>previous-1)
+//   console.log("Empty",empty[index])
+//    Finalcolor = empty[index];
+//   console.log("Final",Finalcolor)
+// }
+
   const [innerWidth, setinnerWidth] = useState(window.innerWidth);
   useEffect(() => {
     function handleResize() {
@@ -133,6 +177,8 @@ function SwipeComponent() {
       }
     }
   }, [position]);
+
+  Swiper.i
   return (
     <>
       <div className="Bg-container" onMouseMove={handleMovement}>
@@ -152,10 +198,10 @@ function SwipeComponent() {
             nextEl: ".Next.Btn",
             prevEl: ".Prev.Btn",
           }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 4000,
+          //   disableOnInteraction: false,
+          // }}
           speed={750}
           shortSwipes={true}
           spaceBetween={0}
@@ -185,6 +231,8 @@ function SwipeComponent() {
               rotate: [-45, 0, 45],
             },
           }}
+          // onSlideNextTransitionStart={HandleForward}
+          // onSlidePrevTransitionStart={Handlebackward}
         >
           <div className="BgText " ref={blurContainer} id="blurContainer">
             <div className="textOnHeroSectionSmall absolute text-[15px] w-[10rem] leading-[100%] text-black right-[22%] top-[70%] font-[500]">
@@ -194,13 +242,13 @@ function SwipeComponent() {
             {innerWidth > 768 ? (
               <p
                 className="relative"
-                style={{ backgroundPositionX: `${translateX}px` }}
+                style={{ backgroundPositionX: `${translateX}px`, backgroundColor:empty[index] }}
               >
                 SANTANU KHANKI <br />
                 KHANKI
               </p>
             ) : (
-              <p className="text-[20vw] leading-[90%] " id="mobileViewTextYeh">
+              <p className="text-[20vw] leading-[90%] " id="mobileViewTextYeh" >
                 SANTANU KHANKI KHANKI
               </p>
             )}
@@ -208,7 +256,8 @@ function SwipeComponent() {
               className="heroBlur"
               ref={heroBlur}
               id="blurHero"
-              style={{ opacity: innerWidth <= 768 ? "0" : "1" }}
+              style={{ opacity: innerWidth <= 768 ? "0" : "1" ,backgroundColor:empty[index]
+              }}
             ></div>
           </div>
 
