@@ -96,7 +96,7 @@ function ProductCard(props) {
           <SwiperSlide className="mySwiperSlide">
             <div className="ProductImages" style={{ backgroundImage: `url(${props.fourthslide})`,backgroundColor:`${empty[3]}`}}>
               <span className="ShoeName"></span>
-              <IoHeartCircle className="FavouriteIcon"/>
+              <IoHeartCircle className="text-[2rem] absolute right-[8%] top-[6%] faviconProdSec" />
               <button className="BuyNow">$ PRICE</button>
               </div>
           </SwiperSlide>
