@@ -126,8 +126,8 @@ function SwipeComponent() {
         x <= rect.right
       ) {
         heroBlur.current.style.scale = 1;
-        heroBlur.current.style.left = `${x - 350}px`;
-        heroBlur.current.style.top = `${y - 270}px`;
+        heroBlur.current.style.left = `${x - 180}px`;
+        heroBlur.current.style.top = `${y - 250}px`;
       } else {
         heroBlur.current.style.scale = 0;
       }
