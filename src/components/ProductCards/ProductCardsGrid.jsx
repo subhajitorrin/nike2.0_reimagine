@@ -54,6 +54,7 @@ import Product from "./Product";
 
 
 function ProductCardsGrid() {
+
   const [innerWidth, setinnerWidth] = useState(window.innerWidth);
   useEffect(() => {
     function handleResize() {
@@ -237,7 +238,8 @@ function ProductCardsGrid() {
           })}
         </div>
         <div className="ContainerX">
-          <div className="ProductContainer">
+   
+          <div className="ProductContainer" >
             {Initial.map((i) => {
               return <Product name={i.name} img={i.img} />;
             })}
