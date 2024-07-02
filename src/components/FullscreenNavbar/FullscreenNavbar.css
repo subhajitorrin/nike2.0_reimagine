@@ -41,39 +41,58 @@
   text-transform: uppercase;
   position: relative;
 }
+
 .hoverEffect {
-  font-size: 1rem;
-  font-weight: 700;
+  color: black;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  position: relative;
 }
-.hoverEffect::before {
-  content: "";
+.navlist1::before {
+  content: attr(data-text1);
   position: absolute;
-  /* left: 0; */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 100%;
-  overflow: hidden;
-  white-space: nowrap;
   color: red;
-  transition: width 0.2s ease;
+  height: 100%;
+  width: 0%;
+  overflow: hidden;
+  transition: all 0.3s linear;
 }
-.hoverEffect:hover::before {
+.navlist1:hover::before {
   width: 100%;
 }
-
-.navlist1::before {
-  content: "FIND A STORE";
-}
-
 .navlist2::before {
-  content: "HELP";
+  content: attr(data-text2);
+  position: absolute;
+  color: red;
+  height: 100%;
+  width: 0%;
+  overflow: hidden;
+  transition: all 0.3s linear;
 }
-
+.navlist2:hover::before {
+  width: 100%;
+}
 .navlist3::before {
-  content: "JOIN US";
+  content: attr(data-text3);
+  position: absolute;
+  color: red;
+  height: 100%;
+  width: 0%;
+  overflow: hidden;
+  transition: all 0.3s linear;
 }
-
+.navlist3:hover::before {
+  width: 100%;
+}
 .navlist4::before {
-  content: "SIGN IN";
+  content: attr(data-text4);
+  position: absolute;
+  color: red;
+  height: 100%;
+  width: 0%;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+.navlist4:hover::before {
+  width: 100%;
 }
