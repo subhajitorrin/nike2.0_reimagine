@@ -7,7 +7,7 @@ function Product({ name, img }) {
   return (
     <>
       <div className="product" style={{ backgroundImage: `url(${img})`,backgroundColor:`${dominantColor}` }}>
-        <span className="ProductHeading">{name}</span>
+        <span className="ProductHeading ">{name}</span>
         <span className="SeeMore" data-span="See more">See more</span>
       </div>
     </>

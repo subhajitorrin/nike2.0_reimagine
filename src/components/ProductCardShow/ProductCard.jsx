@@ -85,7 +85,7 @@ function ProductCard(props) {
               <FaHeart className="text-[2rem] absolute right-[8%] top-[6%] faviconProdSec" onClick={()=>{
                 setColor1(previous=>!previous)
               }} style={{color: color1 ?'black':'pink'}}/>
-              <button className="BuyNow">$ PRICE</button>
+              <button className="BuyNow" >$ PRICE</button>
               </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
