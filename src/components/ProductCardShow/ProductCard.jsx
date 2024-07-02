@@ -26,7 +26,7 @@ function ProductCard(props) {
     const { dominantColor, darkerColor, lighterColor } = useExtractColor(images[i]);
     empty[i] = dominantColor;
   }
-  console.log(empty)
+  // console.log(empty)
 
   return (
     <>

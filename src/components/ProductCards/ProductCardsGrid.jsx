@@ -4,57 +4,102 @@ import "./ProductCardsGrid.css";
 import ProductCard from "../ProductCardShow/ProductCard";
 import { useEffect, useState } from "react";
 import Product from "./Product";
+import { useExtractColor } from "react-extract-colors";
 
-  const airJordanXxxVii1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png";
-  const airJordanXxxVii2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/air-jordan-xxxviii-4_xpxbcn-removebg-preview_qnggno.png";
-  const airJordanXxxVii3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929199/air-jordan-xxxviii-2_wnwntt-removebg-preview_wewxtn.png";
-  const airJordanXxxVii4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929199/air-jordan-xxxviii-3_adiyil-removebg-preview_xkd4tm.png";
-  const airJordanXxxVii5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929199/air-jordan-xxxviii-3_adiyil-removebg-preview_xkd4tm.png";
-  const airMax2701 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-4_qi3qul-removebg-preview_mvafhb.png";
-  const airMax2702 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-6_vvpinf-removebg-preview_nioces.png";
-  const airMax2703 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-4_qi3qul-removebg-preview_mvafhb.png";
-  const airMax2704 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-2_aoshoi-removebg-preview_qzyhll.png";
-  const airMax2705 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-5_mg2men-removebg-preview_koffrw.png";
-  const airMax2706 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-max-270-3_mhj3wu-removebg-preview_ibqr3k.png"
-  const airMax2707 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-4_qi3qul-removebg-preview_mvafhb.png";
-  const customPhantomLuna1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929205/custom-phantom-luna-6_h3r088-removebg-preview_ibkmpl.png";
-  const customPhantomLuna2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929205/custom-phantom-luna-4_iean9w-removebg-preview_ijgwwg.png";
-  const customPhantomLuna3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929203/custom-phantom-luna-3_mwozhk-removebg-preview_fwjb7s.png";
-  const customPhantomLuna4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/custom-phantom-luna-8_wnbkmt-removebg-preview_en2f9z.png";
-  const customPhantomLuna5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929203/custom-phantom-luna-2_w0gk1l-removebg-preview_fomwc2.png";
-  const customPhantomLuna6 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929204/custom-phantom-luna-5_zby2ua-removebg-preview_aeucfg.png";
-  const customPhantomLuna7 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929205/custom-phantom-luna-7_wjwvfh-removebg-preview_i6qwwe.png";
-  const jordanStadium1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-4_woywjz-removebg-preview_clc1p9.png";
-  const jordanStadium2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-2_ubp8im-removebg-preview_kfepqt.png";
-  const jordanStadium3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929201/jordan-stadium-6_z79kbd-removebg-preview_c99gdw.png";
-  const jordanStadium4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-2_ubp8im-removebg-preview_kfepqt.png";
-  const jordanStadium5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-1_ryeukg-removebg-preview_jzhdly.png";
-  const jordanStadium6 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-3_ezj9hj-removebg-preview_immejp.png";
-  const jordanStayLoyal1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/jordan-stay-loyal-4_shcbsu-removebg-preview_fedltj.png";
-  const jordanStayLoyal2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/jordan-stay-loyal-1_wctzem-removebg-preview_yz8akt.png";
-  const jordanStayLoyal3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/jordan-stay-loyal-4_shcbsu-removebg-preview_fedltj.png";
-  const jordanStayLoyal4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929203/jordan-stay-loyal-5_okasdb-removebg-preview_jrwupl.png";
-  const jordanStayLoyal5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/jordan-stay-loyal-2_zjdgzx-removebg-preview_ed1tse.png";
-  const jumpmanMvp1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929204/jumpman-mvp-2_s90knu-removebg-preview_dfqsec.png";
-  const jumpmanMvp2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929203/jumpman-mvp-1_jm90hk-removebg-preview_1_xnwpva.png";
-  const jumpmanMvp3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929205/jumpman-mvp-5_tp63el-removebg-preview_ldxw8p.png";
-  const jumpmanMvp4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929204/jumpman-mvp-3_mfkoyc-removebg-preview_gayift.png";
-  const jumpmanMvp5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929203/jumpman-mvp-1_jm90hk-removebg-preview_1_xnwpva.png";
-  const jumpmanMvp6 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929204/jumpman-mvp-4_zu1swz-removebg-preview_c5ggjr.png";
-  const lebronNxxtGen1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929206/lebron-nxxt-gen-6_azb4el-removebg-preview_vbrdqv.png";
-  const lebronNxxtGen2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929207/lebron-nxxt-gen-7_x0jrhr-removebg-preview_yivssn.png";
-  const lebronNxxtGen3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929206/lebron-nxxt-gen-5_qeoovq-removebg-preview_ugm9gu.png";
-  const lebronNxxtGen4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929206/lebron-nxxt-gen-4_l3zkti-removebg-preview_jxfnkt.png";
-  const lebronNxxtGen5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929206/lebron-nxxt-gen-3_zrbsss-removebg-preview_xybvqj.png";
-  const lebronNxxtGen6 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929205/lebron-nxxt-gen-1_yzweqx-removebg-preview_tyspnz.png";
-  const airForce1Wild1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929207/air-force-1-wild-3_mytpbe-removebg-preview_vaahwa.png";
-  const airForce1Wild2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929207/air-force-1-wild-4_lm1ybs-removebg-preview_fkfkfa.png";
-  const airForce1Wild3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929207/air-force-1-wild-3_mytpbe-removebg-preview_vaahwa.png";
-  const airForce1Wild4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719929207/air-force-1-wild-1_ie3elq-removebg-preview_jbnfyn.png";
-
+const airJordanXxxVii1 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png";
+const airJordanXxxVii2 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/air-jordan-xxxviii-4_xpxbcn-removebg-preview_qnggno.png";
+const airJordanXxxVii3 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929199/air-jordan-xxxviii-2_wnwntt-removebg-preview_wewxtn.png";
+const airJordanXxxVii4 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929199/air-jordan-xxxviii-3_adiyil-removebg-preview_xkd4tm.png";
+const airJordanXxxVii5 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929199/air-jordan-xxxviii-3_adiyil-removebg-preview_xkd4tm.png";
+const airMax2701 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-4_qi3qul-removebg-preview_mvafhb.png";
+const airMax2702 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-6_vvpinf-removebg-preview_nioces.png";
+const airMax2703 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-4_qi3qul-removebg-preview_mvafhb.png";
+const airMax2704 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-2_aoshoi-removebg-preview_qzyhll.png";
+const airMax2705 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-5_mg2men-removebg-preview_koffrw.png";
+const airMax2706 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-max-270-3_mhj3wu-removebg-preview_ibqr3k.png";
+const airMax2707 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-4_qi3qul-removebg-preview_mvafhb.png";
+const customPhantomLuna1 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929205/custom-phantom-luna-6_h3r088-removebg-preview_ibkmpl.png";
+const customPhantomLuna2 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929205/custom-phantom-luna-4_iean9w-removebg-preview_ijgwwg.png";
+const customPhantomLuna3 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929203/custom-phantom-luna-3_mwozhk-removebg-preview_fwjb7s.png";
+const customPhantomLuna4 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/custom-phantom-luna-8_wnbkmt-removebg-preview_en2f9z.png";
+const customPhantomLuna5 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929203/custom-phantom-luna-2_w0gk1l-removebg-preview_fomwc2.png";
+const customPhantomLuna6 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929204/custom-phantom-luna-5_zby2ua-removebg-preview_aeucfg.png";
+const customPhantomLuna7 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929205/custom-phantom-luna-7_wjwvfh-removebg-preview_i6qwwe.png";
+const jordanStadium1 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-4_woywjz-removebg-preview_clc1p9.png";
+const jordanStadium2 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-2_ubp8im-removebg-preview_kfepqt.png";
+const jordanStadium3 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929201/jordan-stadium-6_z79kbd-removebg-preview_c99gdw.png";
+const jordanStadium4 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-2_ubp8im-removebg-preview_kfepqt.png";
+const jordanStadium5 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-1_ryeukg-removebg-preview_jzhdly.png";
+const jordanStadium6 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-3_ezj9hj-removebg-preview_immejp.png";
+const jordanStayLoyal1 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/jordan-stay-loyal-4_shcbsu-removebg-preview_fedltj.png";
+const jordanStayLoyal2 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/jordan-stay-loyal-1_wctzem-removebg-preview_yz8akt.png";
+const jordanStayLoyal3 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/jordan-stay-loyal-4_shcbsu-removebg-preview_fedltj.png";
+const jordanStayLoyal4 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929203/jordan-stay-loyal-5_okasdb-removebg-preview_jrwupl.png";
+const jordanStayLoyal5 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/jordan-stay-loyal-2_zjdgzx-removebg-preview_ed1tse.png";
+const jumpmanMvp1 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929204/jumpman-mvp-2_s90knu-removebg-preview_dfqsec.png";
+const jumpmanMvp2 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929203/jumpman-mvp-1_jm90hk-removebg-preview_1_xnwpva.png";
+const jumpmanMvp3 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929205/jumpman-mvp-5_tp63el-removebg-preview_ldxw8p.png";
+const jumpmanMvp4 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929204/jumpman-mvp-3_mfkoyc-removebg-preview_gayift.png";
+const jumpmanMvp5 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929203/jumpman-mvp-1_jm90hk-removebg-preview_1_xnwpva.png";
+const jumpmanMvp6 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929204/jumpman-mvp-4_zu1swz-removebg-preview_c5ggjr.png";
+const lebronNxxtGen1 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929206/lebron-nxxt-gen-6_azb4el-removebg-preview_vbrdqv.png";
+const lebronNxxtGen2 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929207/lebron-nxxt-gen-7_x0jrhr-removebg-preview_yivssn.png";
+const lebronNxxtGen3 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929206/lebron-nxxt-gen-5_qeoovq-removebg-preview_ugm9gu.png";
+const lebronNxxtGen4 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929206/lebron-nxxt-gen-4_l3zkti-removebg-preview_jxfnkt.png";
+const lebronNxxtGen5 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929206/lebron-nxxt-gen-3_zrbsss-removebg-preview_xybvqj.png";
+const lebronNxxtGen6 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929205/lebron-nxxt-gen-1_yzweqx-removebg-preview_tyspnz.png";
+const airForce1Wild1 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929207/air-force-1-wild-3_mytpbe-removebg-preview_vaahwa.png";
+const airForce1Wild2 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929207/air-force-1-wild-4_lm1ybs-removebg-preview_fkfkfa.png";
+const airForce1Wild3 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929207/air-force-1-wild-3_mytpbe-removebg-preview_vaahwa.png";
+const airForce1Wild4 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929207/air-force-1-wild-1_ie3elq-removebg-preview_jbnfyn.png";
 
 function ProductCardsGrid() {
-
   const [innerWidth, setinnerWidth] = useState(window.innerWidth);
   useEffect(() => {
     function handleResize() {
@@ -238,8 +283,7 @@ function ProductCardsGrid() {
           })}
         </div>
         <div className="ContainerX">
-   
-          <div className="ProductContainer" >
+          <div className="ProductContainer">
             {Initial.map((i) => {
               return <Product name={i.name} img={i.img} />;
             })}
@@ -251,11 +295,15 @@ function ProductCardsGrid() {
     return (
       <div className="bg-[#f4f2f0] mobileViewProductSection h-[60vh] relative z-[1]  px-[1rem] py-[3rem] flex overflow-y-auto top-[1px] ">
         {Initial.map((item, index) => {
+          const { dominantColor, darkerColor, lighterColor } = useExtractColor(
+            item.img
+          );
           return (
             <div
               key={index}
               style={{
                 backgroundImage: `url(${item.img})`,
+                backgroundColor: `${dominantColor}`,
                 boxShadow: "2px 2px 20px rgba(0, 0, 0, 0.2)",
               }}
               className="flex flex-col items-center justify-end gap-[1rem] pb-[2rem] mobileProductionSectionCards overflow-hidden h-full min-w-[80vw] mx-[2rem] rounded-tr-[20px] rounded-bl-[20px]"
