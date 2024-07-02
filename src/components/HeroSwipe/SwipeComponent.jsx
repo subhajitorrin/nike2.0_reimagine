@@ -63,6 +63,17 @@ function handleLeave2() {
 function handleMouseMoveHero() {}
 
 function SwipeComponent() {
+  const [innerWidth, setinnerWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    function handleResize() {
+      setinnerWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [translateX, setTranslateX] = useState(0);
 
@@ -180,14 +191,25 @@ function SwipeComponent() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
               consequuntur?
             </div>
-            <p
-              className="relative"
-              style={{ backgroundPositionX: `${translateX}px` }}
-            >
-              SANTANU KHANKI <br />
-              KHANKI
-            </p>
-            <div className="heroBlur" ref={heroBlur} id="blurHero"></div>
+            {innerWidth > 768 ? (
+              <p
+                className="relative"
+                style={{ backgroundPositionX: `${translateX}px` }}
+              >
+                SANTANU KHANKI <br />
+                KHANKI
+              </p>
+            ) : (
+              <p className="text-[20vw] leading-[90%] " id="mobileViewTextYeh">
+                SANTANU KHANKI KHANKI
+              </p>
+            )}
+            <div
+              className="heroBlur"
+              ref={heroBlur}
+              id="blurHero"
+              style={{ opacity: innerWidth <= 768 ? "0" : "1" }}
+            ></div>
           </div>
 
           <SwiperSlide className="slider">
