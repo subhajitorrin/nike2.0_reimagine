@@ -4,6 +4,7 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import MobileShoeCard from "./MobileShoeCard";
 import gsap from "gsap";
 import "./CardSection.css";
+import Tilt from "react-parallax-tilt";
 
 
 const shoe1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831391/shoe1_asgdsi.png";
@@ -114,9 +115,12 @@ function CardSection() {
             />
           </div>
         </div>
-        <div className="cardSectionShoeButton items-center text-[1.2rem] flex gap-[1rem] px-[2rem] py-[1.5rem] border rounded-[35px]  font-bold">
-          all shoes <HiArrowNarrowRight className="shoeBtnRightArrIcon text-white text-[1.5rem]" />
-        </div>
+        <Tilt>
+          <div className="cardSectionShoeButton items-center text-[1.2rem] flex gap-[1rem] px-[2rem] py-[1.5rem] border rounded-[35px]  font-bold">
+            all shoes{" "}
+            <HiArrowNarrowRight className="shoeBtnRightArrIcon text-white text-[1.5rem]" />
+          </div>
+        </Tilt>
       </div>
     );
   }

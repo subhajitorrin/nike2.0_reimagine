@@ -12,7 +12,7 @@ import {
 import { EffectCards, EffectCreative } from "swiper/modules";
 import "swiper/css/bundle";
 import "./ProductCard.css";
-import { IoHeartCircle } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa";
 import { useExtractColor } from "react-extract-colors";
 
 
@@ -27,6 +27,13 @@ function ProductCard(props) {
     empty[i] = dominantColor;
   }
   // console.log(empty)
+
+  const [color1,setColor1]=useState(!false)
+  const [color2,setColor2]=useState(!false)
+  const [color3,setColor3]=useState(!false)
+  const [color4,setColor4]=useState(!false)
+  const [color5,setColor5]=useState(!false)
+
 
   return (
     <>
@@ -75,35 +82,49 @@ function ProductCard(props) {
           <SwiperSlide className="mySwiperSlide">
             <div className="ProductImages" style={{ backgroundImage: `url(${props.firstslide})`,backgroundColor:`${empty[0]}`}}>
               <span className="ShoeName"></span>
-              <IoHeartCircle className="FavouriteIcon"/>
+              <FaHeart className="text-[2rem] absolute right-[8%] top-[6%] faviconProdSec" onClick={()=>{
+                setColor1(previous=>!previous)
+              }} style={{color: color1 ?'black':'pink'}}/>
               <button className="BuyNow">$ PRICE</button>
               </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
             <div className="ProductImages" style={{ backgroundImage: `url(${props.secondslide})`,backgroundColor:`${empty[1]}`}}>
               <span className="ShoeName"></span>
-              <IoHeartCircle className="FavouriteIcon"/>
+              <FaHeart className="text-[2rem] absolute right-[8%] top-[6%] faviconProdSec" onClick={()=>{
+                setColor2(previous=>!previous)
+              }} style={{color: color2 ?'black':'pink'}}/>
               <button className="BuyNow">$ PRICE</button>
               </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
             <div className="ProductImages" style={{ backgroundImage: `url(${props.thirdslide})`,backgroundColor:`${empty[2]}`}}>
               <span className="ShoeName"></span>
-              <IoHeartCircle className="FavouriteIcon"/>
+              <FaHeart className="text-[2rem] absolute right-[8%] top-[6%] faviconProdSec"
+              onClick={()=>{
+                setColor3(previous=>!previous)
+              }} style={{color: color3 ?'black':'pink'}}/>
               <button className="BuyNow">$ PRICE</button>
               </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
             <div className="ProductImages" style={{ backgroundImage: `url(${props.fourthslide})`,backgroundColor:`${empty[3]}`}}>
               <span className="ShoeName"></span>
-              <IoHeartCircle className="text-[2rem] absolute right-[8%] top-[6%] faviconProdSec" />
+              <FaHeart className="text-[2rem] absolute right-[8%] top-[6%] faviconProdSec" 
+              onClick={()=>{
+                setColor4(previous=>!previous)
+              }} style={{color: color4 ?'black':'pink'}} />
               <button className="BuyNow">$ PRICE</button>
               </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
             <div className="ProductImages" style={{ backgroundImage: `url(${props.fifthslide})`,backgroundColor:`${empty[4]}`}}>
               <span className="ShoeName"></span>
-              <IoHeartCircle   className="FavouriteIcon"/>
+              <FaHeart   className="text-[2rem] absolute right-[8%] top-[6%] faviconProdSec"
+              onClick={()=>{
+                setColor5(previous=>!previous)
+              }} style={{color: color5 ?'black':'pink'}}
+              />
               <button className="BuyNow">$ PRICE</button>
               </div>
           </SwiperSlide>
