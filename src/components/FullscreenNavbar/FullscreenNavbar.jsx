@@ -167,16 +167,16 @@ function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
           <span className="navlist1 hoverEffect">FIND A STORE</span>
           <span className="navlist2 hoverEffect">HELP</span>
         </div>
-        <img
+        {/* <img
           src={NikeLogo1}
           alt="Nike Logo"
-          width={120}
-          height={90}
+          width={100}
+          height={50}
           className="mt-[-10px]"
           style={{
             filter: "invert(25%) sepia(70%) saturate(2137%) hue-rotate(331deg) brightness(105%) contrast(96%)",
           }}
-        />
+        /> */}
         <div className="navarea-option">
           <span className="navlist3 hoverEffect">JOIN US</span>
           <span className="navlist4 hoverEffect"> SIGN IN</span>

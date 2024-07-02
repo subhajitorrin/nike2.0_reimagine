@@ -83,7 +83,7 @@ function SwipeComponent() {
       const x = position.x;
       const y = position.y;
       if (
-        y >= rect.top &&
+        y >= rect.top+200 &&
         y <= rect.bottom &&
         x >= rect.left &&
         x <= rect.right
