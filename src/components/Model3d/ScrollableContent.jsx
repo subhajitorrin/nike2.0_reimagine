@@ -135,7 +135,7 @@ const ScrollableContent = () => {
               <h1 className="TextAnimationSection1 text-[2.2vw] font-bold tektur text-[#d88719] rounded-[10px] overflow-hidden">
                 {section1.title.split(" ").map((word, index) => (
                   <div
-                    className="TextAnimationSection1 relative inline-block bg-black  "
+                    className="TextAnimationSection1 relative inline-block bg-black"
                     key={index}
                   >
                     {word}&nbsp;
@@ -164,7 +164,7 @@ const ScrollableContent = () => {
             className="modelSection2 h-screen  pt-[10rem] mt-[9rem]"
           >
             <div className="w-[40vw] h-[40vh]  flex items-center justify-center flex-col gap-[1rem]">
-              <h1 className="TextAnimationSection2 text-[2.2vw] font-bold tektur text-[#d88719] rounded-[10px] overflow-hidden">
+              <h1 className=" TextAnimationSection2 text-[2.2vw] font-bold tektur text-[#d88719] rounded-[10px] overflow-hidden">
                 {section2.title.split(" ").map((word, index) => (
                   <div
                     className="TextAnimationSection2 relative inline-block bg-black "

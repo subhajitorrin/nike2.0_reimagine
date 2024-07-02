@@ -19,11 +19,12 @@
   height: 100%;
 }
 .ProductHeading {
-  font-size: 1.8rem;
+
+  font-size: 1.4rem;
   color:Black;
-  margin-top: 1rem;
+  margin-top: 2rem;
   font-weight: bolder;
-  font-family: tektur;
+  font-family: kalam;
 }
 .SeeMore {
   color: rgb(0, 0, 0);
