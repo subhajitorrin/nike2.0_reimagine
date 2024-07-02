@@ -12,11 +12,16 @@ import {
 import { EffectCards, EffectCreative } from "swiper/modules";
 import "swiper/css/bundle";
 import "./ProductCard.css";
+import { IoHeartCircle } from "react-icons/io5";
+
+
+
+
 function ProductCard(props) {
   return (
     <>
       <div className="bgContainer">
-        
+      
         <Swiper
           className="mySwiper"
           modules={[
@@ -56,20 +61,41 @@ function ProductCard(props) {
           
           initialSlide={2}
         >
+          <div className="SwipeSee"><span>Swipe to SEE</span></div>
           <SwiperSlide className="mySwiperSlide">
-            <div className="ProductImages" style={{ backgroundImage: `url(${props.firstslide})`}}><span className="ShoeName">ABC</span></div>
+            <div className="ProductImages" style={{ backgroundImage: `url(${props.firstslide})`}}>
+              <span className="ShoeName"></span>
+              <IoHeartCircle className="FavouriteIcon"/>
+              <button className="BuyNow">$ PRICE</button>
+              </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
-            <div className="ProductImages" style={{ backgroundImage: `url(${props.secondslide})`}}><span className="ShoeName">BC</span></div>
+            <div className="ProductImages" style={{ backgroundImage: `url(${props.secondslide})`}}>
+              <span className="ShoeName"></span>
+              <IoHeartCircle className="FavouriteIcon"/>
+              <button className="BuyNow">$ PRICE</button>
+              </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
-            <div className="ProductImages" style={{ backgroundImage: `url(${props.thirdslide})`}}><span className="ShoeName">AC</span></div>
+            <div className="ProductImages" style={{ backgroundImage: `url(${props.thirdslide})`}}>
+              <span className="ShoeName"></span>
+              <IoHeartCircle className="FavouriteIcon"/>
+              <button className="BuyNow">$ PRICE</button>
+              </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
-            <div className="ProductImages" style={{ backgroundImage: `url(${props.fourthslide})`}}><span className="ShoeName">AdC</span></div>
+            <div className="ProductImages" style={{ backgroundImage: `url(${props.fourthslide})`}}>
+              <span className="ShoeName"></span>
+              <IoHeartCircle className="FavouriteIcon"/>
+              <button className="BuyNow">$ PRICE</button>
+              </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
-            <div className="ProductImages" style={{ backgroundImage: `url(${props.fifthslide})`}}><span className="ShoeName">AeC</span></div>
+            <div className="ProductImages" style={{ backgroundImage: `url(${props.fifthslide})`}}>
+              <span className="ShoeName"></span>
+              <IoHeartCircle   className="FavouriteIcon"/>
+              <button className="BuyNow">$ PRICE</button>
+              </div>
           </SwiperSlide>
       
         </Swiper>

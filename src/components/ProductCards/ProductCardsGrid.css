@@ -26,7 +26,8 @@
   padding: 15rem;
   flex-wrap: wrap;
   overflow-wrap: normal;
-  max-height: 200vw;
+  /* max-height: 200vw; */
+  min-height:100vh;
   overflow-y: auto;
   scroll-behavior: smooth;
   gap: 2rem;
