@@ -93,6 +93,7 @@
   left: 25%;
 }
 .BgText {
+  /* border: 1px solid; */
   font-family: tektur;
   line-height: 85%;
   font-weight: 700;
@@ -101,9 +102,22 @@
   font-size: 8vw;
   text-align: center;
   color: #e13251;
-  padding: 7rem;
+  /* padding: 7rem; */
+  padding-top: 5rem;
   height: 80%;
-  width: 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.BgText p {
+  /* border: 1px solid; */
+  min-width: 150%;
+  text-align: center;
+  /* background: linear-gradient(to left, #e0e0e0 20%, #ff0000 50%, #e0e0e0 80%); */
+  background: linear-gradient(to left, #e0e0e0 30%, #ff0000 50%, #e0e0e0 70%);
+  background-repeat: no-repeat;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 .heroBlur {
   height: 300px;

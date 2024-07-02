@@ -64,6 +64,32 @@ function handleMouseMoveHero() {}
 
 function SwipeComponent() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [translateX, setTranslateX] = useState(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const mouseX = e.pageX; // X-coordinate of the cursor
+      const windowWidth = window.innerWidth; // Width of the window
+
+      const distanceFromCenter = mouseX - windowWidth / 2; // Distance from the center of the window
+
+      // Maximum translation in pixels (adjust as needed)
+      const maxTranslation = 500;
+
+      // Calculate translation based on percentage of distance from center
+      const translation =
+        maxTranslation * (distanceFromCenter / (windowWidth / 2));
+
+      setTranslateX(translation); // Update state to move the element
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   const heroBlur = useRef(null);
   const blurContainer = useRef(null);
   useEffect(() => {
@@ -83,7 +109,7 @@ function SwipeComponent() {
       const x = position.x;
       const y = position.y;
       if (
-        y >= rect.top+200 &&
+        y >= rect.top + 200 &&
         y <= rect.bottom &&
         x >= rect.left &&
         x <= rect.right
@@ -149,14 +175,17 @@ function SwipeComponent() {
             },
           }}
         >
-          <div
-            className="BgText "
-            ref={blurContainer}
-            id="blurContainer"
-          >
-            <p>
+          <div className="BgText " ref={blurContainer} id="blurContainer">
+            <p
+              className="relative"
+              style={{ backgroundPositionX: `${translateX}px` }}
+            >
               SANTANU KHANKI <br />
               KHANKI
+              {/* <div
+                className="bg-[red] h-[100%] w-[310px] absolute top-0 left-[38%]"
+                style={{ transform: `translateX(${translateX}px)` }}
+              ></div> */}
             </p>
             <div className="heroBlur" ref={heroBlur} id="blurHero"></div>
           </div>
