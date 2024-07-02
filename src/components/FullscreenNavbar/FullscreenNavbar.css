@@ -14,7 +14,7 @@
 .navarea {
   display: flex;
   justify-content: space-between;
-  padding: 2vh;
+  padding: 3vh;
   background-color: transparent;
   position: relative;
   z-index: 201;
