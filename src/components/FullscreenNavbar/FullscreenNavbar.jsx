@@ -164,12 +164,12 @@ function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
       </div>
       <div className="navarea">
         <div className="navarea-option">
-          <span className="navlist1 hoverEffect">FIND A STORE</span>
-          <span className="navlist2 hoverEffect">HELP</span>
+          <span className="navlist1 hoverEffect" data-text1="FIND A STORE">FIND A STORE</span>
+          <span className="navlist2 hoverEffect" data-text2="HELP">HELP</span>
         </div>
         <div className="navarea-option">
-          <span className="navlist3 hoverEffect">JOIN US</span>
-          <span className="navlist4 hoverEffect"> SIGN IN</span>
+          <span className="navlist3 hoverEffect" data-text3="JOIN US">JOIN US</span>
+          <span className="navlist4 hoverEffect" data-text4="SIGN IN">SIGN IN</span>
         </div>
       </div>
       <div className="overlay">
