@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./SwipeComponent.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
@@ -25,48 +25,106 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { SiNike } from "react-icons/si";
 // import NikeLogoBg from "../../assets/NikeLogoBg.jpeg"
 
-function handleMovement(e){
-    let Moveimg = document.querySelectorAll('.HeroShoe')
-    Moveimg.forEach(item => {
-        const Axis = item.getBoundingClientRect()
-        const x = (e.clientX-Axis.left)/Axis.width;
-        const y = (e.clientY-Axis.top)/Axis.height;
-        const Movex = (x-0.2)*20;
-        const Movey = (y-0.2)*20;
-        item.style.transform = `translate(${Movex}px,${Movey}px)`
-    });
-    
-} 
-
-
-function handleEnter1(){
-    let IncreaseDiv1 = document.querySelector('.lengthdiv1');
-    console.log('hey');
-    IncreaseDiv1.style.width='110%';
-    IncreaseDiv1.style.height='110%';
-}
-function handleLeave1(){
-    let IncreaseDiv1 = document.querySelector('.lengthdiv1');
-    IncreaseDiv1.style.width='0%';
-    IncreaseDiv1.style.height='0%';
-}
-function handleEnter2(){
-    let IncreaseDiv2 = document.querySelector('.lengthdiv2');
-    console.log('hey');
-    IncreaseDiv2.style.width='110%';
-    IncreaseDiv2.style.height='110%'
-}
-function handleLeave2(){
-    let IncreaseDiv2 = document.querySelector('.lengthdiv2');
-    IncreaseDiv2.style.width='0%';
-    IncreaseDiv2.style.height='0%'
+function handleMovement(e) {
+  let Moveimg = document.querySelectorAll(".HeroShoe");
+  Moveimg.forEach((item) => {
+    const Axis = item.getBoundingClientRect();
+    const x = (e.clientX - Axis.left) / Axis.width;
+    const y = (e.clientY - Axis.top) / Axis.height;
+    const Movex = (x - 0.2) * 20;
+    const Movey = (y - 0.2) * 20;
+    item.style.transform = `translate(${Movex}px,${Movey}px)`;
+  });
 }
 
+function handleEnter1() {
+  let IncreaseDiv1 = document.querySelector(".lengthdiv1");
+  // console.log("hey");
+  IncreaseDiv1.style.width = "110%";
+  IncreaseDiv1.style.height = "110%";
+}
+function handleLeave1() {
+  let IncreaseDiv1 = document.querySelector(".lengthdiv1");
+  IncreaseDiv1.style.width = "0%";
+  IncreaseDiv1.style.height = "0%";
+}
+function handleEnter2() {
+  let IncreaseDiv2 = document.querySelector(".lengthdiv2");
+  // console.log("hey");
+  IncreaseDiv2.style.width = "110%";
+  IncreaseDiv2.style.height = "110%";
+}
+function handleLeave2() {
+  let IncreaseDiv2 = document.querySelector(".lengthdiv2");
+  IncreaseDiv2.style.width = "0%";
+  IncreaseDiv2.style.height = "0%";
+}
+
+function handleMouseMoveHero() {}
 
 function SwipeComponent() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [translateX, setTranslateX] = useState(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const mouseX = e.pageX; // X-coordinate of the cursor
+      const windowWidth = window.innerWidth; // Width of the window
+
+      const distanceFromCenter = mouseX - windowWidth / 2; // Distance from the center of the window
+
+      // Maximum translation in pixels (adjust as needed)
+      const maxTranslation = 500;
+
+      // Calculate translation based on percentage of distance from center
+      const translation =
+        maxTranslation * (distanceFromCenter / (windowWidth / 2));
+
+      setTranslateX(translation); // Update state to move the element
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  const heroBlur = useRef(null);
+  const blurContainer = useRef(null);
+  useEffect(() => {
+    function handleCursorUpdate(event) {
+      setPosition({ x: event.clientX, y: event.clientY });
+    }
+    document.addEventListener("mousemove", handleCursorUpdate);
+
+    return () => {
+      document.removeEventListener("mousemove", handleCursorUpdate);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (blurContainer.current && heroBlur.current) {
+      const rect = blurContainer.current.getBoundingClientRect();
+      const x = position.x;
+      const y = position.y;
+      if (
+        y >= rect.top + 200 &&
+        y <= rect.bottom &&
+        x >= rect.left &&
+        x <= rect.right
+      ) {
+        heroBlur.current.style.scale = 1;
+        heroBlur.current.style.left = `${x - 350}px`;
+        heroBlur.current.style.top = `${y - 270}px`;
+      } else {
+        heroBlur.current.style.scale = 0;
+      }
+    }
+  }, [position]);
   return (
     <>
-      <div className="Bg-container" onMouseMove={handleMovement} >
+      <div className="Bg-container" onMouseMove={handleMovement}>
         <Swiper
           className="my-swiper"
           modules={[
@@ -84,8 +142,8 @@ function SwipeComponent() {
             prevEl: ".Prev.Btn",
           }}
           autoplay={{
-              delay:4000,
-              disableOnInteraction:false
+            delay: 4000,
+            disableOnInteraction: false,
           }}
           speed={750}
           shortSwipes={true}
@@ -94,11 +152,11 @@ function SwipeComponent() {
           grabCursor={true}
           loop={true}
           slidesPerView={1}
-        //   pagination={{
-        //     dynamicBullets: true,
-        //     dynamicMainBullets: 1,
-        //     clickable: true,
-        //   }}
+          //   pagination={{
+          //     dynamicBullets: true,
+          //     dynamicMainBullets: 1,
+          //     clickable: true,
+          //   }}
           // effect='cards'
           // cardsEffect={{
           //     perSlideRotate:10,
@@ -116,15 +174,28 @@ function SwipeComponent() {
               rotate: [-45, 0, 45],
             },
           }}
-        >   
-        <span className="BgText">Be Legendary<br></br><SiNike className="NikeLogoBg"/></span>
-        
+        >
+          <div className="BgText " ref={blurContainer} id="blurContainer">
+            <div className="textOnHeroSectionSmall absolute text-[15px] w-[10rem] leading-[100%] text-black right-[22%] top-[70%] font-[500]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              consequuntur?
+            </div>
+            <p
+              className="relative"
+              style={{ backgroundPositionX: `${translateX}px` }}
+            >
+              SANTANU KHANKI <br />
+              KHANKI
+            </p>
+            <div className="heroBlur" ref={heroBlur} id="blurHero"></div>
+          </div>
+
           <SwiperSlide className="slider">
             {/* <video className='ShoePlatform' autoPlay muted playsInline loop>
                     <source src={GrassPlatform}></source>
                 </video> */}
             <div className="SwipeDiv">
-            {/* <div className="flashLightEffectDiv"></div> */}
+              {/* <div className="flashLightEffectDiv"></div> */}
               <img src={AirJordan} alt="" className="HeroShoe" />
               <img className="PlatformImg" src={GrassPlatform} alt="" />
             </div>
@@ -147,13 +218,21 @@ function SwipeComponent() {
               <img className="PlatformImg" src={ElectroPlatform} alt="" />
             </div>
           </SwiperSlide>
-          <div className="Prev Btn"  onMouseEnter={handleEnter1} onMouseLeave={handleLeave1}>
+          <div
+            className="Prev Btn"
+            onMouseEnter={handleEnter1}
+            onMouseLeave={handleLeave1}
+          >
             <div className="lengthdiv1"></div>
-          <FaArrowLeftLong className="SlideNavArrow"/>
+            <FaArrowLeftLong className="SlideNavArrow" />
           </div>
-          <div className="Next Btn" onMouseEnter={handleEnter2} onMouseLeave={handleLeave2}>
-          <div className="lengthdiv2"></div>
-          <FaArrowRightLong className="SlideNavArrow"/>
+          <div
+            className="Next Btn"
+            onMouseEnter={handleEnter2}
+            onMouseLeave={handleLeave2}
+          >
+            <div className="lengthdiv2"></div>
+            <FaArrowRightLong className="SlideNavArrow" />
           </div>
         </Swiper>
       </div>

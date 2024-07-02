@@ -6,6 +6,7 @@ import { RiMenu3Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import NavContents from "./NavContents/NavContents";
 import MobileViewNavContents from "./NavContents/MobileViewNavContents";
+import NikeLogo1 from '../../assets/NavbarClip/NikeLogo1.png'
 
 function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -143,9 +144,8 @@ function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
         className=""
         style={{
           opacity: `${toggleNavbar ? "1" : scrollY > 150 ? "1" : "0"}`,
-          pointerEvents: `${
-            toggleNavbar ? "auto" : scrollY > 150 ? "auto" : "none"
-          }`,
+          pointerEvents: `${toggleNavbar ? "auto" : scrollY > 150 ? "auto" : "none"
+            }`,
         }}
       >
         {!navOyyehActive ? (
@@ -167,6 +167,16 @@ function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
           <span className="navlist1 hoverEffect" data-text1="FIND A STORE">FIND A STORE</span>
           <span className="navlist2 hoverEffect" data-text2="HELP">HELP</span>
         </div>
+        {/* <img
+          src={NikeLogo1}
+          alt="Nike Logo"
+          width={100}
+          height={50}
+          className="mt-[-10px]"
+          style={{
+            filter: "invert(25%) sepia(70%) saturate(2137%) hue-rotate(331deg) brightness(105%) contrast(96%)",
+          }}
+        /> */}
         <div className="navarea-option">
           <span className="navlist3 hoverEffect" data-text3="JOIN US">JOIN US</span>
           <span className="navlist4 hoverEffect" data-text4="SIGN IN">SIGN IN</span>
