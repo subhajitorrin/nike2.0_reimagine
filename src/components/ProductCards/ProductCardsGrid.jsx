@@ -4,54 +4,54 @@ import "./ProductCardsGrid.css";
 import ProductCard from "../ProductCardShow/ProductCard";
 import { useEffect, useState } from "react";
 import Product from "./Product";
-import {
-  airJordanXxxVii1,
-  airJordanXxxVii2,
-  airJordanXxxVii3,
-  airJordanXxxVii4,
-  airJordanXxxVii5,
-  airMax2701,
-  airMax2702,
-  airMax2703,
-  airMax2704,
-  airMax2705,
-  airMax2706,
-  airMax2707,
-  customPhantomLuna1,
-  customPhantomLuna2,
-  customPhantomLuna3,
-  customPhantomLuna4,
-  customPhantomLuna5,
-  customPhantomLuna6,
-  customPhantomLuna7,
-  jordanStadium1,
-  jordanStadium2,
-  jordanStadium3,
-  jordanStadium4,
-  jordanStadium5,
-  jordanStadium6,
-  jordanStayLoyal1,
-  jordanStayLoyal2,
-  jordanStayLoyal3,
-  jordanStayLoyal4,
-  jordanStayLoyal5,
-  jumpmanMvp1,
-  jumpmanMvp2,
-  jumpmanMvp3,
-  jumpmanMvp4,
-  jumpmanMvp5,
-  jumpmanMvp6,
-  lebronNxxtGen1,
-  lebronNxxtGen2,
-  lebronNxxtGen3,
-  lebronNxxtGen4,
-  lebronNxxtGen5,
-  lebronNxxtGen6,
-  airForce1Wild1,
-  airForce1Wild2,
-  airForce1Wild3,
-  airForce1Wild4,
-} from "../../../public/Shoes";
+
+  const airJordanXxxVii1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904171/air-jordan-xxxviii-1_ps5c3f.jpg";
+  const airJordanXxxVii2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904170/air-jordan-xxxviii-2_wnwntt.webp";
+  const airJordanXxxVii3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904170/air-jordan-xxxviii-3_adiyil.webp";
+  const airJordanXxxVii4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904170/air-jordan-xxxviii-4_xpxbcn.jpg";
+  const airJordanXxxVii5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904169/air-jordan-xxxviii-5_agb0xb.webp";
+  const airMax2701 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904229/air-max-270-6_vvpinf.jpg";
+  const airMax2702 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904225/air-max-270-7_rg752g.webp";
+  const airMax2703 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904221/air-max-270-4_qi3qul.webp";
+  const airMax2704 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904219/air-max-270-5_mg2men.webp";
+  const airMax2705 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904218/air-max-270-1_cfhbuq.jpg";
+  const airMax2706 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904209/air-max-270-2_aoshoi.webp"
+  const airMax2707 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904209/air-max-270-3_mhj3wu.jpg";
+  const customPhantomLuna1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904238/custom-phantom-luna-4_iean9w.webp";
+  const customPhantomLuna2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904238/custom-phantom-luna-1_pcyw1b.webp";
+  const customPhantomLuna3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904238/custom-phantom-luna-7_wjwvfh.webp";
+  const customPhantomLuna4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904238/custom-phantom-luna-8_wnbkmt.webp";
+  const customPhantomLuna5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904235/custom-phantom-luna-3_mwozhk.webp";
+  const customPhantomLuna6 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904235/custom-phantom-luna-2_w0gk1l.webp";
+  const customPhantomLuna7 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904235/custom-phantom-luna-5_zby2ua.webp";
+  const jordanStadium1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904261/jordan-stadium-7_s5gws0.webp";
+  const jordanStadium2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904260/jordan-stadium-2_ubp8im.webp";
+  const jordanStadium3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904260/jordan-stadium-5_zknblb.webp";
+  const jordanStadium4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904260/jordan-stadium-6_z79kbd.webp";
+  const jordanStadium5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904260/jordan-stadium-4_woywjz.webp";
+  const jordanStadium6 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904255/jordan-stadium-1_ryeukg.webp";
+  const jordanStayLoyal1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904285/jordan-stay-loyal-1_wctzem.jpg";
+  const jordanStayLoyal2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904284/jordan-stay-loyal-5_okasdb.webp";
+  const jordanStayLoyal3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904283/jordan-stay-loyal-4_shcbsu.jpg";
+  const jordanStayLoyal4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904281/jordan-stay-loyal-3_ryoh0p.jpg";
+  const jordanStayLoyal5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904280/jordan-stay-loyal-2_zjdgzx.webp";
+  const jumpmanMvp1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904315/jumpman-mvp-5_tp63el.webp";
+  const jumpmanMvp2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904313/jumpman-mvp-6_mfbvf1.webp";
+  const jumpmanMvp3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904311/jumpman-mvp-3_mfkoyc.webp";
+  const jumpmanMvp4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904311/jumpman-mvp-1_jm90hk.webp";
+  const jumpmanMvp5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904311/jumpman-mvp-4_zu1swz.webp";
+  const jumpmanMvp6 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904310/jumpman-mvp-2_s90knu.webp";
+  const lebronNxxtGen1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904338/lebron-nxxt-gen-6_azb4el.jpg";
+  const lebronNxxtGen2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904337/lebron-nxxt-gen-3_zrbsss.webp";
+  const lebronNxxtGen3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904336/lebron-nxxt-gen-5_qeoovq.webp";
+  const lebronNxxtGen4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904336/lebron-nxxt-gen-7_x0jrhr.webp";
+  const lebronNxxtGen5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904332/lebron-nxxt-gen-4_l3zkti.webp";
+  const lebronNxxtGen6 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904328/lebron-nxxt-gen-2_jogrv7.webp";
+  const airForce1Wild1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904352/air-force-1-wild-1_ie3elq.jpg";
+  const airForce1Wild2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904351/air-force-1-wild-4_lm1ybs.webp";
+  const airForce1Wild3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904350/air-force-1-wild-3_mytpbe.jpg";
+  const airForce1Wild4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719904349/air-force-1-wild-2_av4tha.jpg";
+
 
 function ProductCardsGrid() {
   const [innerWidth, setinnerWidth] = useState(window.innerWidth);
