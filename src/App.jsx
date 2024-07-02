@@ -105,8 +105,8 @@ at App.jsx line 13
         settoggleNavbar={settoggleNavbar}
       />
       <SwipeComponent />
-      <ProductCardsGrid />
       <CardSection />
+      <ProductCardsGrid />
       {isLoading ? <p>Loading...</p> : showModel && <Model />}
       {isLoading ? <p>Loading...</p> : showModel && <UpperFooter />}
       <MovingCards />
