@@ -112,40 +112,49 @@ function ProductCardsGrid() {
   }, []);
   const [Initial, setInitial] = useState([
     {
-      name: "AirJordan",
+      index:1,
+      name: "AirJordan-XXXViii",
       img: airJordanXxxVii5,
     },
     {
-      name: "AirForce",
+      index:2,
+      name: "Air Max 270",
       img: airMax2701,
     },
     {
-      name: "Dunk",
+      index:3,
+      name: "Custom Phantom",
       img: customPhantomLuna1,
     },
     {
-      name: "Blazer",
+      index:4,
+      name: "Jordan Stadium",
       img: jordanStadium1,
     },
     {
-      name: "AirJordan",
+      index:5,
+      name: "Jordan Stay Loyal",
       img: jordanStayLoyal1,
     },
     {
-      name: "AirJordan",
+      index:6,
+      name: "Air Force 1 ",
       img: airForce1Wild1,
     },
     {
-      name: "AirJordan",
+      index:7,
+      name: "Lebron Nxxt Gen",
       img: lebronNxxtGen1,
     },
     {
-      name: "AirJordan",
+      index:8,
+      name: "Jumpman Mvp",
       img: jumpmanMvp1,
     },
   ]);
   const [ShowInitial, setShowInitial] = useState([
     {
+      index:1,
       firstslide: airJordanXxxVii1,
       secondslide: airJordanXxxVii2,
       thirdslide: airJordanXxxVii3,
@@ -153,6 +162,7 @@ function ProductCardsGrid() {
       fifthslide: airJordanXxxVii5,
     },
     {
+      index:2,
       firstslide: airMax2702,
       secondslide: airMax2703,
       thirdslide: airMax2704,
@@ -160,6 +170,7 @@ function ProductCardsGrid() {
       fifthslide: airMax2706,
     },
     {
+      index:3,
       firstslide: customPhantomLuna2,
       secondslide: customPhantomLuna3,
       thirdslide: customPhantomLuna4,
@@ -167,6 +178,7 @@ function ProductCardsGrid() {
       fifthslide: customPhantomLuna6,
     },
     {
+      index:4,
       firstslide: jordanStadium2,
       secondslide: jordanStadium3,
       thirdslide: jordanStadium4,
@@ -174,6 +186,7 @@ function ProductCardsGrid() {
       fifthslide: jordanStadium6,
     },
     {
+      index:5,
       firstslide: jordanStayLoyal1,
       secondslide: jordanStayLoyal2,
       thirdslide: jordanStayLoyal3,
@@ -181,6 +194,7 @@ function ProductCardsGrid() {
       fifthslide: jordanStayLoyal5,
     },
     {
+      index:6,
       firstslide: jumpmanMvp2,
       secondslide: jumpmanMvp3,
       thirdslide: jumpmanMvp4,
@@ -188,6 +202,7 @@ function ProductCardsGrid() {
       fifthslide: jumpmanMvp6,
     },
     {
+      index:7,
       firstslide: lebronNxxtGen2,
       secondslide: lebronNxxtGen3,
       thirdslide: lebronNxxtGen4,
@@ -195,6 +210,7 @@ function ProductCardsGrid() {
       fifthslide: lebronNxxtGen6,
     },
     {
+      index:8,
       firstslide: airForce1Wild1,
       secondslide: airForce1Wild2,
       thirdslide: airForce1Wild3,
@@ -270,7 +286,7 @@ function ProductCardsGrid() {
           {ShowInitial.map((i) => {
             // console.log(i);
             return (
-              <div className="boom">
+              <div className="boom" key={i.index}>
                 <ProductCard
                   firstslide={i.firstslide}
                   secondslide={i.secondslide}
@@ -285,7 +301,11 @@ function ProductCardsGrid() {
         <div className="ContainerX">
           <div className="ProductContainer">
             {Initial.map((i) => {
-              return <Product name={i.name} img={i.img} />;
+              return (
+                <div key={i.index}>
+                  <Product name={i.name} img={i.img} />
+                </div>
+              );
             })}
           </div>
         </div>

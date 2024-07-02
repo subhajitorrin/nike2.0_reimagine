@@ -28,7 +28,7 @@ const ScrollableContent = () => {
   };
   const section1Mobile = {
     title: "Elevate Your Performance with Nike",
-    desc: "Elevate your performance with Nike, where cutting-edge technology meets unparalleled design to enhance your athletic prowess. Whether you're a seasoned athlete or just beginning your fitness journey, Nike's innovative gear and apparel are crafted to support and empower you every step of the way.",
+    desc: "Elevate your performance with Nike, where cutting-edge technology meets unparalleled design to enhance your athletic prowess.",
   };
   const section2 = {
     title: "Transform Your Game with Nike",
@@ -36,7 +36,7 @@ const ScrollableContent = () => {
   };
   const section2Mobile = {
     title: "Transform Your Game with Nike",
-    desc: "Nike: The Ultimate Sportswear Experience invites you into a world where style meets performance, crafting a seamless blend of innovation and comfort. From iconic sneakers that redefine streetwear to high-performance activewear designed to enhance your athletic endeavors.",
+    desc: "Nike: The Ultimate Sportswear Experience invites you into a world where style meets performance, crafting a seamless blend of innovation and comfort.",
   };
 
   useGSAP(
