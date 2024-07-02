@@ -176,16 +176,16 @@ function SwipeComponent() {
           }}
         >
           <div className="BgText " ref={blurContainer} id="blurContainer">
+            <div className="textOnHeroSectionSmall absolute text-[15px] w-[10rem] leading-[100%] text-black right-[22%] top-[70%] font-[500]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
+              consequuntur?
+            </div>
             <p
               className="relative"
               style={{ backgroundPositionX: `${translateX}px` }}
             >
               SANTANU KHANKI <br />
               KHANKI
-              {/* <div
-                className="bg-[red] h-[100%] w-[310px] absolute top-0 left-[38%]"
-                style={{ transform: `translateX(${translateX}px)` }}
-              ></div> */}
             </p>
             <div className="heroBlur" ref={heroBlur} id="blurHero"></div>
           </div>
