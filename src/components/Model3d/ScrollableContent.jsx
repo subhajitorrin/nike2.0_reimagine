@@ -26,9 +26,17 @@ const ScrollableContent = () => {
     title: "Elevate Your Performance with Nike",
     desc: "Elevate your performance with Nike, where cutting-edge technology meets unparalleled design to enhance your athletic prowess. Whether you're a seasoned athlete or just beginning your fitness journey, Nike's innovative gear and apparel are crafted to support and empower you every step of the way. Experience the perfect blend of comfort, durability, and style, ensuring that you can push your limits and achieve your personal best.",
   };
+  const section1Mobile = {
+    title: "Elevate Your Performance with Nike",
+    desc: "Elevate your performance with Nike, where cutting-edge technology meets unparalleled design to enhance your athletic prowess. Whether you're a seasoned athlete or just beginning your fitness journey, Nike's innovative gear and apparel are crafted to support and empower you every step of the way.",
+  };
   const section2 = {
     title: "Transform Your Game with Nike",
     desc: "Nike: The Ultimate Sportswear Experience invites you into a world where style meets performance, crafting a seamless blend of innovation and comfort. From iconic sneakers that redefine streetwear to high-performance activewear designed to enhance your athletic endeavors, Nike sets the benchmark in sportswear excellence. Embrace the energy of Nike's cutting-edge technologies, engineered to support your every movement and elevate your performance.",
+  };
+  const section2Mobile = {
+    title: "Transform Your Game with Nike",
+    desc: "Nike: The Ultimate Sportswear Experience invites you into a world where style meets performance, crafting a seamless blend of innovation and comfort. From iconic sneakers that redefine streetwear to high-performance activewear designed to enhance your athletic endeavors.",
   };
 
   useGSAP(
@@ -194,7 +202,7 @@ const ScrollableContent = () => {
           >
             <div className="absolute h-[40vh]  right-0 w-full  flex items-center justify-center flex-col gap-[1rem] ">
               <h1 className="TextAnimationSection1 text-[7vw] font-bold tektur text-[#d88719] rounded-[10px] overflow-hidden">
-                {section1.title.split(" ").map((word, index) => (
+                {section1Mobile.title.split(" ").map((word, index) => (
                   <div
                     className="TextAnimationSection1 relative inline-block bg-black "
                     key={index}
@@ -204,7 +212,7 @@ const ScrollableContent = () => {
                 ))}
               </h1>
               <p className="vtregular text-[5vw] font-[300]">
-                {section1.desc.split(" ").map((word, index) => (
+                {section1Mobile.desc.split(" ").map((word, index) => (
                   <div
                     className="TextAnimationSection1 relative inline-block text-black"
                     key={index}
@@ -226,7 +234,7 @@ const ScrollableContent = () => {
           >
             <div className="w-full h-[40vh]  flex items-center justify-center flex-col gap-[1rem] ">
               <h1 className="TextAnimationSection2 text-[7vw] font-bold tektur text-[#d88719] rounded-[10px] overflow-hidden">
-                {section2.title.split(" ").map((word, index) => (
+                {section2Mobile.title.split(" ").map((word, index) => (
                   <div
                     className="TextAnimationSection2 relative inline-block bg-black "
                     key={index}
@@ -236,7 +244,7 @@ const ScrollableContent = () => {
                 ))}
               </h1>
               <p className="vtregular text-[5vw] font-[300]">
-                {section2.desc.split(" ").map((word, index) => (
+                {section2Mobile.desc.split(" ").map((word, index) => (
                   <div
                     className="TextAnimationSection2 relative inline-block text-black"
                     key={index}

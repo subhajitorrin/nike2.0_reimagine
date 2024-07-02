@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./MovingCards.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import card1 from "../../assets/MovingCards/asset 28.jpeg";
-import card2 from "../../assets/MovingCards/asset 29.jpeg";
-import card3 from "../../assets/MovingCards/card3.mp4";
-import card4 from "../../assets/MovingCards/asset 31.jpeg";
-import card5 from "../../assets/MovingCards/asset 22.jpeg";
-import card6 from "../../assets/MovingCards/asset 23.jpeg";
-import card7 from "../../assets/MovingCards/asset 25.jpeg";
+
+const card1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831358/asset_28_jgcvxw.jpg";
+const card2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831361/asset_29_erhrui.jpg";
+const card3 = "https://res.cloudinary.com/difxhccup/video/upload/v1719831374/card3_xhignc.mp4";
+const card4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831361/asset_31_lqiosi.jpg";
+const card5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831356/asset_22_uw6omx.jpg";
+const card6 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831349/asset_23_lcsgiw.jpg";
+const card7 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831351/asset_25_x0rm9j.jpg";
 
 function MovingCards() {
   function handelLog() {

@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import ShoeCard from "./ShoeCard";
 import { HiArrowNarrowRight } from "react-icons/hi";
-import shoe1 from "../../assets/ShoeCardImgs/shoe1.png";
-import shoe2 from "../../assets/ShoeCardImgs/shoe2.png";
-import shoe3 from "../../assets/ShoeCardImgs/shoe3.png";
-import shoe4 from "../../assets/ShoeCardImgs/shoe4.png";
 import MobileShoeCard from "./MobileShoeCard";
 import gsap from "gsap";
 import "./CardSection.css";
 import Tilt from "react-parallax-tilt";
+
+
+const shoe1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831391/shoe1_asgdsi.png";
+const shoe2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831392/shoe2_sbvyi9.png";
+const shoe3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831394/shoe3_ljcgv6.png";
+const shoe4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831395/shoe4_ulzyd7.png";
 
 const shoeList = [
   { shoe: shoe1, title: "AIR JORDAN 1", desc: "Classic, coveted, enduring." },
