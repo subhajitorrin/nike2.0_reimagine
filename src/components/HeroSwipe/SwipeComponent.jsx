@@ -29,7 +29,7 @@ const bg = 'rgba(0,0,0,0)'
 
 function handleMovement(e) {
   
-  // let Moveimg = document.querySelectorAll(".HeroShoe");
+  // let Moveimg = document.querySelectorAll(".SmallIndicatingProduct");
   // Moveimg.forEach((item) => {
   //   const Axis = item.getBoundingClientRect();
   //   const x = (e.clientX - Axis.left) / Axis.width;
