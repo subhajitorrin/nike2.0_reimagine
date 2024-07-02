@@ -289,35 +289,38 @@ function ProductCardsGrid() {
             })}
           </div>
         </div>
+        <div className="h-[30vh] w-full relative z-[1] top-[0] bg-[#f4f2f0] rotate-[180deg] blur-[50px]"></div>
       </>
     );
   } else {
     return (
-      <div className="bg-[#f4f2f0] mobileViewProductSection h-[60vh] relative z-[1]  px-[1rem] py-[3rem] flex overflow-y-auto top-[1px] ">
-        {Initial.map((item, index) => {
-          const { dominantColor, darkerColor, lighterColor } = useExtractColor(
-            item.img
-          );
-          return (
-            <div
-              key={index}
-              style={{
-                backgroundImage: `url(${item.img})`,
-                backgroundColor: `${dominantColor}`,
-                boxShadow: "2px 2px 20px rgba(0, 0, 0, 0.2)",
-              }}
-              className="flex flex-col items-center justify-end gap-[1rem] pb-[2rem] mobileProductionSectionCards overflow-hidden h-full min-w-[80vw] mx-[2rem] rounded-tr-[20px] rounded-bl-[20px]"
-            >
-              <span className=" text-white text-[1.5rem] tektur">
-                {item.name}
-              </span>
-              <div className="rounded-[20px] px-[1rem] py-[.2rem] bg-white text-black">
-                See more
+      <>
+        <div className="bg-[#f4f2f0] mobileViewProductSection h-[80vh] relative z-[1]  px-[1rem] py-[3rem] pb-[40%] flex overflow-y-auto top-[1px] ">
+          {Initial.map((item, index) => {
+            const { dominantColor, darkerColor, lighterColor } =
+              useExtractColor(item.img);
+            return (
+              <div
+                key={index}
+                style={{
+                  backgroundImage: `url(${item.img})`,
+                  backgroundColor: `${dominantColor}`,
+                  boxShadow: "2px 2px 20px rgba(0, 0, 0, 0.2)",
+                }}
+                className="flex flex-col items-center justify-end gap-[1rem] pb-[2rem] mobileProductionSectionCards overflow-hidden h-full min-w-[80vw] mx-[2rem] rounded-tr-[20px] rounded-bl-[20px]"
+              >
+                <span className=" text-white text-[1.5rem] tektur">
+                  {item.name}
+                </span>
+                <div className="rounded-[20px] px-[1rem] py-[.2rem] bg-white text-black">
+                  See more
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+        <div className="h-[30vh] w-[130%] relative z-[1] left-[-3%] top-[-7rem] bg-[#f4f2f0] blur-[30px] "></div>
+      </>
     );
   }
 }
