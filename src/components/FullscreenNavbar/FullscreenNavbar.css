@@ -48,6 +48,11 @@
   font-weight: bolder;
   position: relative;
 }
+@media (max-width: 768px) {
+  .hoverEffect {
+    font-size: 1rem;
+  }
+}
 .navlist1::before {
   content: attr(data-text1);
   position: absolute;
