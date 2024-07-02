@@ -3,8 +3,8 @@ import "./Product.css";
 import { useExtractColor } from "react-extract-colors";
 function Product({ name, img }) {
   const { dominantColor, darkerColor, lighterColor } = useExtractColor(img);
+  console.log(dominantColor)
   return (
-    
     <>
       <div className="product" style={{ backgroundImage: `url(${img})`,backgroundColor:`${dominantColor}` }}>
         <span className="ProductHeading">{name}</span>

@@ -19,11 +19,15 @@ import { useExtractColor } from "react-extract-colors";
 
 
 function ProductCard(props) {
-  const { dominantColor1, darkerColor1, lighterColor1 } = useExtractColor(props.firstslide);
-  const { dominantColor2, darkerColor2, lighterColor2 } = useExtractColor(props.secondslide);
-  const { dominantColor3, darkerColor3, lighterColor3 } = useExtractColor(props.thirdslide);
-  const { dominantColor4, darkerColor4, lighterColor4 } = useExtractColor(props.fourthslide);
-  const { dominantColor5, darkerColor5, lighterColor5 } = useExtractColor(props.fifthslide);
+  const images=[props.firstslide,props.secondslide,props.thirdslide,props.fourthslide,props.fifthslide]
+  let i=0;
+  let empty = [];
+  for(i=0;i<images.length;i++){
+    const { dominantColor, darkerColor, lighterColor } = useExtractColor(images[i]);
+    empty[i] = dominantColor;
+  }
+  console.log(empty)
+
   return (
     <>
       <div className="bgContainer">
@@ -69,35 +73,35 @@ function ProductCard(props) {
         >
           <div className="SwipeSee"><span>Swipe to SEE</span></div>
           <SwiperSlide className="mySwiperSlide">
-            <div className="ProductImages" style={{ backgroundImage: `url(${props.firstslide})`,backgroundColor:`${dominantColor1}`}}>
+            <div className="ProductImages" style={{ backgroundImage: `url(${props.firstslide})`,backgroundColor:`${empty[0]}`}}>
               <span className="ShoeName"></span>
               <IoHeartCircle className="FavouriteIcon"/>
               <button className="BuyNow">$ PRICE</button>
               </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
-            <div className="ProductImages" style={{ backgroundImage: `url(${props.secondslide})`,backgroundColor:`${dominantColor2}`}}>
+            <div className="ProductImages" style={{ backgroundImage: `url(${props.secondslide})`,backgroundColor:`${empty[1]}`}}>
               <span className="ShoeName"></span>
               <IoHeartCircle className="FavouriteIcon"/>
               <button className="BuyNow">$ PRICE</button>
               </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
-            <div className="ProductImages" style={{ backgroundImage: `url(${props.thirdslide})`,backgroundColor:`${dominantColor3}`}}>
+            <div className="ProductImages" style={{ backgroundImage: `url(${props.thirdslide})`,backgroundColor:`${empty[2]}`}}>
               <span className="ShoeName"></span>
               <IoHeartCircle className="FavouriteIcon"/>
               <button className="BuyNow">$ PRICE</button>
               </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
-            <div className="ProductImages" style={{ backgroundImage: `url(${props.fourthslide})`,backgroundColor:`${dominantColor4}`}}>
+            <div className="ProductImages" style={{ backgroundImage: `url(${props.fourthslide})`,backgroundColor:`${empty[3]}`}}>
               <span className="ShoeName"></span>
               <IoHeartCircle className="FavouriteIcon"/>
               <button className="BuyNow">$ PRICE</button>
               </div>
           </SwiperSlide>
           <SwiperSlide className="mySwiperSlide">
-            <div className="ProductImages" style={{ backgroundImage: `url(${props.fifthslide})`,backgroundColor:`${dominantColor5}`}}>
+            <div className="ProductImages" style={{ backgroundImage: `url(${props.fifthslide})`,backgroundColor:`${empty[4]}`}}>
               <span className="ShoeName"></span>
               <IoHeartCircle   className="FavouriteIcon"/>
               <button className="BuyNow">$ PRICE</button>
