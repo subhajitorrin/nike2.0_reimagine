@@ -5,7 +5,7 @@ function Product({ name, img }) {
     <>
       <div className="product" style={{ backgroundImage: `url(${img})` }}>
         <span className="ProductHeading">{name}</span>
-        <span className="SeeMore">See more</span>
+        <span className="SeeMore" data-span="See more">See more</span>
       </div>
     </>
   );

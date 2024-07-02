@@ -11,7 +11,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   user-select: none;
 }
 .BgShoeProductImg {
@@ -23,11 +23,35 @@
   color: white;
 }
 .SeeMore {
-  color: white;
+  color: rgb(0, 0, 0);
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: blue;
-  border-radius: 15px;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  position: relative;
+  font-weight: bolder;
 }
-
+.SeeMore::before{
+  content: attr(data-span);
+  height: 100%;
+  width: 50%;
+  color:red;
+  position: absolute;
+  transition: all 0.3s linear;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  top:0px;
+  left:0px;
+  padding-left: 1rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  font-weight: bolder;
+  border-radius: 25px;
+}
+.SeeMore:hover::before{
+  width: 100%;
+  overflow: hidden;
+}
 
