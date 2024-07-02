@@ -242,7 +242,7 @@ for(i=0;i<HeroImage.length;i++){
             {innerWidth > 768 ? (
               <p
                 className="relative"
-                style={{ backgroundPositionX: `${translateX}px`, backgroundColor:empty[index] }}
+                style={{ backgroundPositionX: `${translateX}px` }}
               >
                 SANTANU KHANKI <br />
                 KHANKI
@@ -256,7 +256,7 @@ for(i=0;i<HeroImage.length;i++){
               className="heroBlur"
               ref={heroBlur}
               id="blurHero"
-              style={{ opacity: innerWidth <= 768 ? "0" : "1" ,backgroundColor:empty[index]
+              style={{ opacity: innerWidth <= 768 ? "0" : "1" 
               }}
             ></div>
           </div>
