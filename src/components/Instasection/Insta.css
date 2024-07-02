@@ -24,7 +24,7 @@
   border-radius: 10px;
   position: absolute;
   left: 120px;
-  top: 400px;
+  top: 350px;
 }
 
 .Insta-secContainer .img3 img {
@@ -58,7 +58,7 @@
   height: 500px;
   border-radius: 10px;
   position: absolute;
-  top: 650px;
+  top: 950px;
   left: 200px;
 }
 
@@ -72,6 +72,6 @@
   margin: 20px 0;
   transition: transform 0.3s ease-out;
 }
-.transitionInsta{
-  transition: all .3s ease-in-out;
+.transitionInsta {
+  transition: all 0.3s ease-in-out;
 }

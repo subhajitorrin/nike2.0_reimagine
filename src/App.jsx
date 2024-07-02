@@ -44,7 +44,6 @@ function App() {
   //     .addEventListener("mouseenter", handleMouseEnter);
   // }, []);
 
-
   // locomotive off on navclick
   // useEffect(() => {
   //   let locomotiveScroll = null;
