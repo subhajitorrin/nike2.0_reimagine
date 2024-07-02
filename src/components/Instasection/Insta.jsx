@@ -3,10 +3,12 @@ import "./Insta.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import img1 from "../../assets/InstaSection/instasection2.jpg";
-import img2 from "../../assets/InstaSection/instasection3.jpg";
-import img3 from "../../assets/InstaSection/instasection4.jpg";
-import img4 from "../../assets/InstaSection/img4.jpg";
+
+const img1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831275/instasection2_dx9obr.jpg";
+const img2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831276/instasection3_w1pkue.jpg";
+const img3 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831276/instasection4_qf12jm.jpg";
+const img4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831273/img4_fetm1x.jpg";
+
 import { FaInstagram } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);

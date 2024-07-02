@@ -2,10 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import "./../../../App.css";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import clip from "../../../assets/BackClip/backclip.mov";
 import { SiNike } from "react-icons/si";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import mountain from "../../../assets/mountainend.webp";
+
+const clip = "https://res.cloudinary.com/difxhccup/video/upload/v1719936605/backclip_rd3hf6.mov";
+const mountain = "https://res.cloudinary.com/difxhccup/image/upload/v1719936445/mountainend_fie6u6.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
