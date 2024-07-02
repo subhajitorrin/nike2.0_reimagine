@@ -206,3 +206,24 @@
     transform:translate(0px,0px)rotate(0deg);
   }
 }
+
+
+.SmallIndicatingProduct{
+  position: absolute;
+  z-index: 9;
+  transform: translate(-420%,250%)rotate(0deg);
+  scale:0.2;
+  /* -webkit-box-reflect: below -50%; */
+}
+.SmallIndicatingProduct:nth-child(2){
+  transform: translate(-400%,260%)rotate(-30deg);
+}
+
+.SmallIndicatingProduct:nth-child(3){
+  transform: translate(400%,-260%)rotateY(-180deg)rotate(0deg);
+  
+}
+.SmallIndicatingProduct:nth-child(4){
+  transform: translate(400%,-270%)rotateY(-180deg)rotate(-30deg);
+  
+}
