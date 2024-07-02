@@ -3,8 +3,8 @@
   padding: 0;
   /* overflow: hidden; */
 }
-:root{
-    --background-image-url: url('../../assets/pattern.jpeg');
+:root {
+  --background-image-url: url("../../assets/pattern.jpeg");
 }
 .Bg-container {
   width: 100vw;
@@ -19,18 +19,17 @@
   background-size:cover;
   backdrop-filter: grayscale(10%); */
   position: relative;
-  top:0;
+  top: 0;
   z-index: 990000;
-  background-color:#f4f2f0;
+  background-color: #f4f2f0;
 }
 .my-swiper {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
   display: flex !important;
   align-items: center;
   justify-content: center;
-  
 }
 
 .slider {
@@ -39,15 +38,14 @@
   display: flex !important;
   align-items: center;
   justify-content: center;
-  
 }
 .SwipeDiv {
   width: 576px;
   height: auto;
   transition: all 0.3s linear;
   position: relative;
-  display:grid;
-  grid-template-rows: repeat(2,1fr);
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
 }
 .HeroShoe {
   width: 100%;
@@ -58,7 +56,7 @@
   rotate: -13deg;
   image-rendering: smooth;
   position: relative;
-  top:30%;
+  top: 30%;
 }
 
 .PlatformImg {
@@ -68,7 +66,7 @@
   pointer-events: none;
   object-fit: contain;
   position: relative;
-  top:-20%;
+  top: -20%;
 }
 
 .Btn {
@@ -81,10 +79,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color:red;
+  color: red;
 }
-.Btn:hover{
-    color:white;
+.Btn:hover {
+  color: white;
 }
 .Next {
   top: 50%;
@@ -94,59 +92,68 @@
   top: 50%;
   left: 25%;
 }
-.BgText{
-    position: absolute;
-    top:-5%;
-    z-index: -1;
-    font-size: 10rem;
-    background: -webkit-radial-gradient(circle, rgb(216, 24, 24) 0%, rgba(225,50,81,1) 100%);
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align:center;
-    filter: blur(1px);
-    opacity: 0.1;
+.BgText {
+  font-family: tektur;
+  line-height: 85%;
+  font-weight: 700;
+  position: absolute;
+  top: 7%;
+  font-size: 8vw;
+  text-align: center;
+  color: #e13251;
+  padding: 7rem;
+  height: 80%;
+  width: 80%;
 }
-.NikeLogoBg{
-    scale:7;
-    position: relative;
-    z-index: -1;
-    margin-top: 20%;
-    filter: blur(0px);
+.heroBlur {
+  height: 300px;
+  width: 300px;
+  filter: blur(100px);
+  background-color: #e13251;
+  position: absolute;
+  top: 0;
+  transition: scale ease-in-out 0.2s;
 }
-.lengthdiv1{
-    width:0%;
-    height:0%;
-    position: absolute;
-    background-color: blue;
-    left:-5%;
-    transition: all 0.1s linear;
-    border-radius: 50px;
+.NikeLogoBg {
+  scale: 7;
+  position: relative;
+  z-index: -1;
+  margin-top: 20%;
+  filter: blur(0px);
 }
-.lengthdiv2{
-    width:0%;
-    height:0%;
-    position: absolute;
-    background-color: blue;
-    right:-5%;
-    transition: all 0.1s linear;
-    border-radius: 50px;
+.lengthdiv1 {
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  background-color: #e13251;
+  left: -5%;
+  transition: all 0.1s linear;
+  border-radius: 50px;
 }
-.SlideNavArrow{
-    z-index: 20;
+.lengthdiv2 {
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  background-color: #e13251;
+  right: -5%;
+  transition: all 0.1s linear;
+  border-radius: 50px;
 }
-.flashLightEffectDiv{
-    position:fixed;
-	top: 0px;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-color: yellow;
+.SlideNavArrow {
+  z-index: 20;
+}
+.flashLightEffectDiv {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-color: yellow;
 }
 
-@media (max-width:768px){
-    .Btn{
-       top:85%;
-       scale:0.9;
-    }
+@media (max-width: 768px) {
+  .Btn {
+    top: 85%;
+    scale: 0.9;
+  }
 }

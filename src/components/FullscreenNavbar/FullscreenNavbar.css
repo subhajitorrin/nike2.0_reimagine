@@ -14,10 +14,12 @@
 .navarea {
   display: flex;
   justify-content: space-between;
-  padding: 3vh;
+  padding: 1rem;
   background-color: transparent;
-  position: relative;
-  z-index: 201;
+  position: absolute;
+  top: 0;
+  z-index: 999999999999999999;
+  width: 100%;
 }
 .menuicon {
   font-size: 1.6rem;
