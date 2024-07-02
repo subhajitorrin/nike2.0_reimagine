@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "./Loader.css";
 import gsap from "gsap";
-import { Circles } from 'react-loader-spinner';
+import { FadeLoader, PulseLoader } from "react-spinners";
 
-const card1 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831220/shoe6_tod0ha.jpg";
-const card2 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831220/shoe5_hgiuph.jpg";
-const card4 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831219/shoe4_ijks4p.jpg";
-const card5 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831219/shoe3_v49rum.jpg";
-const card6 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831219/shoe2_k30k1f.jpg";
-const card7 = "https://res.cloudinary.com/difxhccup/image/upload/v1719831218/shoe1_ku2u1d.jpg";
+const card1 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719831220/shoe6_tod0ha.jpg";
+const card2 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719831220/shoe5_hgiuph.jpg";
+const card4 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719831219/shoe4_ijks4p.jpg";
+const card5 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719831219/shoe3_v49rum.jpg";
+const card6 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719831219/shoe2_k30k1f.jpg";
+const card7 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719831218/shoe1_ku2u1d.jpg";
 
 const cardsArr = [card1, card2, card4, card5, card6, card7];
 
@@ -54,16 +60,8 @@ function ImgCard({ isLoading }) {
 
   if (!imagesLoaded) {
     return (
-      <div className="absolute top-[50%] left-[40%] ">
-        <Circles
-          height="50"
-          width="50"
-          color="#eb244b"
-          ariaLabel="circles-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        />
+      <div className="absolute top-[40%] left-[40%] ">
+        <FadeLoader color="#e13251" />
       </div>
     );
   } else {
@@ -71,7 +69,8 @@ function ImgCard({ isLoading }) {
       <>
         {imgList.map((item, index) => {
           const len = imgList.length;
-          const rotation = index < len / 2 ? `-${index * 5}deg` : `${index * 5 - 20}deg`;
+          const rotation =
+            index < len / 2 ? `-${index * 5}deg` : `${index * 5 - 20}deg`;
           return (
             <div
               key={`imgCard1-${index}`}
@@ -84,7 +83,8 @@ function ImgCard({ isLoading }) {
         })}
         {imgList.map((item, index) => {
           const len = imgList.length;
-          const rotation = index < len / 2 ? `-${index * 5}deg` : `${index * 5 - 20}deg`;
+          const rotation =
+            index < len / 2 ? `-${index * 5}deg` : `${index * 5 - 20}deg`;
           return (
             <div
               key={`imgCard2-${index}`}

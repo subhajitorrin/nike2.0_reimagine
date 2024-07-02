@@ -24,6 +24,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-parallax": "^3.5.1",
     "react-parallax-tilt": "^1.7.228",
+    "react-spinners": "^0.14.1",
     "react-tilt": "^1.0.2",
     "scroll-lock": "^2.1.5",
     "swiper": "^11.1.4",
