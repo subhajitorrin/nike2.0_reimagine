@@ -2,6 +2,7 @@ import { Html, OrbitControls, View } from "@react-three/drei";
 import React, { Suspense, useEffect, useState } from "react";
 import Shoe4 from './Shoe4';
 import * as THREE from "three";
+import { Audio } from 'react-loader-spinner';
 
 const ModelView = ({
   index,
@@ -37,7 +38,17 @@ const ModelView = ({
         <Suspense
           fallback={
             <Html>
-              <div>isLoading</div>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' , zIndex:100000000 }}>
+                <Audio
+                  height="100"
+                  width="100"
+                  radius="9"
+                  color="green"
+                  ariaLabel="loading"
+                  wrapperStyle
+                  wrapperClass
+                />
+              </div>
             </Html>
           }
         >
