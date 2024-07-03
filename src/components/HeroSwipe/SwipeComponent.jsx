@@ -12,19 +12,18 @@ import "swiper/css/bundle";
 import { EffectFlip } from "swiper/modules";
 import { EffectCreative } from "swiper/modules";
 import { EffectCards } from "swiper/modules";
-import AirJordan from "../../assets/SwipeSectionAsset/Airjordan.png";
-import Dunk from "../../assets/SwipeSectionAsset/Dunk.png";
-import Blazer from "../../assets/SwipeSectionAsset/Blazer.png";
-import AirForce from "../../assets/SwipeSectionAsset/Airforce.png";
-import GrassPlatform from "../../assets/SwipeSectionAsset/GrassPlatform.gif";
-import RockyPlatform from "../../assets/SwipeSectionAsset/RockyPlatform.gif";
-import ElectroPlatform from "../../assets/SwipeSectionAsset/ElectroPlatform.gif";
-import RoadPlatform from "../../assets/SwipeSectionAsset/RoadPlatform.gif";
+const AirJordan = "https://res.cloudinary.com/difxhccup/image/upload/v1719988135/Airjordan_ilfd3a.png"
+const Dunk = "https://res.cloudinary.com/difxhccup/image/upload/v1719988135/Dunk_urvlk3.png"
+const Blazer = "https://res.cloudinary.com/difxhccup/image/upload/v1719988135/Blazer_zdxklo.png"
+const AirForce ="https://res.cloudinary.com/difxhccup/image/upload/v1719988134/Airforce_khhfwn.png"
+import GrassPlatform from "../../assets/SwipeSectionAsset/GrassPlatform-ezgif.com-gif-to-webp-converter.webp";
+import RockyPlatform from "../../assets/SwipeSectionAsset/RockyPlatform-ezgif.com-gif-to-webp-converter.webp";
+import ElectroPlatform from "../../assets/SwipeSectionAsset/ezgif.com-gif-to-webp-converter.webp"
+import RoadPlatform from "../../assets/SwipeSectionAsset/RoadPlatform-ezgif.com-gif-to-webp-converter.webp";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { SiNike } from "react-icons/si";
 import { useExtractColor } from "react-extract-colors";
-// import NikeLogoBg from "../../assets/NikeLogoBg.jpeg"
 const airJordanXxxVii3 =
   "https://res.cloudinary.com/difxhccup/image/upload/v1719929199/air-jordan-xxxviii-2_wnwntt-removebg-preview_wewxtn.png";
 const airMax2702 =
@@ -33,7 +32,6 @@ const customPhantomLuna6 =
   "https://res.cloudinary.com/difxhccup/image/upload/v1719929204/custom-phantom-luna-5_zby2ua-removebg-preview_aeucfg.png";
 const jordanStadium6 =
   "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-3_ezj9hj-removebg-preview_immejp.png";
-
 function handleMovement(e) {
   // let Moveimg = document.querySelectorAll(".SmallIndicatingProduct");
   // Moveimg.forEach((item) => {

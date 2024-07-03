@@ -113,40 +113,43 @@ const Model = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[600vh]" id="main">
-      <div className="fixed top-0 left-0 w-full h-screen">
-        <ModelView
-          index={1}
-          groupRef={first}
-          gsapType="view1"
-          controlRef={cameraControlSmall}
-          setRotationState={setSmallRotation}
-          size={model}
-          modelPosition={modelPositionRef.current}
-        />
-        <Canvas
-          className="w-full h-full"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            overflow: "hidden",
-            backgroundColor: "#f4f2f0", //background color of the 3d model
-            zIndex: -1,
-          }}
-          eventSource={document.getElementById("main")}
+    
+   
+      <div className="relative w-full h-[600vh]" id="main">
+        <div className="fixed top-0 left-0 w-full h-screen">
+          <ModelView
+            index={1}
+            groupRef={first}
+            gsapType="view1"
+            controlRef={cameraControlSmall}
+            setRotationState={setSmallRotation}
+            size={model}
+            modelPosition={modelPositionRef.current}
+          />
+          <Canvas
+            className="w-full h-full"
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              overflow: "hidden",
+              backgroundColor: "#f4f2f0", //background color of the 3d model
+              zIndex: -1,
+            }}
+            eventSource={document.getElementById("main")}
+          >
+            <View.Port />
+            <ModelWrapper modelRef={first} positionRef={modelPositionRef} />
+          </Canvas>
+        </div>
+        <div
+          id="scrollable-content"
+          // ref={scrollableContentRef}
+          className="absolute top-0 left-0 w-full"
         >
-          <View.Port />
-          <ModelWrapper modelRef={first} positionRef={modelPositionRef} />
-        </Canvas>
-      </div>
-      <div
-        id="scrollable-content"
-        // ref={scrollableContentRef}
-        className="absolute top-0 left-0 w-full"
-      >
-        <ScrollableContent />
-      </div>
+          <ScrollableContent />
+        </div>
+    
     </div>
   );
 };
