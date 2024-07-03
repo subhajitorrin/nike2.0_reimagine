@@ -189,6 +189,39 @@ function SwipeComponent() {
   return (
     <>
       <div className="Bg-container" onMouseMove={handleMovement}>
+      <div className="NameShoeonSwipe">
+          <Swiper
+          className="myswiperv2"
+          modules={[
+            Navigation,
+            Pagination,
+            Scrollbar,
+            A11y,
+            Autoplay,
+            EffectFlip,
+            EffectCreative,
+            EffectCards,
+          ]}
+          navigation={{
+            nextEl: ".Next.Btn",
+            prevEl: ".Prev.Btn",
+          }}
+          pagination={true}
+          slidesPerView={1}
+          loop={true}
+          speed={750}
+          spaceBetween={0}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          >
+            <SwiperSlide>AirJordan</SwiperSlide>
+            <SwiperSlide>Dunk</SwiperSlide>
+            <SwiperSlide>Blazer</SwiperSlide>
+            <SwiperSlide>AirForce</SwiperSlide>
+          </Swiper>
+        </div>
         <Swiper
           className="my-swiper"
           modules={[

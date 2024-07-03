@@ -238,3 +238,18 @@
 }
 
 
+.myswiperv2{
+  font-size: 700;
+ text-align: center;
+  font-family: tektur;
+  color:white;
+}
+.NameShoeonSwipe{
+  position: absolute;
+  width:8rem;
+  height: 1.5rem;
+  border-radius: 30px;
+  transform: translate(100%)rotate(-10deg);
+  background-color: red;
+  z-index: 999999999 !important;
+}
