@@ -9,8 +9,9 @@ import MobileViewNavContents from "./NavContents/MobileViewNavContents";
 import NikeLogo1 from "../../assets/NavbarClip/NikeLogo1.png";
 import { SiNike } from "react-icons/si";
 
-const nikeManLogo =
-  "https://res.cloudinary.com/difxhccup/image/upload/v1719959216/nike_logo-removebg-preview_glhuf6.webp";
+// const nikeManLogo =
+//   "https://res.cloudinary.com/difxhccup/image/upload/v1719959216/nike_logo-removebg-preview_glhuf6.webp";
+const nikeManLogo ="https://res.cloudinary.com/difxhccup/image/upload/v1720000185/nike_logo-removebg-preview_1_i4lcgc.webp";
 
 function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -188,7 +189,7 @@ function FullscreenNavbar({ toggleNavbar, settoggleNavbar }) {
         />  */}
         {/* <SiNike className="text-[3rem]"/> */}
         {windowWidth > 768 && (
-          <img src={nikeManLogo} alt="" className="h-[80px]" />
+          <img src={nikeManLogo} alt="" className="h-[60px]" />
         )}
 
         <div className="navarea-option">

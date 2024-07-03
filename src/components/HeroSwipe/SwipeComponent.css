@@ -106,9 +106,10 @@
   /* padding: 7rem; */
   padding-top: 5rem;
   height: 80%;
-  width: 100%;
+  width: 95%;
   display: flex;
   justify-content: center;
+  /* border: 1px solid; */
 }
 @media (min-width: 768px) {
   .BgText p {

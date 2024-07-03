@@ -12,13 +12,17 @@ import "swiper/css/bundle";
 import { EffectFlip } from "swiper/modules";
 import { EffectCreative } from "swiper/modules";
 import { EffectCards } from "swiper/modules";
-const AirJordan = "https://res.cloudinary.com/difxhccup/image/upload/v1719988135/Airjordan_ilfd3a.png"
-const Dunk = "https://res.cloudinary.com/difxhccup/image/upload/v1719988135/Dunk_urvlk3.png"
-const Blazer = "https://res.cloudinary.com/difxhccup/image/upload/v1719988135/Blazer_zdxklo.png"
-const AirForce ="https://res.cloudinary.com/difxhccup/image/upload/v1719988134/Airforce_khhfwn.png"
+const AirJordan =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719988135/Airjordan_ilfd3a.png";
+const Dunk =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719988135/Dunk_urvlk3.png";
+const Blazer =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719988135/Blazer_zdxklo.png";
+const AirForce =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719988134/Airforce_khhfwn.png";
 import GrassPlatform from "../../assets/SwipeSectionAsset/GrassPlatform-ezgif.com-gif-to-webp-converter.webp";
 import RockyPlatform from "../../assets/SwipeSectionAsset/RockyPlatform-ezgif.com-gif-to-webp-converter.webp";
-import ElectroPlatform from "../../assets/SwipeSectionAsset/ezgif.com-gif-to-webp-converter.webp"
+import ElectroPlatform from "../../assets/SwipeSectionAsset/ezgif.com-gif-to-webp-converter.webp";
 import RoadPlatform from "../../assets/SwipeSectionAsset/RoadPlatform-ezgif.com-gif-to-webp-converter.webp";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -169,8 +173,8 @@ function SwipeComponent() {
       const x = position.x;
       const y = position.y;
       if (
-        y >= rect.top + 200 &&
-        y <= rect.bottom &&
+        y >= rect.top + 150 &&
+        y <= rect.bottom - 100 &&
         x >= rect.left &&
         x <= rect.right
       ) {
@@ -184,43 +188,43 @@ function SwipeComponent() {
   }, [position]);
 
   Swiper.i;
-  const NameSlide = document.querySelector('.myswiperv2')
-  const PreviousSlidebutton = document.querySelector('.Prev.Btn')
-  const NextSlidebutton = document.querySelector('.Next.Btn')
-  function HandleName(){
-    console.log(NameSlide);
-    console.log(PreviousSlidebutton);
-    console.log(NextSlidebutton);
-    }
+  const NameSlide = document.querySelector(".myswiperv2");
+  const PreviousSlidebutton = document.querySelector(".Prev.Btn");
+  const NextSlidebutton = document.querySelector(".Next.Btn");
+  function HandleName() {
+    // console.log(NameSlide);
+    // console.log(PreviousSlidebutton);
+    // console.log(NextSlidebutton);
+  }
   return (
     <>
       <div className="Bg-container" onMouseMove={handleMovement}>
-      <div className="NameShoeonSwipe">
+        <div className="NameShoeonSwipe">
           <Swiper
-          className="myswiperv2"
-          modules={[
-            Navigation,
-            Pagination,
-            Scrollbar,
-            A11y,
-            Autoplay,
-            EffectFlip,
-            EffectCreative,
-            EffectCards,
-          ]}
-          navigation={{
-            nextEl: ".Next.Btn",
-            prevEl: ".Prev.Btn",
-          }}
-          pagination={true}
-          slidesPerView={1}
-          loop={true}
-          speed={750}
-          spaceBetween={0}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
+            className="myswiperv2"
+            modules={[
+              Navigation,
+              Pagination,
+              Scrollbar,
+              A11y,
+              Autoplay,
+              EffectFlip,
+              EffectCreative,
+              EffectCards,
+            ]}
+            navigation={{
+              nextEl: ".Next.Btn",
+              prevEl: ".Prev.Btn",
+            }}
+            pagination={true}
+            slidesPerView={1}
+            loop={true}
+            speed={750}
+            spaceBetween={0}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
           >
             <SwiperSlide>AirJordan</SwiperSlide>
             <SwiperSlide>Dunk</SwiperSlide>
@@ -283,8 +287,8 @@ function SwipeComponent() {
         >
           <div className="BgText " ref={blurContainer} id="blurContainer">
             <div className="textOnHeroSectionSmall absolute text-[15px] w-[10rem] leading-[100%] text-black right-[22%] top-[70%] font-[500]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
-              consequuntur?
+              Unleash Your Potential with Nike: Performance, Style, Innovation,
+              and Comfort
             </div>
             {innerWidth > 768 ? (
               <p
@@ -313,30 +317,62 @@ function SwipeComponent() {
           </div>
 
           <SwiperSlide className="slider">
-          <img className="SmallIndicatingProduct" src={airJordanXxxVii3} alt></img>
-          <img className="SmallIndicatingProduct" src={airJordanXxxVii3} alt></img>
-          <img className="SmallIndicatingProduct" src={airJordanXxxVii3} alt></img>
-          <img className="SmallIndicatingProduct" src={airJordanXxxVii3} alt></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={airJordanXxxVii3}
+              alt
+            ></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={airJordanXxxVii3}
+              alt
+            ></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={airJordanXxxVii3}
+              alt
+            ></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={airJordanXxxVii3}
+              alt
+            ></img>
             <div className="SwipeDiv">
               <img src={AirJordan} alt="" className="HeroShoe" />
               <img className="PlatformImg" src={GrassPlatform} alt="" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="slider">
-          <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
-          <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
-          <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
-          <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
+            <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
+            <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
+            <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
+            <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
             <div className="SwipeDiv">
               <img src={Dunk} alt="" className="HeroShoe" />
               <img className="PlatformImg" src={RockyPlatform} alt="" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="slider">
-          <img className="SmallIndicatingProduct" src={customPhantomLuna6} alt></img>
-          <img className="SmallIndicatingProduct" src={customPhantomLuna6} alt></img>
-          <img className="SmallIndicatingProduct" src={customPhantomLuna6} alt></img>
-          <img className="SmallIndicatingProduct" src={customPhantomLuna6} alt></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={customPhantomLuna6}
+              alt
+            ></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={customPhantomLuna6}
+              alt
+            ></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={customPhantomLuna6}
+              alt
+            ></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={customPhantomLuna6}
+              alt
+            ></img>
 
             <div className="SwipeDiv">
               <img src={Blazer} alt="" className="HeroShoe" />
@@ -344,10 +380,26 @@ function SwipeComponent() {
             </div>
           </SwiperSlide>
           <SwiperSlide className="slider">
-          <img className="SmallIndicatingProduct" src={jordanStadium6} alt></img>
-          <img className="SmallIndicatingProduct" src={jordanStadium6} alt></img>
-          <img className="SmallIndicatingProduct" src={jordanStadium6} alt></img>
-          <img className="SmallIndicatingProduct" src={jordanStadium6} alt></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={jordanStadium6}
+              alt
+            ></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={jordanStadium6}
+              alt
+            ></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={jordanStadium6}
+              alt
+            ></img>
+            <img
+              className="SmallIndicatingProduct"
+              src={jordanStadium6}
+              alt
+            ></img>
             <div className="SwipeDiv">
               <img src={AirForce} alt="" className="HeroShoe" />
               <img className="PlatformImg" src={ElectroPlatform} alt="" />
