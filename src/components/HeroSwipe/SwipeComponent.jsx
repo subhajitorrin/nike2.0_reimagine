@@ -25,7 +25,14 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { SiNike } from "react-icons/si";
 import { useExtractColor } from "react-extract-colors";
 // import NikeLogoBg from "../../assets/NikeLogoBg.jpeg"
-const bg = "rgba(0,0,0,0)";
+const airJordanXxxVii3 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929199/air-jordan-xxxviii-2_wnwntt-removebg-preview_wewxtn.png";
+const airMax2702 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929202/air-max-270-6_vvpinf-removebg-preview_nioces.png";
+const customPhantomLuna6 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929204/custom-phantom-luna-5_zby2ua-removebg-preview_aeucfg.png";
+const jordanStadium6 =
+  "https://res.cloudinary.com/difxhccup/image/upload/v1719929200/jordan-stadium-3_ezj9hj-removebg-preview_immejp.png";
 
 function handleMovement(e) {
   // let Moveimg = document.querySelectorAll(".SmallIndicatingProduct");
@@ -266,104 +273,41 @@ function SwipeComponent() {
           </div>
 
           <SwiperSlide className="slider">
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
+          <img className="SmallIndicatingProduct" src={airJordanXxxVii3} alt></img>
+          <img className="SmallIndicatingProduct" src={airJordanXxxVii3} alt></img>
+          <img className="SmallIndicatingProduct" src={airJordanXxxVii3} alt></img>
+          <img className="SmallIndicatingProduct" src={airJordanXxxVii3} alt></img>
             <div className="SwipeDiv">
               <img src={AirJordan} alt="" className="HeroShoe" />
               <img className="PlatformImg" src={GrassPlatform} alt="" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="slider">
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
+          <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
+          <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
+          <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
+          <img className="SmallIndicatingProduct" src={airMax2702} alt></img>
             <div className="SwipeDiv">
               <img src={Dunk} alt="" className="HeroShoe" />
               <img className="PlatformImg" src={RockyPlatform} alt="" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="slider">
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
+          <img className="SmallIndicatingProduct" src={customPhantomLuna6} alt></img>
+          <img className="SmallIndicatingProduct" src={customPhantomLuna6} alt></img>
+          <img className="SmallIndicatingProduct" src={customPhantomLuna6} alt></img>
+          <img className="SmallIndicatingProduct" src={customPhantomLuna6} alt></img>
+
             <div className="SwipeDiv">
               <img src={Blazer} alt="" className="HeroShoe" />
               <img className="PlatformImg" src={RoadPlatform} alt="" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="slider">
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
-            <img
-              className="SmallIndicatingProduct"
-              src="https://res.cloudinary.com/difxhccup/image/upload/v1719929201/air-jordan-xxxviii-5_agb0xb-removebg-preview_jtalmz.png"
-              alt
-            ></img>
+          <img className="SmallIndicatingProduct" src={jordanStadium6} alt></img>
+          <img className="SmallIndicatingProduct" src={jordanStadium6} alt></img>
+          <img className="SmallIndicatingProduct" src={jordanStadium6} alt></img>
+          <img className="SmallIndicatingProduct" src={jordanStadium6} alt></img>
             <div className="SwipeDiv">
               <img src={AirForce} alt="" className="HeroShoe" />
               <img className="PlatformImg" src={ElectroPlatform} alt="" />
