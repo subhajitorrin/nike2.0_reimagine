@@ -102,8 +102,7 @@
   overflow: hidden;
   border: 1px solid white;
 }
-.navvideocontainer video {
-  width: 100%;
+.navvideocontainer .video {
   position: relative;
   top: -3rem;
 }

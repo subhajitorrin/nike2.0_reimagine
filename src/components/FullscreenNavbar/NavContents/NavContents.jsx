@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import "./NavContents.css";
 import { FaCaretRight, FaLeaf } from "react-icons/fa";
 import navimg1 from "../../../assets/NavbarClip/navimg.jpg";
-import clip1 from "../../../assets/NavbarClip/nikeclip2.mp4";
+import clip1 from "../../../assets/NavbarClip/ezgif.com-video-to-gif-converter.gif";
+// const clip1 = "https://res.cloudinary.com/dfdfbhvt3/video/upload/v1719990824/nikeclip2_pfvhyx.mp4";
+
 import gsap from "gsap";
 import { IoSearch } from "react-icons/io5";
 import Tilt from "react-parallax-tilt";
@@ -400,7 +402,7 @@ function NavContents({ navContentsRef, toggleNavbar }) {
                   >
                     <div>no</div>
                     <div className="navvideocontainer" ref={navClipRef}>
-                      <video src={clip1} muted loop autoPlay></video>
+                      <img className="video" src={clip1} alt=''></img>
                     </div>
                   </span>
                   <span
