@@ -186,6 +186,14 @@ function SwipeComponent() {
   }, [position]);
 
   Swiper.i;
+  const NameSlide = document.querySelector('.myswiperv2')
+  const PreviousSlidebutton = document.querySelector('.Prev.Btn')
+  const NextSlidebutton = document.querySelector('.Next.Btn')
+  function HandleName(){
+    console.log(NameSlide);
+    console.log(PreviousSlidebutton);
+    console.log(NextSlidebutton);
+    }
   return (
     <>
       <div className="Bg-container" onMouseMove={handleMovement}>
@@ -271,6 +279,7 @@ function SwipeComponent() {
               rotate: [-45, 0, 45],
             },
           }}
+          onSlideChange={HandleName}
           // onSlideNextTransitionStart={HandleForward}
           // onSlidePrevTransitionStart={Handlebackward}
         >

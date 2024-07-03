@@ -15,6 +15,16 @@ import SwipeComponent from "./components/HeroSwipe/SwipeComponent.jsx";
 
 import ProductCardsGrid from "./components/ProductCards/ProductCardsGrid.jsx";
 
+import { rainbowCursor } from "cursor-effects";
+
+new rainbowCursor({
+  length: 3,
+  colors: ["red"],
+  size: 4,
+});
+const targetElement = document.querySelector('.HeroSwipe');
+new rainbowCursor({ element: targetElement });
+
 function App() {
   const [isLoading, setisLoading] = useState(true);
   const locomotiveScroll = new LocomotiveScroll();
@@ -103,7 +113,7 @@ at App.jsx line 13
         toggleNavbar={toggleNavbar}
         settoggleNavbar={settoggleNavbar}
       />
-      <SwipeComponent />
+      <SwipeComponent className="HeroSwipe"/>
       <CardSection />
       <ProductCardsGrid />
       {isLoading ? <p>Loading...</p> : showModel && <Model />}
