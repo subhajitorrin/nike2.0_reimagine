@@ -12,18 +12,18 @@ import CardSection from "./components/CardSection/CardSection";
 import Insta from "./components/Instasection/Insta";
 import UpperFooter from "./components/footer/footer division/UpperFooter";
 import SwipeComponent from "./components/HeroSwipe/SwipeComponent.jsx";
-
+import Cursor from "./components/Cursor/Cursor.jsx";
 import ProductCardsGrid from "./components/ProductCards/ProductCardsGrid.jsx";
 
-import { rainbowCursor } from "cursor-effects";
+// import { rainbowCursor } from "cursor-effects";
 
-new rainbowCursor({
-  length: 3,
-  colors: ["red"],
-  size: 4,
-});
-const targetElement = document.querySelector('.HeroSwipe');
-new rainbowCursor({ element: targetElement });
+// new rainbowCursor({
+//   length: 3,
+//   colors: ["red"],
+//   size: 4,
+// });
+// const targetElement = document.querySelector('.HeroSwipe');
+// new rainbowCursor({ element: targetElement });
 
 function App() {
   const [isLoading, setisLoading] = useState(true);
@@ -107,7 +107,7 @@ at App.jsx line 13
       }}
     >
       <div className="blureffect"></div>
-      {/* <Cursor /> */}
+      <Cursor />
       <Loader isLoading={isLoading} setisLoading={setisLoading} />
       <FullscreenNavbar
         toggleNavbar={toggleNavbar}
